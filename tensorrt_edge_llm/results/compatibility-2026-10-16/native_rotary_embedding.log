@@ -1,0 +1,3 @@
+/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/native_rotary_embedding.cpp:3:58: error: ‘addRotaryEmbedding’ is not a member of ‘nvinfer1::INetworkDefinition’
+    3 | using Required = decltype(&nvinfer1::INetworkDefinition::addRotaryEmbedding);
+      |                                                          ^~~~~~~~~~~~~~~~~~

@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T07:19:13.767698+00:00",
+  "engine": "TensorRT Edge-LLM native experimental pi0.5",
+  "upstream": {
+    "repository": "https://github.com/NVIDIA/TensorRT-Edge-LLM",
+    "ref": "v0.11.0",
+    "commit": "95515c2f87fba8982db5a519f9022277667b3cc9"
+  },
+  "inference_executed": false,
+  "latency_ms": null,
+  "engine_memory_bytes": null,
+  "measurement_note": "Compatibility probe only. No model engine was loaded or timed.",
+  "platform": {
+    "machine": "aarch64",
+    "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.35",
+    "glibc": [
+      "glibc",
+      "2.35"
+    ],
+    "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+    "l4t": "# R36 (release), REVISION: 3.0, GCID: 36191598, BOARD: generic, EABI: aarch64, DATE: Mon May  6 17:34:21 UTC 2024\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia\n",
+    "os_release": "PRETTY_NAME=\"Ubuntu 22.04.4 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.4 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n"
+  },
+  "commands": {
+    "nvcc": {
+      "command": [
+        "/usr/local/cuda/bin/nvcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Aug_15_22:08:11_PDT_2023\nCuda compilation tools, release 12.2, V12.2.140\nBuild cuda_12.2.r12.2/compiler.33191640_0\n",
+      "stderr": ""
+    },
+    "tensorrt_python": {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import tensorrt; print(tensorrt.__version__)"
+      ],
+      "returncode": 0,
+      "stdout": "8.6.2\n",
+      "stderr": ""
+    },
+    "packages": {
+      "command": [
+        "dpkg-query",
+        "-W",
+        "libnvinfer8",
+        "libnvinfer-dev",
+        "nvidia-l4t-cuda"
+      ],
+      "returncode": 0,
+      "stdout": "libnvinfer-dev\t8.6.2.3-1+cuda12.2\nlibnvinfer8\t8.6.2.3-1+cuda12.2\nnvidia-l4t-cuda\t36.3.0-20240506102626\n",
+      "stderr": ""
+    },
+    "glibc": {
+      "command": [
+        "getconf",
+        "GNU_LIBC_VERSION"
+      ],
+      "returncode": 0,
+      "stdout": "glibc 2.35\n",
+      "stderr": ""
+    },
+    "docker": {
+      "command": [
+        "sudo",
+        "-n",
+        "docker",
+        "version",
+        "--format",
+        "{{.Server.Version}}"
+      ],
+      "returncode": 0,
+      "stdout": "27.0.3\n",
+      "stderr": ""
+    },
+    "create_isolated_resolver_venv": {
+      "command": [
+        "/home/nvidia/.local/bin/uv",
+        "venv",
+        "--python",
+        "/usr/bin/python3",
+        "--allow-existing",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/resolver_venv"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Using CPython 3.10.12 interpreter at: /usr/bin/python3\nCreating virtual environment at: pi05-orin-edge-llm/probe-2026-10-16/resolver_venv\nActivate with: source pi05-orin-edge-llm/probe-2026-10-16/resolver_venv/bin/activate\n"
+    },
+    "native_package_resolver_dry_run": {
+      "command": [
+        "/home/nvidia/.local/bin/uv",
+        "pip",
+        "install",
+        "--python",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/resolver_venv/bin/python",
+        "--dry-run",
+        "--no-deps",
+        "--index-url",
+        "https://pypi.org/simple",
+        "tensorrt-edgellm==0.11.0"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Using Python 3.10.12 environment at: pi05-orin-edge-llm/probe-2026-10-16/resolver_venv\nerror: No solution found when resolving dependencies\n  cause: Because tensorrt-edgellm==0.11.0 has no wheels with a matching platform tag (e.g., `manylinux_2_35_aarch64`) and you require tensorrt-edgellm==0.11.0, we can conclude that your requirements are unsatisfiable.\n\nhint: Wheels are available for `tensorrt-edgellm` (v0.11.0) on the following platforms: `manylinux_2_35_x86_64`, `manylinux_2_39_aarch64`\n"
+    }
+  },
+  "source_evidence": {
+    "native_onnx_contract": {
+      "path": "tensorrt_edgellm/onnx/onnx_custom_schemas.py",
+      "sha256": "a79c7411f9e8d403edacddbfc849af494e44f5dd6e606a698632cb1cb29ab930",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/tensorrt_edgellm/onnx/onnx_custom_schemas.py",
+      "matches_pinned_audit": true,
+      "trt_minimum_statement_present": true
+    },
+    "plugin_contract": {
+      "path": "cpp/plugins/attentionPlugin/attentionPlugin.h",
+      "sha256": "95a6d6a0f551960248583a238c9037370368ea35b7834bd94c0087b58a789dee",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/cpp/plugins/attentionPlugin/attentionPlugin.h",
+      "matches_pinned_audit": true
+    },
+    "runtime_contract": {
+      "path": "experimental_models/pi05/cpp/common/pi05Common.cpp",
+      "sha256": "075f772162011393efd55469a345df612c0027b36d8a079b4b7a73d00c78834f",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/experimental_models/pi05/cpp/common/pi05Common.cpp",
+      "matches_pinned_audit": true
+    },
+    "support_matrix": {
+      "path": "docs/source/user_guide/getting_started/support-matrix.md",
+      "sha256": "787bd7f7e0169dccbb5c925d3a77d8a74f105431a455734428339c935905dce1",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/docs/source/user_guide/getting_started/support-matrix.md",
+      "matches_pinned_audit": true
+    },
+    "pi05_example": {
+      "path": "docs/source/user_guide/examples/vla/pi05.md",
+      "sha256": "36ef4056f23bca9f64b1a0dfc48b61909b3925057af52bed6f0cf29e626f8601",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/docs/source/user_guide/examples/vla/pi05.md",
+      "matches_pinned_audit": true
+    },
+    "pi05_design": {
+      "path": "docs/source/developer_guide/models/pi05.md",
+      "sha256": "fde7181fa9441691c10e002e7e623bbf781204d0c29e641b68e7ef35e5e5a717",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/docs/source/developer_guide/models/pi05.md",
+      "matches_pinned_audit": true
+    },
+    "python_dependencies": {
+      "path": "pyproject.toml",
+      "sha256": "db1c3eccc8f8f6d744cd93d2f01999ee8f43ed4720789a0cee2706db1b3795f1",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/pyproject.toml",
+      "matches_pinned_audit": true
+    }
+  },
+  "api_compile_probes": {
+    "control_trt_headers": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-fsyntax-only",
+        "-I/usr/include/aarch64-linux-gnu",
+        "-I/usr/local/cuda/include",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/control_trt_headers.cpp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "native_attention": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-fsyntax-only",
+        "-I/usr/include/aarch64-linux-gnu",
+        "-I/usr/local/cuda/include",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/native_attention.cpp"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/native_attention.cpp:3:58: error: ‘addAttention’ is not a member of ‘nvinfer1::INetworkDefinition’\n    3 | using Required = decltype(&nvinfer1::INetworkDefinition::addAttention);\n      |                                                          ^~~~~~~~~~~~\n"
+    },
+    "native_rotary_embedding": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-fsyntax-only",
+        "-I/usr/include/aarch64-linux-gnu",
+        "-I/usr/local/cuda/include",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/native_rotary_embedding.cpp"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/native_rotary_embedding.cpp:3:58: error: ‘addRotaryEmbedding’ is not a member of ‘nvinfer1::INetworkDefinition’\n    3 | using Required = decltype(&nvinfer1::INetworkDefinition::addRotaryEmbedding);\n      |                                                          ^~~~~~~~~~~~~~~~~~\n"
+    },
+    "plugin_v3_build_v2": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-fsyntax-only",
+        "-I/usr/include/aarch64-linux-gnu",
+        "-I/usr/local/cuda/include",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/plugin_v3_build_v2.cpp"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/plugin_v3_build_v2.cpp:3:28: error: ‘IPluginV3OneBuildV2’ in namespace ‘nvinfer1’ does not name a type\n    3 | using Required = nvinfer1::IPluginV3OneBuildV2;\n      |                            ^~~~~~~~~~~~~~~~~~~\n"
+    },
+    "runtime_managed_memory": {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-fsyntax-only",
+        "-I/usr/include/aarch64-linux-gnu",
+        "-I/usr/local/cuda/include",
+        "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/runtime_managed_memory.cpp"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/runtime_managed_memory.cpp:3:51: error: ‘getDeviceMemorySizeV2’ is not a member of ‘nvinfer1::ICudaEngine’\n    3 | using Required = decltype(&nvinfer1::ICudaEngine::getDeviceMemorySizeV2);\n      |                                                   ^~~~~~~~~~~~~~~~~~~~~\n"
+    }
+  },
+  "blockers": [
+    "Published aarch64 wheel requires glibc 2.39; host is older.",
+    "Native package resolver rejected the host platform; see package_resolver.log.",
+    "Installed TensorRT headers lack APIs used by the native pi05 path: native_attention, native_rotary_embedding, plugin_v3_build_v2, runtime_managed_memory"
+  ],
+  "published_wheels": [
+    {
+      "filename": "tensorrt_edgellm-0.11.0-cp310-cp310-manylinux_2_35_x86_64.whl",
+      "size_bytes": 200576598,
+      "sha256": "73c407eb625ab4382dd0b380bd51a6d08d4a3d3b18ec34154187dfc42b3b98fe"
+    },
+    {
+      "filename": "tensorrt_edgellm-0.11.0-cp310-cp310-manylinux_2_39_aarch64.whl",
+      "size_bytes": 447051288,
+      "sha256": "9bb4383ef013a2108d2c077c8758a1a1ecbb2995ac9450ae02d5611dcecba611"
+    },
+    {
+      "filename": "tensorrt_edgellm-0.11.0-cp311-cp311-manylinux_2_35_x86_64.whl",
+      "size_bytes": 200582426,
+      "sha256": "2cef657ced3a30b6d03d5c4b1ad511a707f77b64d7f59d5e1dd117de8ceb8f50"
+    },
+    {
+      "filename": "tensorrt_edgellm-0.11.0-cp311-cp311-manylinux_2_39_aarch64.whl",
+      "size_bytes": 447058774,
+      "sha256": "21a66a57de5264bcf24e3e699e3e7b660e9541409d978cb5e76fe92e890b9c33"
+    },
+    {
+      "filename": "tensorrt_edgellm-0.11.0-cp312-cp312-manylinux_2_35_x86_64.whl",
+      "size_bytes": 200595884,
+      "sha256": "f3ea7a0f96c52a12d80b84d42f6f9b1902d2a0018f0d3156370a62a84583801c"
+    },
+    {
+      "filename": "tensorrt_edgellm-0.11.0-cp312-cp312-manylinux_2_39_aarch64.whl",
+      "size_bytes": 447070745,
+      "sha256": "9e6722a5a250d0ba18665911a908aecfc9684722b9d56d944efe31fe6c889d9b"
+    }
+  ],
+  "wheel_floor": {
+    "aarch64_glibc_minimum": "2.39",
+    "installed_glibc": "2.35"
+  },
+  "status": "blocked_on_current_stack"
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "engine": "TensorRT Edge-LLM",
+  "date": "2026-10-16",
+  "upstream_ref": "v0.11.0",
+  "upstream_commit": "95515c2f87fba8982db5a519f9022277667b3cc9",
+  "native_pi05_support": true,
+  "native_pi05_precision": "FP16 only",
+  "selected_policy_config": "pi05_libero",
+  "status": "blocked_on_current_stack",
+  "inference_executed": false,
+  "reason": "Installed TensorRT 8.6 lacks required >=10.15 native Attention/RotaryEmbedding, V3 plugin and runtime memory APIs. Published aarch64 wheel requires glibc 2.39 whereas this host has glibc 2.35. Official Orin release payload targets JetPack 7.2/CUDA 13; current host is L4T 36.3/CUDA 12.2.",
+  "evidence": "results/compatibility-2026-10-16/compatibility.json",
+  "measured_latency_ms": {
+    "cpu_preprocess": null,
+    "vision": null,
+    "prefix_assemble": null,
+    "prefix_kv_prefill": null,
+    "action_expert_10_steps": null,
+    "full_model": null,
+    "full_policy": null
+  },
+  "measured_memory_bytes": {
+    "process_rss": null,
+    "process_peak_rss": null,
+    "cuda_device": null,
+    "system_ram_delta": null
+  },
+  "null_meaning": "Not measured because a native pi05 engine could not run. Null is neither zero nor a speed estimate; probe runtime and probe RSS are not engine measurements.",
+  "prepared_native_workflow_not_executed": "run_native_supported.sh",
+  "helper_cpu_validation": "results/input-adapter-validation-2026-10-16/validation.json",
+  "host_sdk_changed": false,
+  "baseline_environment_changed": false,
+  "ordinary_tensorrt_fallback_executed": false,
+  "migration_claim": "Current official release path is blocked; this does not prove that a separately engineered and validated source port is theoretically impossible."
+}
