@@ -1,0 +1,257 @@
+{
+  "utc_time": "2026-10-16T04:00:40.754744+00:00",
+  "command": [
+    "baseline/benchmark.py",
+    "--deployment-root",
+    "/home/nvidia/pi05-orin",
+    "--iterations",
+    "30",
+    "--warmup",
+    "10",
+    "--output",
+    "reports/baseline-2026-10-16"
+  ],
+  "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+  "executable": "/home/nvidia/pi05-orin/.venv/bin/python",
+  "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.35",
+  "uname": [
+    "Linux",
+    "localhost.localdomain",
+    "5.15.136-tegra",
+    "#1 SMP PREEMPT Fri Nov 7 11:29:34 CST 2025",
+    "aarch64",
+    "aarch64"
+  ],
+  "versions": {
+    "torch": "2.3.0a0+6ddf5cf85e.nv24.4",
+    "torchvision": null,
+    "transformers": "4.53.2",
+    "safetensors": "0.8.0",
+    "jax": "0.5.3",
+    "jaxlib": "0.5.3",
+    "flax": "0.10.2",
+    "numpy": "1.26.4",
+    "websockets": "15.0.1",
+    "sentencepiece": "0.2.2"
+  },
+  "cuda": {
+    "runtime": "12.2",
+    "cudnn": 8904,
+    "device": "Orin",
+    "compute_capability": [
+      8,
+      7
+    ],
+    "total_memory_bytes": 65888481280,
+    "multiprocessors": 16,
+    "bf16_supported": true,
+    "max_tensor_allocated_bytes": 7645579776,
+    "max_tensor_reserved_bytes": 7765753856
+  },
+  "torch_settings": {
+    "num_threads": 6,
+    "num_interop_threads": 12,
+    "float32_matmul_precision": "high",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "deterministic_algorithms": false,
+    "matmul_allow_tf32": true,
+    "cudnn_allow_tf32": true
+  },
+  "parameter_elements_by_dtype": {
+    "torch.float32": 119720608,
+    "torch.bfloat16": 3497036912
+  },
+  "environment": {
+    "PYTHONPATH": null,
+    "JAX_PLATFORMS": "cpu",
+    "OPENPI_DATA_HOME": "/home/nvidia/pi05-orin/cache",
+    "OMP_NUM_THREADS": "6",
+    "MKL_NUM_THREADS": null,
+    "CUDA_VISIBLE_DEVICES": null,
+    "CUDA_LAUNCH_BLOCKING": null,
+    "LD_LIBRARY_PATH": null
+  },
+  "hardware_files": {
+    "/proc/device-tree/model": "NVIDIA Jetson AGX Orin Developer Kit",
+    "/etc/nv_tegra_release": "# R36 (release), REVISION: 3.0, GCID: 36191598, BOARD: generic, EABI: aarch64, DATE: Mon May  6 17:34:21 UTC 2024\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+    "/etc/os-release": "PRETTY_NAME=\"Ubuntu 22.04.4 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.4 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy",
+    "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor": "schedutil"
+  },
+  "devfreq": [
+    {
+      "path": "/sys/class/devfreq/15340000.vic",
+      "name": "15340000.vic",
+      "governor": "tegra_wmark",
+      "cur_freq": "729600000",
+      "min_freq": "115200000",
+      "max_freq": "729600000"
+    },
+    {
+      "path": "/sys/class/devfreq/15380000.nvjpg",
+      "name": "15380000.nvjpg",
+      "governor": "userspace",
+      "cur_freq": "729600000",
+      "min_freq": "115200000",
+      "max_freq": "729600000"
+    },
+    {
+      "path": "/sys/class/devfreq/15480000.nvdec",
+      "name": "15480000.nvdec",
+      "governor": "tegra_wmark",
+      "cur_freq": "998400000",
+      "min_freq": "115200000",
+      "max_freq": "998400000"
+    },
+    {
+      "path": "/sys/class/devfreq/154c0000.nvenc",
+      "name": "154c0000.nvenc",
+      "governor": "tegra_wmark",
+      "cur_freq": "998400000",
+      "min_freq": "115200000",
+      "max_freq": "998400000"
+    },
+    {
+      "path": "/sys/class/devfreq/15540000.nvjpg",
+      "name": "15540000.nvjpg",
+      "governor": "userspace",
+      "cur_freq": "729600000",
+      "min_freq": "115200000",
+      "max_freq": "729600000"
+    },
+    {
+      "path": "/sys/class/devfreq/15a50000.ofa",
+      "name": "15a50000.ofa",
+      "governor": "tegra_wmark",
+      "cur_freq": "780800000",
+      "min_freq": "115200000",
+      "max_freq": "780800000"
+    },
+    {
+      "path": "/sys/class/devfreq/17000000.gpu",
+      "name": "17000000.gpu",
+      "governor": "nvhost_podgov",
+      "cur_freq": "816000000",
+      "min_freq": "306000000",
+      "max_freq": "1300500000"
+    }
+  ],
+  "readonly_hardware_commands": [
+    {
+      "command": [
+        "/usr/sbin/nvpmodel",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "NV Power Mode: MAXN\n0",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/jetson_clocks",
+        "--show"
+      ],
+      "returncode": 1,
+      "stdout": "SOC family:tegra234  Machine:NVIDIA Jetson AGX Orin Developer Kit\nError: Run this script(/usr/bin/jetson_clocks) as a root user",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/sbin/nvidia-smi"
+      ],
+      "returncode": 0,
+      "stdout": "Fri Oct 16 12:00:40 2026       \n+---------------------------------------------------------------------------------------+\n| NVIDIA-SMI 540.3.0                Driver Version: N/A          CUDA Version: 12.2     |\n|-----------------------------------------+----------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |\n|                                         |                      |               MIG M. |\n|=========================================+======================+======================|\n|   0  Orin (nvgpu)                  N/A  | N/A              N/A |                  N/A |\n| N/A   N/A  N/A               N/A /  N/A | Not Supported        |     N/A          N/A |\n|                                         |                      |                  N/A |\n+-----------------------------------------+----------------------+----------------------+\n                                                                                         \n+---------------------------------------------------------------------------------------+\n| Processes:                                                                            |\n|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |\n|        ID   ID                                                             Usage      |\n|=======================================================================================|\n|  No running processes found                                                           |\n+---------------------------------------------------------------------------------------+",
+      "stderr": ""
+    }
+  ],
+  "repositories": {
+    "openpi": {
+      "path": "/home/nvidia/pi05-orin/openpi",
+      "commit": "215abfb217dbac7d5f1273282331b9b1866c0479",
+      "status": "M src/openpi/shared/download.py",
+      "remote": "https://github.com/Physical-Intelligence/openpi.git"
+    },
+    "benchmark": {
+      "path": "/home/nvidia/pi05-orin-benchmarks/baseline",
+      "commit_unavailable": "fatal: not a git repository (or any of the parent directories): .git",
+      "status_unavailable": "fatal: not a git repository (or any of the parent directories): .git",
+      "remote_unavailable": "fatal: not a git repository (or any of the parent directories): .git"
+    }
+  },
+  "source_files": {
+    "benchmark": {
+      "path": "/home/nvidia/pi05-orin-benchmarks/baseline/benchmark.py",
+      "sha256": "303e9281235c5fe8097628db033751ca0f785ec41e3764ef49afdca8f085f25b"
+    },
+    "deployment_helper": {
+      "path": "/home/nvidia/pi05-orin/serve.py",
+      "sha256": "67d15284872d5c70b95e162b4102c8dcd6de4a8f79187e623c1f9e96291c6353"
+    },
+    "policy": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/policies/policy.py",
+      "sha256": "a2ac5236e23b11d0f5a840d4a8fef148d89dba921d5452ec5dfcd5a6ffa46f20"
+    },
+    "model": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/models_pytorch/pi0_pytorch.py",
+      "sha256": "dcd7b6f508808ce4b7170a1720a4c62c6da04edae3652d16c94a469dca924e16"
+    },
+    "gemma": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/models_pytorch/gemma_pytorch.py",
+      "sha256": "225092e06509da0ae37bb9dca55c00d2804255bb1496f7c8700304b4c52a95eb"
+    },
+    "patched_gemma": {
+      "path": "/home/nvidia/pi05-orin/.venv/lib/python3.10/site-packages/transformers/models/gemma/modeling_gemma.py",
+      "sha256": "17eeb54e277939e58cd6f8a92719a275e36baf0c9f463b2754227d42f87aedde"
+    },
+    "patched_siglip": {
+      "path": "/home/nvidia/pi05-orin/.venv/lib/python3.10/site-packages/transformers/models/siglip/modeling_siglip.py",
+      "sha256": "ef2e99500f263fdd78db9d4d9a255e29d844eb92f53c25ad640f8056700ef84b"
+    },
+    "patched_paligemma": {
+      "path": "/home/nvidia/pi05-orin/.venv/lib/python3.10/site-packages/transformers/models/paligemma/modeling_paligemma.py",
+      "sha256": "c945d330b829264f927f3ee5339f977238631772de07a28e855e265bb85fd53c"
+    },
+    "openpi.transforms": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/transforms.py",
+      "sha256": "a1b94e9e72849a18834778f229c6bb389a495eb7fbe0aa800edea728b9424ff4"
+    },
+    "openpi.models.pi0_config": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/models/pi0_config.py",
+      "sha256": "d321858c30b398126035ea2b6da09e1c422eeeebb5ebf8df631daf9dc77647fa"
+    },
+    "openpi.models.tokenizer": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/models/tokenizer.py",
+      "sha256": "965be8b3c393a6811875bbc32da9e01a5d01cc2f87802de801cf7293e049748c"
+    },
+    "openpi.models_pytorch.preprocessing_pytorch": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/models_pytorch/preprocessing_pytorch.py",
+      "sha256": "6a44e91be2d7a724c6140d2cc98ed0a631b8d38bbb29f63b380a0a19f903bbf6"
+    },
+    "openpi.policies.libero_policy": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/policies/libero_policy.py",
+      "sha256": "d8679d99facc3fef48da07406081b20709ed872fcefdf7de67ede99422d623fa"
+    },
+    "openpi.shared.normalize": {
+      "path": "/home/nvidia/pi05-orin/openpi/src/openpi/shared/normalize.py",
+      "sha256": "6c2cea4946fb07e51801530400d2b2fd94730e195cd290d6b6960114eca9739d"
+    }
+  },
+  "checkpoint": {
+    "directory": "/home/nvidia/pi05-orin/models/pi05_libero",
+    "model_sha256": "1502e1c5f765ca1bfd6f8f6be0bc769ba2cc263bf298b98bd106d8db168c02e6",
+    "size_bytes": 7233650408,
+    "norm_stats_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+    "tokenizer_model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6"
+  },
+  "deployment_directory": "/home/nvidia/pi05-orin",
+  "fixture": {
+    "seed": 20261016,
+    "array_sha256": {
+      "image": "a4de3b322092a1318081b07ef7070e09ebd64cb83d6b6abc63a815e276797f85",
+      "wrist_image": "7cb8655a0602934ac78db6b7c209118df1070fc9dc1ea705e773e0961254f11f",
+      "state": "e417ffb2ef7489661c51fdab128618e9e4fa80298130645cdf76b628162e108d",
+      "noise": "1e392eeb39c82b5f2d3772a0227c2cd4b323e7c72a1ffdd6333afd5850e6bc6c"
+    },
+    "prompt": "pick up the black bowl"
+  }
+}

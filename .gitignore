@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv*/
+vendor/
+build*/
+models/
+*.safetensors
+*.whl
+*.so
+*.nsys-rep
+*.qdrep
+logs/
+*.tmp
+.env
+*.pem
+*.key
