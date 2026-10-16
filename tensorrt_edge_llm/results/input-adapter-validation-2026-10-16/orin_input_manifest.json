@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd",
+  "tokenizer_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+  "policy_config": "pi05_libero",
+  "pixel_values": {
+    "shape": [
+      2,
+      3,
+      224,
+      224
+    ],
+    "dtype": "little-endian float16"
+  },
+  "noise": {
+    "shape": [
+      1,
+      10,
+      32
+    ],
+    "dtype": "little-endian float32"
+  },
+  "token_count": 7,
+  "prefix_len": 519,
+  "masked_padding_compacted": true,
+  "precision_note": "Pixel cast to FP16 is required by upstream; baseline uses FP32 pixels then BF16 model.",
+  "files": {
+    "x0.bin": "1e392eeb39c82b5f2d3772a0227c2cd4b323e7c72a1ffdd6333afd5850e6bc6c",
+    "token_ids.csv": "e5306e6a4e4804a917a833d59f675d8cc9de8fe3bddaaebed71fab3c18fa6415",
+    "wrist.png": "1a4b720638c2abc614e4e934faaae2eb4efd8eebb568d739c635e3c7a8756f0e",
+    "observation.json": "f8b48998ad49aedf7fcd358d65288b003020f9dcbe766584ffabaa86c1afe07b",
+    "pixel_values.bin": "9b93c177b043726459def93be72a5769ec981eef18adb50158dbb9e962cc1528",
+    "base.png": "810d4304ee8bec29664709f5a7f8819beb9d255c36ccdd14e5ebe9836b1742b0"
+  }
+}

@@ -1,0 +1,3 @@
+/home/nvidia/pi05-orin-edge-llm/probe-2026-10-16/plugin_v3_build_v2.cpp:3:28: error: ‘IPluginV3OneBuildV2’ in namespace ‘nvinfer1’ does not name a type
+    3 | using Required = nvinfer1::IPluginV3OneBuildV2;
+      |                            ^~~~~~~~~~~~~~~~~~~

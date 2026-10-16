@@ -1,0 +1,5 @@
+Using Python 3.10.12 environment at: pi05-orin-edge-llm/probe-2026-10-16/resolver_venv
+error: No solution found when resolving dependencies
+  cause: Because tensorrt-edgellm==0.11.0 has no wheels with a matching platform tag (e.g., `manylinux_2_35_aarch64`) and you require tensorrt-edgellm==0.11.0, we can conclude that your requirements are unsatisfiable.
+
+hint: Wheels are available for `tensorrt-edgellm` (v0.11.0) on the following platforms: `manylinux_2_35_x86_64`, `manylinux_2_39_aarch64`

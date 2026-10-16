@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-10-16",
+  "upstream": "https://github.com/NVIDIA/TensorRT-Edge-LLM",
+  "pinned_ref": "v0.11.0",
+  "pinned_commit": "95515c2f87fba8982db5a519f9022277667b3cc9",
+  "source_files": [
+    {
+      "path": "docs/source/user_guide/getting_started/support-matrix.md",
+      "sha256": "787bd7f7e0169dccbb5c925d3a77d8a74f105431a455734428339c935905dce1",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/docs/source/user_guide/getting_started/support-matrix.md"
+    },
+    {
+      "path": "docs/source/user_guide/examples/vla/pi05.md",
+      "sha256": "36ef4056f23bca9f64b1a0dfc48b61909b3925057af52bed6f0cf29e626f8601",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/docs/source/user_guide/examples/vla/pi05.md"
+    },
+    {
+      "path": "docs/source/developer_guide/models/pi05.md",
+      "sha256": "fde7181fa9441691c10e002e7e623bbf781204d0c29e641b68e7ef35e5e5a717",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/docs/source/developer_guide/models/pi05.md"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "db1c3eccc8f8f6d744cd93d2f01999ee8f43ed4720789a0cee2706db1b3795f1",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/pyproject.toml"
+    },
+    {
+      "path": "tensorrt_edgellm/onnx/onnx_custom_schemas.py",
+      "sha256": "a79c7411f9e8d403edacddbfc849af494e44f5dd6e606a698632cb1cb29ab930",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/tensorrt_edgellm/onnx/onnx_custom_schemas.py"
+    },
+    {
+      "path": "experimental_models/pi05/cpp/common/pi05Common.cpp",
+      "sha256": "075f772162011393efd55469a345df612c0027b36d8a079b4b7a73d00c78834f",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/experimental_models/pi05/cpp/common/pi05Common.cpp"
+    },
+    {
+      "path": "cpp/plugins/attentionPlugin/attentionPlugin.h",
+      "sha256": "95a6d6a0f551960248583a238c9037370368ea35b7834bd94c0087b58a789dee",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/cpp/plugins/attentionPlugin/attentionPlugin.h"
+    },
+    {
+      "path": "tensorrt_edgellm/models/pi05/export.py",
+      "sha256": "ea72ef1f1e0576b645df4efade38ce8d39b73b64096ca5c8ec22dad16f08b508",
+      "url": "https://github.com/NVIDIA/TensorRT-Edge-LLM/blob/95515c2f87fba8982db5a519f9022277667b3cc9/tensorrt_edgellm/models/pi05/export.py"
+    }
+  ],
+  "historical_native_pi05_presence": [
+    {
+      "ref": "v0.6.0",
+      "commit": "996623c07270355dbf532f0600fe2626fce0704e",
+      "native_pi05_directory_present": false,
+      "api_tree_response_sha256": "ad1c2d7e62273c05aa0aebbbc3962319bb1389e29029f173eb64794fead6f8c2"
+    },
+    {
+      "ref": "v0.10.1",
+      "commit": "e8b29522938901f6df19ebeedd4b69bc8edbcd97",
+      "native_pi05_directory_present": false,
+      "api_tree_response_sha256": "9637a1c821c687c7757dd4dcb89da9e88a15d32eb215432cdba0b48427d9d434"
+    },
+    {
+      "ref": "v0.11.0",
+      "commit": "95515c2f87fba8982db5a519f9022277667b3cc9",
+      "native_pi05_directory_present": true,
+      "api_tree_response_sha256": "e03e6d1eed5d389118e2896d23ad07ff8fd101b8ee16525ff3cf28504b2e537e"
+    }
+  ]
+}

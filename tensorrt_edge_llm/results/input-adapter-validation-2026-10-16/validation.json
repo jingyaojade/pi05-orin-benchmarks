@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "validation_host": "local Windows x86_64",
+  "inference_executed": false,
+  "scope": "CPU adapter validation only. Synthetic outputs used only to verify representation conversion, never engine accuracy or performance.",
+  "checks": {
+    "python310_syntax": true,
+    "x0_bitwise_equal_baseline": true,
+    "pixel_shape_and_bytes": true,
+    "pixels_match_baseline_normalization_then_fp16": true,
+    "token_ids_equal_actual_openpi_tokenizer_method": true,
+    "robot_json_comparator_identity": true,
+    "normalized_safetensors_quantile_roundtrip_rmse_below_1e_6": true
+  },
+  "token_count": 7,
+  "compact_prefix_rows": 519,
+  "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd",
+  "tokenizer_source_sha256": "965be8b3c393a6811875bbc32da9e01a5d01cc2f87802de801cf7293e049748c",
+  "native_engine_executed": false,
+  "orin_input_generation_executed": true,
+  "orin_input_manifest": "orin_input_manifest.json",
+  "bash_syntax_check_passed_on_orin": true
+}
