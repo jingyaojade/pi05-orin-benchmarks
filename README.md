@@ -4,6 +4,21 @@
 
 分支约定：`main` 保存 baseline 代码、原始测量和报告；`flashrt` 在 baseline 提交之上增加独立的 FlashRT 目录和对比结果。
 
+## Baseline 实测（2026-10-16）
+
+Jetson AGX Orin 64GB、CUDA 12.2、NVIDIA PyTorch 2.3；每阶段预热 10 次、测量 30 次。
+
+| 区间 | 均值 | p95 |
+| --- | ---: | ---: |
+| 完整本机策略（含预处理与数据传输，不含网络） | 886.895 ms | 891.282 ms |
+| CUDA 输入就绪至 CUDA 动作输出完成的模型墙钟 | 879.124 ms | 882.884 ms |
+
+每次输出 `10×7` action chunk，模型执行 10 次去噪。模型墙钟包含 Python 发射和循环开销。
+分阶段计时、插桩增幅、硬件频率限制和数值检查见[完整中文报告](reports/baseline-2026-10-16/report_zh.md)。
+[原始记录](reports/baseline-2026-10-16/raw.json)与[来源信息](reports/baseline-2026-10-16/provenance.json)一并保留。
+
+在已有 Orin 部署上重测：`bash run_baseline.sh reports/baseline-new-run`。
+
 ## 测量口径
 
 - 相同官方 `pi05_libero` checkpoint、固定观测和固定噪声。
