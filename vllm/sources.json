@@ -1,0 +1,89 @@
+{
+  "repositories": {
+    "vllm": "fa75d3456d60a5ffe923818c4b495295675b38e1",
+    "vllm-omni": "90576488ae85de6ac355bb7aa3e9470c38303bba",
+    "vllm-0.5.0": "8f89d72090da70895d77d32248ea8504f7daba50"
+  },
+  "files": [
+    {
+      "local": "vllm/CMakeLists.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/CMakeLists.txt",
+      "sha256": "28fee1e8aec86ce364cfb269e79b97a611ad17d507761aebafa851b4dde37d1a"
+    },
+    {
+      "local": "vllm/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/pyproject.toml",
+      "sha256": "88dc4178b60e975b236b798cb34afef7fdd8a11d8d62439c7eaf5fd8bd46535d"
+    },
+    {
+      "local": "vllm/requirements/common.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/requirements/common.txt",
+      "sha256": "366cb94fae6ea961da1e7d1c855f6316c3897b5ce9a839017db2bbebb668055a"
+    },
+    {
+      "local": "vllm/requirements/cuda.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/requirements/cuda.txt",
+      "sha256": "980c0a16ebfbef23ccd43198ea35b4b02f757c8eb4e7313be388dbf5d5c15430"
+    },
+    {
+      "local": "vllm/vllm/model_executor/models/registry.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/vllm/model_executor/models/registry.py",
+      "sha256": "563a61769cb1fb9931f8f4cc0e42dd513eabbcd29870c7d6dbf957157ac337fd"
+    },
+    {
+      "local": "vllm-omni/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/pyproject.toml",
+      "sha256": "8f49aa07314afb0fc6b7c52f270048f2578d0c3c7994d8ad64505ce33ce54736"
+    },
+    {
+      "local": "vllm-omni/recipes/lerobot/Pi05.md",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/recipes/lerobot/Pi05.md",
+      "sha256": "63ea7f7ee0a2f334e22af1fd89915693120174250e779468520692d915db7ea8"
+    },
+    {
+      "local": "vllm-omni/requirements/common.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/requirements/common.txt",
+      "sha256": "98115705659febebd2228c09a33d809ae64f226f4c1a26f5797613a54584b2fd"
+    },
+    {
+      "local": "vllm-omni/requirements/cuda.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/requirements/cuda.txt",
+      "sha256": "82682805781e87761dae66f7404e9466caee7c25dfbd8620a44de141ab0e200a"
+    },
+    {
+      "local": "vllm-omni/vllm_omni/diffusion/models/pi0/modeling_pi0.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi0/modeling_pi0.py",
+      "sha256": "8d4822751c2faca7c96c568087e52283927addddbd44b98bce3c8ffd3004a5eb"
+    },
+    {
+      "local": "vllm-omni/vllm_omni/diffusion/models/pi05/config.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/config.py",
+      "sha256": "a801da2bf95f6b88199322d5f13f4f870847d240599c2a2e55cf7fa201ce8350"
+    },
+    {
+      "local": "vllm-omni/vllm_omni/diffusion/models/pi05/modeling_pi05.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/modeling_pi05.py",
+      "sha256": "e4a0a645fddde8f5a5cb448c963e41b802a0ead807614161af809605b752ff34"
+    },
+    {
+      "local": "vllm-omni/vllm_omni/diffusion/models/pi05/pipeline_pi05.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/pipeline_pi05.py",
+      "sha256": "65faa7c61b7dd5766a60a3bd1a3ecf9db47ce216c898d46d3a7e9863f1d71c60"
+    },
+    {
+      "local": "vllm-0.5.0/requirements-cuda.txt",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/8f89d72090da70895d77d32248ea8504f7daba50/requirements-cuda.txt",
+      "sha256": "66c06efebb6c63869456f09dcea5d8034c8fbf07f622dd1b1cb024b038f5c8e6"
+    },
+    {
+      "local": "vllm-0.5.0/vllm/model_executor/models/__init__.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/8f89d72090da70895d77d32248ea8504f7daba50/vllm/model_executor/models/__init__.py",
+      "sha256": "43069dd8b1f506e1e17b703554a809b9cd9f6b0383f9dca4f45cd0fa110a3098"
+    },
+    {
+      "local": "vllm-omni/vllm_omni/diffusion/models/pi05/processor_pi05.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/processor_pi05.py",
+      "sha256": "85d14f2894fbf59f44c38ef76b3edf99406b02a5e3be28f03c3d12ef2b470f9c"
+    }
+  ]
+}

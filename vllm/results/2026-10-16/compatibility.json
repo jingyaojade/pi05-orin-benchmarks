@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-10-16T07:07:31.933882+00:00",
+  "mode": "CPU/source/dependency preflight only; no model or CUDA allocation",
+  "python": {
+    "version": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+    "executable": "/home/nvidia/pi05-orin/.venv/bin/python",
+    "machine": "aarch64",
+    "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.35"
+  },
+  "installed": {
+    "torch": "2.3.0a0+6ddf5cf85e.nv24.4",
+    "transformers": "4.53.2",
+    "vllm": null,
+    "vllm-omni": null,
+    "safetensors": "0.8.0"
+  },
+  "commands": {
+    "nvcc_version": {
+      "argv": [
+        "/usr/local/cuda/bin/nvcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Aug_15_22:08:11_PDT_2023\nCuda compilation tools, release 12.2, V12.2.140\nBuild cuda_12.2.r12.2/compiler.33191640_0\n",
+      "stderr": "",
+      "elapsed_seconds": 0.01003766999929212
+    },
+    "l4t_release": {
+      "argv": [
+        "cat",
+        "/etc/nv_tegra_release"
+      ],
+      "returncode": 0,
+      "stdout": "# R36 (release), REVISION: 3.0, GCID: 36191598, BOARD: generic, EABI: aarch64, DATE: Mon May  6 17:34:21 UTC 2024\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia\n",
+      "stderr": "",
+      "elapsed_seconds": 0.0037995369984855643
+    },
+    "official_pi05_import": {
+      "argv": [
+        "/home/nvidia/pi05-orin/.venv/bin/python",
+        "-c",
+        "import importlib.util; s=importlib.util.spec_from_file_location('official_pi05_probe', '/home/nvidia/pi05-orin-vllm/vllm/vendor/vllm-omni/vllm_omni/diffusion/models/pi05/modeling_pi05.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); print('ORIGINAL_OFFICIAL_PI05_IMPORT_OK')"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen importlib._bootstrap_external>\", line 883, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"/home/nvidia/pi05-orin-vllm/vllm/vendor/vllm-omni/vllm_omni/diffusion/models/pi05/modeling_pi05.py\", line 43, in <module>\n    from vllm.model_executor.model_loader.weight_utils import default_weight_loader\nModuleNotFoundError: No module named 'vllm'\n",
+      "elapsed_seconds": 8.100139628999386
+    },
+    "create_venv": {
+      "skipped": "pre-existing probe-only venv"
+    },
+    "official_release_dry_run": {
+      "argv": [
+        "/home/nvidia/.local/bin/uv",
+        "pip",
+        "install",
+        "--dry-run",
+        "--python",
+        "/home/nvidia/pi05-orin-vllm/.venv-probe/bin/python",
+        "--constraint",
+        "vllm/results/2026-10-16/constraints.txt",
+        "vllm==0.30.0",
+        "vllm-omni==0.30.0"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Using Python 3.10.12 environment at: .venv-probe\nerror: No solution found when resolving dependencies\n  cause: Because vllm==0.30.0 depends on torch==2.13.0 and torch==2.3.0a0+6ddf5cf85e.nv24.4, we can conclude that vllm==0.30.0 cannot be used.\n         And because you require vllm==0.30.0, we can conclude that your requirements are unsatisfiable.\n",
+      "elapsed_seconds": 0.0588287919999857
+    },
+    "current_release_dry_run": {
+      "argv": [
+        "/home/nvidia/.local/bin/uv",
+        "pip",
+        "install",
+        "--dry-run",
+        "--python",
+        "/home/nvidia/pi05-orin-vllm/.venv-probe/bin/python",
+        "--constraint",
+        "vllm/results/2026-10-16/constraints.txt",
+        "vllm==0.31.0"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Using Python 3.10.12 environment at: .venv-probe\nerror: No solution found when resolving dependencies\n  cause: Because vllm>=0.31.0 depends on torch==2.13.0 and torch==2.3.0a0+6ddf5cf85e.nv24.4, we can conclude that vllm>=0.31.0 cannot be used.\n         And because you require vllm==0.31.0, we can conclude that your requirements are unsatisfiable.\n",
+      "elapsed_seconds": 0.046891529998902115
+    }
+  },
+  "sources": {
+    "vllm/CMakeLists.txt": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/CMakeLists.txt",
+      "expected_sha256": "28fee1e8aec86ce364cfb269e79b97a611ad17d507761aebafa851b4dde37d1a",
+      "size_bytes": 68056,
+      "sha256": "28fee1e8aec86ce364cfb269e79b97a611ad17d507761aebafa851b4dde37d1a",
+      "verified": true
+    },
+    "vllm/pyproject.toml": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/pyproject.toml",
+      "expected_sha256": "88dc4178b60e975b236b798cb34afef7fdd8a11d8d62439c7eaf5fd8bd46535d",
+      "size_bytes": 7613,
+      "sha256": "88dc4178b60e975b236b798cb34afef7fdd8a11d8d62439c7eaf5fd8bd46535d",
+      "verified": true
+    },
+    "vllm/requirements/common.txt": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/requirements/common.txt",
+      "expected_sha256": "366cb94fae6ea961da1e7d1c855f6316c3897b5ce9a839017db2bbebb668055a",
+      "size_bytes": 3315,
+      "sha256": "366cb94fae6ea961da1e7d1c855f6316c3897b5ce9a839017db2bbebb668055a",
+      "verified": true
+    },
+    "vllm/requirements/cuda.txt": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/requirements/cuda.txt",
+      "expected_sha256": "980c0a16ebfbef23ccd43198ea35b4b02f757c8eb4e7313be388dbf5d5c15430",
+      "size_bytes": 943,
+      "sha256": "980c0a16ebfbef23ccd43198ea35b4b02f757c8eb4e7313be388dbf5d5c15430",
+      "verified": true
+    },
+    "vllm/vllm/model_executor/models/registry.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/fa75d3456d60a5ffe923818c4b495295675b38e1/vllm/model_executor/models/registry.py",
+      "expected_sha256": "563a61769cb1fb9931f8f4cc0e42dd513eabbcd29870c7d6dbf957157ac337fd",
+      "size_bytes": 65270,
+      "sha256": "563a61769cb1fb9931f8f4cc0e42dd513eabbcd29870c7d6dbf957157ac337fd",
+      "verified": true
+    },
+    "vllm-omni/pyproject.toml": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/pyproject.toml",
+      "expected_sha256": "8f49aa07314afb0fc6b7c52f270048f2578d0c3c7994d8ad64505ce33ce54736",
+      "size_bytes": 16218,
+      "sha256": "8f49aa07314afb0fc6b7c52f270048f2578d0c3c7994d8ad64505ce33ce54736",
+      "verified": true
+    },
+    "vllm-omni/recipes/lerobot/Pi05.md": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/recipes/lerobot/Pi05.md",
+      "expected_sha256": "63ea7f7ee0a2f334e22af1fd89915693120174250e779468520692d915db7ea8",
+      "size_bytes": 6535,
+      "sha256": "63ea7f7ee0a2f334e22af1fd89915693120174250e779468520692d915db7ea8",
+      "verified": true
+    },
+    "vllm-omni/requirements/common.txt": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/requirements/common.txt",
+      "expected_sha256": "98115705659febebd2228c09a33d809ae64f226f4c1a26f5797613a54584b2fd",
+      "size_bytes": 2064,
+      "sha256": "98115705659febebd2228c09a33d809ae64f226f4c1a26f5797613a54584b2fd",
+      "verified": true
+    },
+    "vllm-omni/requirements/cuda.txt": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/requirements/cuda.txt",
+      "expected_sha256": "82682805781e87761dae66f7404e9466caee7c25dfbd8620a44de141ab0e200a",
+      "size_bytes": 200,
+      "sha256": "82682805781e87761dae66f7404e9466caee7c25dfbd8620a44de141ab0e200a",
+      "verified": true
+    },
+    "vllm-omni/vllm_omni/diffusion/models/pi0/modeling_pi0.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi0/modeling_pi0.py",
+      "expected_sha256": "8d4822751c2faca7c96c568087e52283927addddbd44b98bce3c8ffd3004a5eb",
+      "size_bytes": 42813,
+      "sha256": "8d4822751c2faca7c96c568087e52283927addddbd44b98bce3c8ffd3004a5eb",
+      "verified": true
+    },
+    "vllm-omni/vllm_omni/diffusion/models/pi05/config.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/config.py",
+      "expected_sha256": "a801da2bf95f6b88199322d5f13f4f870847d240599c2a2e55cf7fa201ce8350",
+      "size_bytes": 22328,
+      "sha256": "a801da2bf95f6b88199322d5f13f4f870847d240599c2a2e55cf7fa201ce8350",
+      "verified": true
+    },
+    "vllm-omni/vllm_omni/diffusion/models/pi05/modeling_pi05.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/modeling_pi05.py",
+      "expected_sha256": "e4a0a645fddde8f5a5cb448c963e41b802a0ead807614161af809605b752ff34",
+      "size_bytes": 41526,
+      "sha256": "e4a0a645fddde8f5a5cb448c963e41b802a0ead807614161af809605b752ff34",
+      "verified": true
+    },
+    "vllm-omni/vllm_omni/diffusion/models/pi05/pipeline_pi05.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/pipeline_pi05.py",
+      "expected_sha256": "65faa7c61b7dd5766a60a3bd1a3ecf9db47ce216c898d46d3a7e9863f1d71c60",
+      "size_bytes": 13502,
+      "sha256": "65faa7c61b7dd5766a60a3bd1a3ecf9db47ce216c898d46d3a7e9863f1d71c60",
+      "verified": true
+    },
+    "vllm-0.5.0/requirements-cuda.txt": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/8f89d72090da70895d77d32248ea8504f7daba50/requirements-cuda.txt",
+      "expected_sha256": "66c06efebb6c63869456f09dcea5d8034c8fbf07f622dd1b1cb024b038f5c8e6",
+      "size_bytes": 243,
+      "sha256": "66c06efebb6c63869456f09dcea5d8034c8fbf07f622dd1b1cb024b038f5c8e6",
+      "verified": true
+    },
+    "vllm-0.5.0/vllm/model_executor/models/__init__.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/8f89d72090da70895d77d32248ea8504f7daba50/vllm/model_executor/models/__init__.py",
+      "expected_sha256": "43069dd8b1f506e1e17b703554a809b9cd9f6b0383f9dca4f45cd0fa110a3098",
+      "size_bytes": 5383,
+      "sha256": "43069dd8b1f506e1e17b703554a809b9cd9f6b0383f9dca4f45cd0fa110a3098",
+      "verified": true
+    },
+    "vllm-omni/vllm_omni/diffusion/models/pi05/processor_pi05.py": {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm-omni/90576488ae85de6ac355bb7aa3e9470c38303bba/vllm_omni/diffusion/models/pi05/processor_pi05.py",
+      "expected_sha256": "85d14f2894fbf59f44c38ef76b3edf99406b02a5e3be28f03c3d12ef2b470f9c",
+      "size_bytes": 26770,
+      "sha256": "85d14f2894fbf59f44c38ef76b3edf99406b02a5e3be28f03c3d12ef2b470f9c",
+      "verified": true
+    }
+  },
+  "inference_performed": false,
+  "latency_ms": null,
+  "inference_peak_memory_bytes": null,
+  "latest_source_python_requirement": {
+    "requires_python": ">=3.11,<3.15",
+    "target_python": "3.10.12",
+    "satisfied": false
+  }
+}
