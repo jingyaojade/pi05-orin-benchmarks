@@ -1,0 +1,93 @@
+{
+  "phases": {
+    "flashrt_policy_uninstrumented": {
+      "policy_wall_ms": {
+        "n": 30,
+        "mean_ms": 177.1055747666954,
+        "median_ms": 177.1360815009757,
+        "p95_ms": 181.0147602504003,
+        "min_ms": 172.41370899864705,
+        "max_ms": 181.8961009994382,
+        "std_ms": 2.304144534941762
+      }
+    },
+    "model_uninstrumented": {
+      "model_wall_ms": {
+        "n": 30,
+        "mean_ms": 170.84706346666664,
+        "median_ms": 170.85620749999998,
+        "p95_ms": 171.3964632,
+        "min_ms": 170.085508,
+        "max_ms": 171.603038,
+        "std_ms": 0.3562140158233293
+      },
+      "model_cuda_stream_elapsed_ms": {
+        "n": 30,
+        "mean_ms": 170.6985315958659,
+        "median_ms": 170.68170166015625,
+        "p95_ms": 171.26294708251953,
+        "min_ms": 169.95030212402344,
+        "max_ms": 171.4629364013672,
+        "std_ms": 0.3621064500286645
+      }
+    },
+    "flashrt_diagnostic_stage_graphs": {
+      "vision_cuda_stream_elapsed_ms": {
+        "n": 30,
+        "mean_ms": 35.25300827026367,
+        "median_ms": 35.25080108642578,
+        "p95_ms": 35.33231449127197,
+        "min_ms": 35.14332962036133,
+        "max_ms": 35.37744140625,
+        "std_ms": 0.052676003789523
+      },
+      "prefill_cuda_stream_elapsed_ms": {
+        "n": 30,
+        "mean_ms": 96.78500849405924,
+        "median_ms": 96.60992050170898,
+        "p95_ms": 98.00419120788574,
+        "min_ms": 96.12364959716797,
+        "max_ms": 98.43769836425781,
+        "std_ms": 0.5586798300727744
+      },
+      "denoise_cuda_stream_elapsed_ms": {
+        "n": 30,
+        "mean_ms": 35.99387601216634,
+        "median_ms": 35.946319580078125,
+        "p95_ms": 36.22676162719726,
+        "min_ms": 35.80758285522461,
+        "max_ms": 36.44198226928711,
+        "std_ms": 0.13902737766490467
+      },
+      "stage_chain_cuda_stream_elapsed_ms": {
+        "n": 30,
+        "mean_ms": 168.03189341227213,
+        "median_ms": 167.89256286621094,
+        "p95_ms": 169.29217834472655,
+        "min_ms": 167.2855682373047,
+        "max_ms": 169.59274291992188,
+        "std_ms": 0.5998429920592003
+      },
+      "diagnostic_chain_wall_ms": {
+        "n": 30,
+        "mean_ms": 174.93542140030817,
+        "median_ms": 174.411179499657,
+        "p95_ms": 177.87519285020608,
+        "min_ms": 172.20411299967964,
+        "max_ms": 183.76648299999943,
+        "std_ms": 2.2400899854656466
+      }
+    }
+  },
+  "caveats": [
+    "FlashRT is locally patched; upstream source commit and patch hashes are recorded.",
+    "All 3 cameras run SigLIP; encoder GEMMs retain 968 rows (768 image + 200 prompt capacity).",
+    "Prompt K/V are compacted into the masked camera gap for FA2 seqused masking; padded attention keys are skipped.",
+    "No image pooling, layer dropping, temporal KV reuse, or step reduction; 10 action rows and 10 ODE steps.",
+    "FlashRT computes/accumulates the action state in BF16 and precomputes timestep modulations; OpenPI retains some FP32 work.",
+    "Model-only times replay the original full production graph from CUDA-ready inputs to completed CUDA output; staging, D2H, action decoding and comparison are outside timing.",
+    "Diagnostic stage graphs are separate launches, not a timing decomposition of one full production graph.",
+    "CUDA events report stream elapsed intervals; they do not report kernel busy time or utilization.",
+    "Accuracy uses a single synthetic fixture; INT8, if selected, is a separate experiment."
+  ]
+}

@@ -11,6 +11,7 @@ import argparse
 import ast
 from collections import Counter
 from datetime import datetime, timedelta, timezone
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -136,6 +137,8 @@ def percentage(value, total):
 
 def samples(result, phase):
     found = result["raw"].get("phases", {}).get(phase, [])
+    if isinstance(found, dict):
+        found = found.get("samples", [])
     return found if isinstance(found, list) else []
 
 
@@ -184,6 +187,265 @@ def fixture_metadata(directory):
         with reference.open("rb") as stream:
             result["reference_actions"] = npy_metadata(stream)
     return result
+
+
+def file_sha256(path):
+    if not path.is_file():
+        return None
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def fixture_payload_hashes(directory):
+    """Hash C-order numeric array payloads, excluding NPY/ZIP file headers."""
+    path = directory / "fixed_inputs.npz"
+    if not path.is_file():
+        return {}
+    hashes = {}
+    with zipfile.ZipFile(path) as archive:
+        for name in ("image", "wrist_image", "state", "noise"):
+            if name + ".npy" not in archive.namelist():
+                continue
+            with archive.open(name + ".npy") as array:
+                metadata = npy_metadata(array)
+                dtype = metadata["dtype"]
+                if metadata["fortran_order"] or not isinstance(dtype, str) or "O" in dtype:
+                    continue
+                digest = hashlib.sha256()
+                for block in iter(lambda: array.read(1024 * 1024), b""):
+                    digest.update(block)
+                hashes[name] = digest.hexdigest()
+    return hashes
+
+
+def nested(value, *keys):
+    for key in keys:
+        value = value.get(key) if isinstance(value, dict) else None
+    return value
+
+
+def match_status(first, second):
+    if first is None or second is None:
+        return MISSING
+    return "一致" if first == second else "不一致"
+
+
+def digest_label(value):
+    return code(value[:16] + "…") if isinstance(value, str) and len(value) == 64 else code(value)
+
+
+def comparison_sources(baseline, comparison, flashrt):
+    first, second = baseline["provenance"], comparison["provenance"]
+    checks = []
+    if flashrt:
+        hashes = second.get("hashes", {})
+        norm_key = "assets/physical-intelligence/libero/norm_stats.json"
+        mappings = [
+            ("权重文件", nested(first, "checkpoint", "model_sha256"), hashes.get("weights"), "checkpoint.model_sha256 ↔ hashes.weights"),
+            ("归一化文件", nested(first, "checkpoint", "norm_stats_sha256"), hashes.get(norm_key), "checkpoint.norm_stats_sha256 ↔ hashes." + norm_key),
+            ("tokenizer 序列化模型", nested(first, "checkpoint", "tokenizer_model_sha256"), nested(second, "tokenizer", "serialized_model_sha256"),
+             "checkpoint.tokenizer_model_sha256 ↔ tokenizer.serialized_model_sha256"),
+            ("输入 NPZ 源文件", file_sha256(baseline["directory"] / "fixed_inputs.npz"), hashes.get("fixture"),
+             "本地基线 fixed_inputs.npz 文件 SHA-256 ↔ FlashRT hashes.fixture（实际读取的源文件）"),
+            ("参考动作 NPY 源文件", file_sha256(baseline["directory"] / "reference_actions.npy"), hashes.get("reference_actions"),
+             "本地基线 reference_actions.npy 文件 SHA-256 ↔ FlashRT hashes.reference_actions"),
+        ]
+    else:
+        mappings = [(label, nested(first, *keys), nested(second, *keys), ".".join(keys))
+                    for label, keys in (("权重文件", ("checkpoint", "model_sha256")),
+                                        ("归一化文件", ("checkpoint", "norm_stats_sha256")),
+                                        ("tokenizer 序列化模型", ("checkpoint", "tokenizer_model_sha256")))]
+        mappings.append(("输入 NPZ 文件", file_sha256(baseline["directory"] / "fixed_inputs.npz"),
+                         file_sha256(comparison["directory"] / "fixed_inputs.npz"), "两侧本地 fixed_inputs.npz 文件 SHA-256"))
+    for label, a, b, source in mappings:
+        checks.append([label, digest_label(a), digest_label(b), match_status(a, b), code(source)])
+    original_payloads = nested(first, "fixture", "array_sha256")
+    if not isinstance(original_payloads, dict):
+        original_payloads = fixture_payload_hashes(baseline["directory"])
+    other_payloads = nested(second, "fixture", "array_sha256")
+    if not isinstance(other_payloads, dict):
+        other_payloads = fixture_payload_hashes(comparison["directory"])
+    for name in ("image", "wrist_image", "state", "noise"):
+        a, b = original_payloads.get(name), other_payloads.get(name)
+        checks.append([f"输入数组 {name} 内容", digest_label(a), digest_label(b), match_status(a, b),
+                       "数组字节 SHA-256 ↔ 数组字节 SHA-256（不含 NPZ/NPY 头）"])
+    return ["", "### 来源与输入核对", "",
+            "核对使用完整 SHA-256；表中只缩写前 16 个字符。NPZ 文件散列与数组内容散列分别核对，二者不是同一种数据，绝不互相比较。重存 NPZ 的 ZIP 元数据可能改变文件散列而保持数组内容相同。", "",
+            table(["对象", "基线 SHA-256 前缀", "对照 SHA-256 前缀", "核对", "对应来源"], checks)]
+
+
+def comparison_distributions(comparison):
+    labels = {
+        "policy_wall_ms": "完整策略墙钟",
+        "full_policy_wall_ms": "完整策略墙钟",
+        "model_wall_ms": "生产模型同步墙钟",
+        "model_cuda_stream_elapsed_ms": "生产模型 CUDA 流事件区间",
+        "vision_cuda_stream_elapsed_ms": "诊断视觉编码流区间",
+        "prefill_cuda_stream_elapsed_ms": "诊断前缀 KV 预填充流区间",
+        "denoise_cuda_stream_elapsed_ms": "诊断全部去噪迭代流区间",
+        "stage_chain_cuda_stream_elapsed_ms": "独立诊断阶段链总流区间",
+        "diagnostic_chain_wall_ms": "完整诊断调用墙钟（含输入/输出处理）",
+    }
+    phase_names = {
+        "flashrt_policy_uninstrumented": "生产完整策略（未插桩）",
+        PHASE_MODEL: "生产模型（无内部阶段插桩）",
+        "flashrt_diagnostic_stage_graphs": "独立诊断阶段图（分别发射）",
+    }
+    provenance = comparison["provenance"]
+    versions = provenance.get("versions", {})
+    lines = ["", "### 对照实现与全部实测分布", "",
+             table(["项目", "记录"], [["精度模式", provenance.get("precision", MISSING)],
+                                     ["GPU / 计算能力", f"{text(provenance.get('gpu'))} / {code(provenance.get('gpu_capability'))}"],
+                                     ["CUDA build / PyTorch", f"{text(provenance.get('torch_cuda_build'))} / {text(versions.get('torch'))}"],
+                                     ["上游提交", code(provenance.get("flashrt_upstream_commit"))],
+                                     ["模型几何配置", code(provenance.get("geometry"))]])]
+    for phase, metrics in comparison["summary"].get("phases", {}).items():
+        lines.extend(["", f"#### {phase_names.get(phase, phase)}", "", f"原始阶段键：{code(phase)}。"])
+        raw_phase = comparison["raw"].get("phases", {}).get(phase)
+        if raw_phase is not None:
+            warmup = raw_phase.get("warmup_wall_ms") if isinstance(raw_phase, dict) else comparison["raw"].get("warmup", {}).get(phase)
+            lines.extend(["", f"原始记录包含 {len(samples(comparison, phase))} 个测量样本；预热记录数：{len(warmup) if isinstance(warmup, list) else MISSING}。"])
+        if phase == "flashrt_diagnostic_stage_graphs":
+            lines.extend(["", "下表为独立捕获的视觉、预填充和去噪阶段图；各图分别 replay。其链内三个 CUDA 区间可描述这次诊断链，但不能当作生产完整图的精确分解。`denoise` 包含全部迭代，不是单次迭代耗时。"])
+        rows = [distribution_row(f"{labels.get(metric, metric)} {code(metric)}", values) for metric, values in metrics.items()]
+        lines.extend(["", table(["实测指标", "n", "均值 ms", "中位数 ms", "p95 ms", "最小 ms", "最大 ms", "标准差 ms"], rows)])
+    return lines
+
+
+def diagnostic_overhead(comparison):
+    phases = comparison["summary"].get("phases", {})
+    diagnostic = "flashrt_diagnostic_stage_graphs"
+    if diagnostic not in phases:
+        return []
+    pairs = []
+    if PHASE_MODEL in phases:
+        pairs.append(("CUDA 流区间", PHASE_MODEL, "model_cuda_stream_elapsed_ms", "stage_chain_cuda_stream_elapsed_ms"))
+    if "flashrt_policy_uninstrumented" in phases:
+        pairs.append(("含前后处理的完整调用墙钟", "flashrt_policy_uninstrumented", "policy_wall_ms", "diagnostic_chain_wall_ms"))
+    if not pairs:
+        return []
+    rows = []
+    for label, phase, production_key, diagnostic_key in pairs:
+        production = mean(comparison, phase, production_key)
+        chain = mean(comparison, diagnostic, diagnostic_key)
+        difference = chain - production if chain is not None and production is not None else None
+        ratio = chain / production if chain is not None and production is not None and production > 0 else None
+        rows.append([label, fmt(production), fmt(chain), fmt(difference), percentage(difference, production),
+                     f"{ratio:.4f}×" if ratio is not None else MISSING,
+                     code(production_key) + " ↔ " + code(diagnostic_key)])
+    return ["", "### 独立诊断链相对生产执行的额外耗时", "",
+            table(["对应边界", "生产均值 ms", "诊断均值 ms", "诊断−生产 ms", "均值增幅", "诊断/生产", "指标对应"], rows), "",
+            "CUDA 行比较输入 staging 之后、输出 D2H 之前的流区间；墙钟行比较均包含输入/输出处理的完整调用。没有拿诊断完整调用墙钟减去生产模型墙钟。差值由各自实测均值相减得到，可能包含分图发射、捕获边界差异及顺序测量时的频率/温度漂移，不能归因为纯 launch 开销。"]
+
+
+def baseline_tokenizer_evidence(baseline):
+    """Use a hash-bound post-measurement sidecar without editing provenance."""
+    original = baseline["provenance"].get("tokenizer", {})
+    if not isinstance(original, dict):
+        original = {}
+    if isinstance(original.get("token_ids"), list) and original["token_ids"]:
+        return original, None
+    path = baseline["directory"].parent / "baseline-tokenizer-audit.json"
+    if not path.is_file():
+        return original, None
+    audit = {"path": path, "accepted": False, "checks": [], "reasons": []}
+    try:
+        payload = load_json(path, required=True)
+    except (OSError, ValueError) as error:
+        audit["reasons"].append(f"无法读取审计文件：{error}")
+        return original, audit
+    audit["payload"] = payload
+    expected_model = nested(baseline["provenance"], "checkpoint", "tokenizer_model_sha256")
+    expected_fixture = file_sha256(baseline["directory"] / "fixed_inputs.npz")
+    for label, expected, actual in (
+        ("tokenizer 模型 SHA-256", expected_model, payload.get("model_sha256")),
+        ("基线实际 NPZ 文件 SHA-256", expected_fixture, payload.get("fixture_sha256")),
+    ):
+        status = match_status(expected, actual)
+        audit["checks"].append([label, digest_label(expected), digest_label(actual), status])
+        if status != "一致":
+            audit["reasons"].append(label + "缺失或不匹配")
+    expected_source = nested(baseline["provenance"], "source_files", "openpi.models.tokenizer", "sha256")
+    if expected_source is not None:
+        actual_source = payload.get("source_sha256")
+        status = match_status(expected_source, actual_source)
+        audit["checks"].append(["官方 tokenizer 源码 SHA-256", digest_label(expected_source), digest_label(actual_source), status])
+        if status != "一致":
+            audit["reasons"].append("tokenizer 源码 SHA-256 缺失或不匹配")
+    expected_prompt = nested(baseline["provenance"], "fixture", "prompt")
+    if expected_prompt is not None and expected_prompt != payload.get("prompt"):
+        audit["reasons"].append("审计文本指令与基线 fixture 不匹配")
+    ids, mask = payload.get("token_ids"), payload.get("token_mask")
+    valid_arrays = (isinstance(ids, list) and isinstance(mask, list) and len(ids) == 200 and len(mask) == 200
+                    and all(isinstance(value, int) and not isinstance(value, bool) and value >= 0 for value in ids)
+                    and all(isinstance(value, bool) for value in mask))
+    if not valid_arrays:
+        audit["reasons"].append("审计必须记录完整 200 个整数 token IDs 与 200 个布尔 mask")
+    valid_ids = [token for token, enabled in zip(ids, mask) if enabled] if valid_arrays else None
+    if payload.get("valid_ids") is not None and payload["valid_ids"] != valid_ids:
+        audit["reasons"].append("审计 valid_ids 与完整 IDs/mask 不一致")
+    if audit["reasons"]:
+        return original, audit
+    audit["accepted"] = True
+    evidence = {**original, "token_ids": ids, "token_mask": mask, "valid_token_ids": valid_ids,
+                "valid_token_count": len(valid_ids), "prompt": payload.get("prompt"),
+                "serialized_model_sha256": payload["model_sha256"]}
+    return evidence, audit
+
+
+def render_tokenizer_audit(evidence, audit):
+    if audit is None:
+        return []
+    payload = audit.get("payload", {})
+    status = "通过核对，接受为补充证据" if audit["accepted"] else "未通过核对，不采用其中的 token IDs/mask"
+    lines = ["", "### 基线 tokenizer 补充 CPU 审计", "",
+             f"审计文件：{code(audit['path'])}；审计记录时间：{timestamp(payload.get('created_utc'))}。", "",
+             "这是性能测量完成后的 CPU tokenization 审计，**不是 benchmark 当时记录**，不补写或更改原始计时/provenance 文件。", "",
+             f"声明范围：{text(payload.get('scope'))}。接受状态：**{status}**。"]
+    if audit["checks"]:
+        lines.extend(["", table(["绑定检查", "基线值 SHA-256 前缀", "sidecar 值 SHA-256 前缀", "核对"], audit["checks"])])
+    if audit["accepted"]:
+        lines.extend(["", f"补充审计中的有效 token 数：{evidence.get('valid_token_count', MISSING)}；有效 IDs：{code(evidence.get('valid_token_ids'))}。"])
+    elif audit["reasons"]:
+        lines.extend(["", "拒绝原因：" + "；".join(audit["reasons"]) + "。"])
+    return lines
+
+
+def tokenizer_comparison(baseline, comparison):
+    first, audit = baseline_tokenizer_evidence(baseline)
+    second = comparison["provenance"].get("tokenizer", {})
+    if not first and not second:
+        return []
+
+    def details(value):
+        ids, mask = value.get("token_ids"), value.get("token_mask")
+        valid = value.get("valid_token_ids")
+        if valid is None and isinstance(ids, list) and isinstance(mask, list) and len(ids) == len(mask):
+            valid = [token for token, enabled in zip(ids, mask) if enabled]
+        count = value.get("valid_token_count", len(valid) if isinstance(valid, list) else None)
+        return ids, mask, valid, count
+
+    first_ids, first_mask, first_valid, first_count = details(first)
+    second_ids, second_mask, second_valid, second_count = details(second)
+    rows = [
+        ["完整 token IDs", f"长度 {len(first_ids)}" if isinstance(first_ids, list) else MISSING,
+         f"长度 {len(second_ids)}" if isinstance(second_ids, list) else MISSING, match_status(first_ids, second_ids)],
+        ["完整 token mask", f"长度 {len(first_mask)}" if isinstance(first_mask, list) else MISSING,
+         f"长度 {len(second_mask)}" if isinstance(second_mask, list) else MISSING, match_status(first_mask, second_mask)],
+        ["有效 token 数", first_count, second_count, match_status(first_count, second_count)],
+        ["有效 token IDs", code(first_valid), code(second_valid), match_status(first_valid, second_valid)],
+        ["state_in_prompt", code(first.get("state_in_prompt")), code(second.get("state_in_prompt")),
+         match_status(first.get("state_in_prompt"), second.get("state_in_prompt"))],
+    ]
+    return ["", "### tokenizer 实际输出核对", "",
+            "基线 IDs/mask 来源：" + ("经模型与输入文件散列绑定的测后 CPU 补充审计，非性能测量时记录。" if audit is not None and audit["accepted"]
+                                         else "原始 provenance；不符合绑定条件的补充审计不予采用。"), "",
+            table(["字段", "基线", "对照", "核对"], rows), "",
+            f"对照 tokenizer 文件路径：{code(second.get('model_path'))}；文件 SHA-256：{code(second.get('model_sha256'))}；序列化模型 SHA-256：{code(second.get('serialized_model_sha256'))}。", "",
+            "完整 token IDs 和 mask 从两侧 provenance 中逐项比较；缺失的一侧保持“未记录”。模型散列一致本身不能替代实际 token 输出核对。"]
 
 
 def stage_counts(result, name):
@@ -263,6 +525,8 @@ def render(result, comparison=None):
     if fixtures:
         lines.extend(["", "保存的数组文件头（只读取元数据，不反序列化对象）：", "",
                       table(["数组", "形状", "dtype"], [[name, code(value["shape"]), code(value["dtype"])] for name, value in fixtures.items()])])
+    tokenizer_evidence, tokenizer_audit = baseline_tokenizer_evidence(result)
+    lines.extend(render_tokenizer_audit(tokenizer_evidence, tokenizer_audit))
 
     lines.extend(["", "## 未插桩基线分布", "",
                   table(["计时区间", "n", "均值 ms", "中位数 ms", "p95 ms", "最小 ms", "最大 ms", "标准差 ms"],
@@ -426,24 +690,22 @@ def render_comparison(baseline, comparison):
         else:
             lines.extend(["", "FlashRT 独立生产模型测量未记录，模型项保持“未记录”，不从完整策略或诊断阶段耗时推算。"])
         lines.extend(["", "`flashrt_diagnostic_stage_graphs` 单独捕获并分别发射诊断阶段图，具有不同的 launch 边界。它不是生产完整图的精确耗时分解，不映射到上表的生产模型项，也不据此计算模型加速比。"])
-    checks = []
-    for label, keys in (("固定输入数组 SHA-256", ("fixture", "array_sha256")),
-                        ("权重 SHA-256", ("checkpoint", "model_sha256")),
-                        ("归一化资产 SHA-256", ("checkpoint", "norm_stats_sha256")),
-                        ("tokenizer SHA-256", ("checkpoint", "tokenizer_model_sha256"))):
-        first, second = baseline["provenance"], comparison["provenance"]
-        for key in keys:
-            first = first.get(key) if isinstance(first, dict) else None
-            second = second.get(key) if isinstance(second, dict) else None
-        status = MISSING if first is None or second is None else "一致" if first == second else "不一致"
-        checks.append([label, status])
-    lines.extend(["", table(["可核对的来源字段", "结果"], checks), "",
-                  f"对照逐位相等汇总标记：{code(comparison['summary'].get('all_actions_bitwise_equal'))}。该标记通常仅指对照运行内部自洽，跨后端等价性仍需独立的动作误差验证。"])
+    lines.extend(comparison_distributions(comparison))
     if flashrt_mapping:
-        baseline_hash = baseline["provenance"].get("checkpoint", {}).get("model_sha256")
-        flashrt_hash = comparison["provenance"].get("hashes", {}).get("weights")
-        weight_match = MISSING if not baseline_hash or not flashrt_hash else "一致" if baseline_hash == flashrt_hash else "不一致"
-        lines.extend(["", f"FlashRT `hashes.weights` 与基线权重 SHA-256 核对：{weight_match}。其他未采用统一来源结构的字段保留“未记录”。"])
+        lines.extend(diagnostic_overhead(comparison))
+    lines.extend(comparison_sources(baseline, comparison, flashrt_mapping))
+    lines.extend(tokenizer_comparison(baseline, comparison))
+    lines.extend(["", f"对照逐位相等汇总标记：{code(comparison['summary'].get('all_actions_bitwise_equal'))}。该标记通常仅指对照运行内部自洽，跨后端等价性仍需独立的动作误差验证。"])
+    repeat_rows = []
+    for phase in comparison["raw"].get("phases", {}):
+        recorded = samples(comparison, phase)
+        if recorded:
+            values = [sample.get("validation", {}) for sample in recorded]
+            field = "exact_match" if flashrt_mapping else "bitwise_equal_reference"
+            counts = Counter("true" if value.get(field) is True else "false" if value.get(field) is False else MISSING for value in values)
+            repeat_rows.append([code(phase), field, code(dict(counts))])
+    if repeat_rows:
+        lines.extend(["", "各对照阶段内部重复输出校验：", "", table(["阶段", "记录字段", "计数"], repeat_rows)])
     accuracy = comparison.get("accuracy", {})
     metrics = accuracy.get("metrics", comparison["raw"].get("accuracy_against_openpi", {}))
     if metrics:

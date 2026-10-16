@@ -30,7 +30,13 @@ python reporting/report.py \
 
 同时识别仓库中的 FlashRT harness：将其 `flashrt_policy_uninstrumented.policy_wall_ms` 明确映射到完整策略墙钟。独立生产模型计时直接读取 `model_uninstrumented.model_wall_ms` 与 `model_cuda_stream_elapsed_ms`，比较 CUDA 输入就绪到输出完成的相同边界；对应字段不存在时显示“未记录”。对照表列出每个指标的数据来源。
 
-报告展示 `accuracy.json` 中独立测得的动作误差，并引用实现记录的精度限制。单独捕获、分别发射的 `flashrt_diagnostic_stage_graphs` 具有不同的 launch 边界，不映射为生产模型耗时，也不会用于推断模型加速比。同步模型墙钟仍含 replay 发射开销，CUDA Event 也不是 GPU 内核忙碌时间。
+报告列出 FlashRT **每个 phase 的全部已测指标**，包括视觉编码、前缀 KV 预填充、全部去噪迭代、阶段链 CUDA 区间和诊断调用墙钟，各有样本数、均值、中位数、p95、范围与标准差。诊断阶段链存在时，会分别计算其流区间相对生产模型流区间、完整诊断调用墙钟相对生产完整策略墙钟的均值差与比例；不会混淆模型与含前后处理的调用边界。
+
+报告展示 `accuracy.json` 中独立测得的动作误差，并引用实现记录的精度限制。单独捕获、分别发射的 `flashrt_diagnostic_stage_graphs` 具有不同的 launch 边界，不映射为生产模型耗时，也不会用于推断模型加速比。诊断链额外耗时也可能受捕获边界与温度/频率漂移影响，不等同于纯 launch 开销。同步模型墙钟仍含 replay 发射开销，CUDA Event 也不是 GPU 内核忙碌时间。
+
+来源核对明确映射 FlashRT 权重、归一化和序列化 tokenizer 模型的散列。其 `hashes.fixture` 是读取的 **NPZ 文件散列**，只与本地基线 `fixed_inputs.npz` 文件散列比较，绝不与 `fixture.array_sha256` 混比。另逐数组比较不含文件头的内容散列，因此重存 ZIP 元数据而内容不变的 NPZ 仍能核对内容。两侧记录实际 token IDs/mask 时会逐项比较；一侧未记录时保留缺失。
+
+如果原始基线 provenance 没有 token IDs，生成器可读取 `BASELINE_DIRECTORY.parent / baseline-tokenizer-audit.json` 的测后 CPU 审计 sidecar。仅在其 `model_sha256` 等于基线 `checkpoint.tokenizer_model_sha256`、`fixture_sha256` 等于本地基线 `fixed_inputs.npz` 的实际文件 SHA-256 时采用。基线已记录 tokenizer 源码散列时，还会验证 `source_sha256`；同时检查文本指令、完整 200 个 IDs/mask 及有效 IDs 的内部一致性。报告明确标为“补充 CPU 审计，非 benchmark 当时记录”，并保留原始计时及 provenance 不变。绑定失败会显示原因，并拒绝使用该 sidecar 的 IDs/mask。
 
 必需输入为 `summary.json`。同目录的 `raw.json` 和 `provenance.json` 用于详细调用计数、层级、数值校验与来源。`fixed_inputs.npz` 和 `reference_actions.npy` 存在时，生成器只读取安全的数组文件头来展示形状与 dtype，不载入 pickle 或对象数据。
 

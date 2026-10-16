@@ -4,6 +4,9 @@
 
 分支约定：`main` 保存 baseline 代码、原始测量和报告；`flashrt` 在 baseline 提交之上增加独立的 FlashRT 目录和对比结果。
 
+本分支已完成 FlashRT BF16：纯模型 **230.918 ms/action chunk**，相对初次 / 相邻重测 baseline 分别加速 **3.807× / 4.207×**。动作余弦相似度 **0.999833**，RMSE **0.007630**；仅验证固定合成输入。
+INT8 虽更快，但这组输入上的动作偏差较大，本次不选用。详见[完整对照结论](reports/flashrt-comparison_zh.md)与[FlashRT 复现步骤](flashrt/README.md)。
+
 ## Baseline 实测（2026-10-16）
 
 Jetson AGX Orin 64GB、CUDA 12.2、NVIDIA PyTorch 2.3；每阶段预热 10 次、测量 30 次。

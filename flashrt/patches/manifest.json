@@ -1,0 +1,18 @@
+{
+  "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+  "files": {
+    "flash_rt/frontends/torch/pi05_rtx.py": {
+      "upstream_sha256_lf": "5ecb7cb7b6dc60b8c1115d8aaaf09f520507a4402958a250664cd30f2f82ce42",
+      "patched_sha256_lf": "7900d753e4f1fb3f32fffaa5ad64e00a72dc9cd7ce3deb40a8a6fe40a3e93edb"
+    },
+    "flash_rt/models/pi05/pipeline_rtx.py": {
+      "upstream_sha256_lf": "de60a1f629195ed4336956afd0f47a1bdefef940c37877539f1f3cfab657ce37",
+      "patched_sha256_lf": "2135e8b21558cf26907784042cf5074d69bb9d1d3de82967cdb14e74c848d4ce"
+    },
+    "flash_rt/hardware/rtx/attn_backend.py": {
+      "upstream_sha256_lf": "aa5d78321d7b941c85e1581034d449149bf48799fe1aec2e15d1ff44fd65cff0",
+      "patched_sha256_lf": "4322877c876dcf043842fbcca4387c50764a8fc21c15efd95f70735c0bf96a56"
+    }
+  },
+  "patch_sha256": "ee55750fa7742e84cfb80fd8441f3e8c31f16a325327d157b33a0d6b7bc96372"
+}

@@ -1,0 +1,17 @@
+{
+  "against": "/home/nvidia/pi05-orin-benchmarks/reports/baseline-2026-10-16/reference_actions.npy",
+  "metrics": {
+    "shape": [
+      10,
+      7
+    ],
+    "all_finite": true,
+    "exact_match": false,
+    "cosine": 0.5806599613320034,
+    "rmse": 0.4158627176775489,
+    "max_abs": 2.2996395468463895,
+    "mean_abs": 0.18519352811646583
+  },
+  "scope": "one seeded synthetic observation; this is not robot-task success",
+  "noise_contract": "same float32 fixture values; FlashRT stages them as BF16; deployed sampler uses FP32 state/update"
+}

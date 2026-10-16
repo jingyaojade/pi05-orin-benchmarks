@@ -1,0 +1,222 @@
+Using CPython 3.10.12 interpreter at: /usr/bin/python3.10
+Creating virtual environment at: pi05-orin-flashrt/.venv
+Activate with: source pi05-orin-flashrt/.venv/bin/activate
+Using Python 3.10.12 environment at: pi05-orin-flashrt/.venv
+Resolved 17 packages in 1.08s
+Downloading cmake (25.9MiB)
+Downloading sympy (6.0MiB)
+Downloading pillow (6.0MiB)
+ Downloaded sympy
+ Downloaded pillow
+ Downloaded cmake
+Prepared 5 packages in 4.52s
+Installed 17 packages in 8.72s
+ + cmake==3.31.10
+ + filelock==4.1.0
+ + fsspec==2026.9.0
+ + jinja2==3.1.6
+ + markupsafe==3.0.4
+ + mpmath==1.3.0
+ + networkx==3.4.2
+ + ninja==1.13.2
+ + numpy==1.26.4
+ + pillow==12.3.0
+ + pybind11==3.1.0
+ + pyyaml==6.0.3
+ + safetensors==0.8.0
+ + sentencepiece==0.2.2
+ + sympy==1.14.0
+ + torch==2.3.0a0+6ddf5cf85e.nv24.4.14026654 (from file:///home/nvidia/pi05-orin/downloads/torch-2.3.0a0+6ddf5cf85e.nv24.04.14026654-cp310-cp310-linux_aarch64.whl)
+ + typing-extensions==4.16.0
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/nvidia/pi05-orin-flashrt/vendor/FlashRT/.git/
+From https://github.com/flashrt-project/FlashRT
+ * branch            6cb2f80caec2f561a1331c554a6d3bbf95d2ed55 -> FETCH_HEAD
+HEAD is now at 6cb2f80 docs: correct Pi0.5 RTX 5090 benchmarks (#231)
+Cloning into '/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/third_party/cutlass'...
+Note: switching to 'da5e086dab31d63815acafdac9a9c5893b1c69e2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+{
+  "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+  "files": {
+    "flash_rt/frontends/torch/pi05_rtx.py": {
+      "upstream_sha256_lf": "5ecb7cb7b6dc60b8c1115d8aaaf09f520507a4402958a250664cd30f2f82ce42",
+      "patched_sha256_lf": "7900d753e4f1fb3f32fffaa5ad64e00a72dc9cd7ce3deb40a8a6fe40a3e93edb"
+    },
+    "flash_rt/models/pi05/pipeline_rtx.py": {
+      "upstream_sha256_lf": "de60a1f629195ed4336956afd0f47a1bdefef940c37877539f1f3cfab657ce37",
+      "patched_sha256_lf": "2135e8b21558cf26907784042cf5074d69bb9d1d3de82967cdb14e74c848d4ce"
+    },
+    "flash_rt/hardware/rtx/attn_backend.py": {
+      "upstream_sha256_lf": "aa5d78321d7b941c85e1581034d449149bf48799fe1aec2e15d1ff44fd65cff0",
+      "patched_sha256_lf": "4322877c876dcf043842fbcca4387c50764a8fc21c15efd95f70735c0bf96a56"
+    }
+  },
+  "patch_sha256": "ee55750fa7742e84cfb80fd8441f3e8c31f16a325327d157b33a0d6b7bc96372"
+}
+Using Python 3.10.12 environment at: pi05-orin-flashrt/.venv
+Resolved 1 package in 6ms
+   Building flash-rt @ file:///home/nvidia/pi05-orin-flashrt/vendor/FlashRT
+      Built flash-rt @ file:///home/nvidia/pi05-orin-flashrt/vendor/FlashRT
+Prepared 1 package in 3.21s
+Installed 1 package in 2ms
+ + flash-rt==0.2.0 (from file:///home/nvidia/pi05-orin-flashrt/vendor/FlashRT)
+TORCH 2.3.0a0+6ddf5cf85e.nv24.04 CUDA 12.2 GPU Orin
+-- The CUDA compiler identification is NVIDIA 12.2.140 with host compiler GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- ccache: not found (optional; install for faster rebuilds)
+-- NVFP4/W4A8 support: DISABLED (requires Blackwell sm_120a/sm_121a, current: sm_87)
+-- Using gencode flag: -gencode=arch=compute_87,code=sm_87
+-- FA2 in-SO attention: ENABLED (sm_87)
+-- SM80-family CUTLASS INT8: ENABLED (sm_87)
+-- Slim VLA build: ENABLED (model/arch-specific kernels gated out)
+-- Motus beta kernels: DISABLED
+-- Found Python3: /home/nvidia/pi05-orin-flashrt/.venv/bin/python (found version "3.10.12") found components: Interpreter Development Development.Module Development.Embed
+-- Performing Test HAS_FLTO_AUTO
+-- Performing Test HAS_FLTO_AUTO - Success
+-- Found pybind11: /home/nvidia/pi05-orin-flashrt/.venv/lib/python3.10/site-packages/pybind11/include (found version "3.1.0")
+-- Found CUDAToolkit: /usr/local/cuda/targets/aarch64-linux/include (found version "12.2.140")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Pi0.5 skinny decoder kernels: DISABLED
+-- FA2 vendor arch: sm_87 AOT only (FA2_ARCH_NATIVE_ONLY=ON)
+-- FA2 vendor instantiations: hdim={96,128,256} x dtype={bf16} x {split,no-split} = 12 kernel .cu files
+-- FA2 pybind module: flash_rt_fa2 (separate .so)
+-- OmniVoice TTS SM120 kernels: DISABLED
+-- MiniMax-Remover FP8/NVFP4 kernels: DISABLED
+-- Spark-X2.5-4B kernels: DISABLED (set FLASHRT_ENABLE_SPARK_X25=ON on sm_120)
+-- Thor VLA helper kernels: DISABLED (SM100-class only)
+-- Cosmos3-Edge AV kernels: DISABLED
+-- Cosmos3 Reasoner kernels: DISABLED
+-- Delayed audio-codebook kernels: DISABLED
+-- Motus VAE FP8 quantize kernels: SKIPPED (slim build)
+-- Qwen3.6 / linear-attention kernels: SKIPPED (slim build)
+-- SM120 NVFP4 W4A16 fp4_w4a4 kernels: SKIPPED (slim build)
+-- NVFP4 swizzle/quantize kernels: SKIPPED (slim build)
+-- MelBandRoformer kernels: DISABLED
+-- Pi0.5 NVFP4 prefix kernels: DISABLED
+-- Pi0.5 SDE kernels: DISABLED
+-- LingBot-VLA kernels: DISABLED (Thor sm_110 only; current sm_87)
+-- JAX FFI: SKIPPED (jax.ffi not importable or ffi.h missing)
+-- Configuring done (5.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/nvidia/pi05-orin-flashrt/vendor/FlashRT/build_orin_sm87
+[1/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/flash_attn_2_src/flash_attn/flash_fwd_hdim96_bf16_sm80.cu.o
+[2/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/flash_attn_2_src/flash_attn/flash_fwd_split_hdim96_bf16_sm80.cu.o
+[3/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/flash_attn_2_src/flash_attn/flash_fwd_hdim128_bf16_sm80.cu.o
+[4/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/flash_attn_2_src/flash_attn/flash_fwd_split_hdim128_bf16_sm80.cu.o
+[5/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/flash_attn_2_src/flash_attn/flash_fwd_hdim256_bf16_sm80.cu.o
+[6/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_tile_inst/flash_fwd_smallq_bf16_sm80.cu.o
+[7/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_wrapper.cu.o
+[8/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_causal_inst/flash_fwd_hdim128_bf16_sm80_causal.cu.o
+[9/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/flash_attn_2_src/flash_attn/flash_fwd_split_hdim256_bf16_sm80.cu.o
+[10/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_causal_inst/flash_fwd_split_hdim128_bf16_sm80_causal.cu.o
+[11/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_causal_inst/flash_fwd_hdim256_bf16_sm80_causal.cu.o
+[12/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_wrapper_causal.cu.o
+[13/53] Building CXX object CMakeFiles/flash_rt_fa2.dir/csrc/fa2_bindings.cpp.o
+[14/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/gemm/gemm_runner.cu.o
+[15/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/norm.cu.o
+[16/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/activation.cu.o
+[17/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/rope.cu.o
+[18/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/quantize.cu.o
+[19/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/elementwise.cu.o
+[20/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/fusion.cu.o
+[21/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/patch_embed.cu.o
+[22/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/softmax.cu.o
+[23/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/attention_cublas.cu.o
+[24/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/attention_mha.cu.o
+[25/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/attention_mha_causal.cu.o
+[26/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/rope_qwen3.cu.o
+[27/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/decoder_fused.cu.o
+[28/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/dit_bf16.cu.o
+[29/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/attention_dit_bf16.cu.o
+[30/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/fp8_block128_dequant.cu.o
+[31/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/fp8_per_token_block_quant.cu.o
+[32/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/tq_dequant_kv.cu.o
+[33/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/wmma_probe.cu.o
+[34/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/tq_dequant_cutlass.cu.o
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/third_party/cutlass/include/cutlass/gemm/kernel/sm100_tile_scheduler_group.hpp:325:1: warning: ‘nodiscard’ attribute applied to ‘static void cutlass::gemm::kernel::detail::PersistentTileSchedulerSm100Group<GroupProblemShape, SchedulerPipelineStageCount>::load_query_response(uint32_t)’ with void return type [-Wattributes]
+  325 |   load_query_response(uint32_t smem_ptr) {
+      | ^ ~~~~~~~~~~~~~~~~~
+[35/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/ada_layer_norm_fp8.cu.o
+[36/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/bias_gelu_quantize_fp8.cu.o
+[37/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/qkv_split_norm_rope_bf16.cu.o
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/csrc/quantize/qkv_split_norm_rope_bf16.cu(38): warning #177-D: variable "nqw2" was declared but never referenced
+    const __nv_bfloat162* nqw2 = reinterpret_cast<const __nv_bfloat162*>(
+                          ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/csrc/quantize/qkv_split_norm_rope_bf16.cu(40): warning #177-D: variable "nkw2" was declared but never referenced
+    const __nv_bfloat162* nkw2 = reinterpret_cast<const __nv_bfloat162*>(
+                          ^
+
+[38/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/quantize/rope_apply_bf16.cu.o
+[39/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/gemm/fp8_block128_gemm.cu.o
+[40/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/silu_mul_qwen36.cu.o
+[41/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/act_bf16.cu.o
+[42/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/embedding_lookup_bf16.cu.o
+[43/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/qwen3_qkv_post_proc.cu.o
+[44/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/bf16_matvec_qwen36.cu.o
+[45/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/kernels/bf16_matmul_bf16.cu.o
+[46/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/attention/fmha_dispatch.cu.o
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/csrc/attention/fmha_dispatch.cu(31): warning #177-D: function "dyn_close" was declared but never referenced
+    static void dyn_close(DynLibHandle h) { if (h) dlclose(h); }
+                ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+[47/53] Building CXX object CMakeFiles/flash_rt_kernels.dir/csrc/bindings.cpp.o
+[48/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/gemm/cutlass_sm80_int8_rowwise.cu.o
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/third_party/cutlass/include/cutlass/gemm/kernel/sm100_tile_scheduler_group.hpp:325:1: warning: ‘nodiscard’ attribute applied to ‘static void cutlass::gemm::kernel::detail::PersistentTileSchedulerSm100Group<GroupProblemShape, SchedulerPipelineStageCount>::load_query_response(uint32_t)’ with void return type [-Wattributes]
+  325 |   load_query_response(uint32_t smem_ptr) {
+      | ^ ~~~~~~~~~~~~~~~~~
+[49/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/gemm/cutlass_sm80_int8_rowwise_t64x128.cu.o
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/third_party/cutlass/include/cutlass/gemm/kernel/sm100_tile_scheduler_group.hpp:325:1: warning: ‘nodiscard’ attribute applied to ‘static void cutlass::gemm::kernel::detail::PersistentTileSchedulerSm100Group<GroupProblemShape, SchedulerPipelineStageCount>::load_query_response(uint32_t)’ with void return type [-Wattributes]
+  325 |   load_query_response(uint32_t smem_ptr) {
+      | ^ ~~~~~~~~~~~~~~~~~
+[50/53] Building CUDA object CMakeFiles/flash_rt_kernels.dir/csrc/gemm/cutlass_sm80_int8_silu_gated.cu.o
+/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/third_party/cutlass/include/cutlass/gemm/kernel/sm100_tile_scheduler_group.hpp:325:1: warning: ‘nodiscard’ attribute applied to ‘static void cutlass::gemm::kernel::detail::PersistentTileSchedulerSm100Group<GroupProblemShape, SchedulerPipelineStageCount>::load_query_response(uint32_t)’ with void return type [-Wattributes]
+  325 |   load_query_response(uint32_t smem_ptr) {
+      | ^ ~~~~~~~~~~~~~~~~~
+[51/53] Linking CXX shared module /home/nvidia/pi05-orin-flashrt/vendor/FlashRT/flash_rt/flash_rt_kernels.cpython-310-aarch64-linux-gnu.so
+[52/53] Building CUDA object CMakeFiles/fa2_vendor_obj.dir/csrc/attention/fa2_causal_inst/flash_fwd_split_hdim256_bf16_sm80_causal.cu.o
+[53/53] Linking CXX shared module /home/nvidia/pi05-orin-flashrt/vendor/FlashRT/flash_rt/flash_rt_fa2.cpython-310-aarch64-linux-gnu.so
+Using Python 3.10.12 environment at: pi05-orin-flashrt/.venv
+2026-10-16T13:16:43+08:00
+FLASHRT_BUILD_COMPLETE

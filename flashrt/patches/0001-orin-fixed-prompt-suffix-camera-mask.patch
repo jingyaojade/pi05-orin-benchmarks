@@ -1,0 +1,180 @@
+--- a/flash_rt/frontends/torch/pi05_rtx.py
++++ b/flash_rt/frontends/torch/pi05_rtx.py
+@@ -635,7 +635,9 @@
+                  decoder_kernel: Optional[str] = None,
+                  prefix_precision: Optional[str] = None,
+                  sde: bool = False,
+-                 decoder_precision: Optional[str] = None):
++                 decoder_precision: Optional[str] = None,
++                 valid_num_views: Optional[int] = None,
++                 fixed_prompt_length: bool = False):
+         checkpoint_dir = pathlib.Path(checkpoint_dir)
+         # Stochastic sampler: pipelines take a per-step noise scale and
+         # per-step noise (infer(..., sde_sigma=, step_noise=)); with no
+@@ -706,6 +708,15 @@
+         self.num_views = int(num_views)
+         self.chunk_size = int(chunk_size)
+         self.max_prompt_len = int(max_prompt_len)
++        # Local Orin comparison patch: retain padded camera compute,
++        # but exclude suffix-camera keys from prefix/joint attention.
++        self._valid_num_views = (self.num_views if valid_num_views is None
++                                 else int(valid_num_views))
++        self._fixed_prompt_length = bool(fixed_prompt_length)
++        if not 1 <= self._valid_num_views <= self.num_views:
++            raise ValueError("valid_num_views must be in [1, num_views]")
++        if self._valid_num_views < self.num_views and not self._fixed_prompt_length:
++            raise ValueError("masked suffix cameras require fixed_prompt_length=True")
+         self._num_steps = int(num_steps)
+         self._vision_pool_factor = int(vision_pool_factor)
+         if self._num_steps <= 0:
+@@ -1640,13 +1651,14 @@
+                 bool(getattr(self.pipeline, "_fixed_shape", False)))
+             return
+ 
+-        max_len = (PI05_STATE_PROMPT_MAX_LEN if state is not None
+-                   else MAX_PROMPT_LEN_DEFAULT)
++        max_len = (self.max_prompt_len if self._fixed_prompt_length else
++                   PI05_STATE_PROMPT_MAX_LEN if state is not None else
++                   MAX_PROMPT_LEN_DEFAULT)
+         embeds, prompt_len, embeds_np = self._embed_prompt_cached(
+             prompt_text, max_len, state=state)
+         self._last_prompt_len = int(prompt_len)
+ 
+-        if self._state_prompt_mode == "fixed" and state is not None:
++        if self._fixed_prompt_length or (self._state_prompt_mode == "fixed" and state is not None):
+             self._set_prompt_fixed(prompt_len)
+         else:
+             self._set_prompt_per_length(state, prompt_len)
+@@ -1678,16 +1690,19 @@
+         backend the per-length pipeline has since touched (observed CUDA illegal
+         access) and would also perturb numerics via autotune variance.
+         """
+-        self._ensure_prompt_capacity(PI05_STATE_PROMPT_MAX_LEN)
++        fixed_capacity = (self.max_prompt_len if self._fixed_prompt_length
++                          else PI05_STATE_PROMPT_MAX_LEN)
++        self._ensure_prompt_capacity(fixed_capacity)
+         if self._fixed_pipeline is None:
+             logger.info("Building fixed-shape Pi05Pipeline (max_prompt_len=%d)...",
+-                        PI05_STATE_PROMPT_MAX_LEN)
++                        fixed_capacity)
+             pipeline_weights = self._build_pipeline_weights()
+             self._fixed_pipeline = Pi05Pipeline(
+                 gemm=self.gemm, fvk=self.fvk, attn_backend=self.attn_backend,
+                 weights=pipeline_weights,
+                 num_views=self.num_views,
+-                max_prompt_len=PI05_STATE_PROMPT_MAX_LEN,
++                max_prompt_len=fixed_capacity,
++                valid_num_views=self._valid_num_views,
+                 chunk_size=self.chunk_size,
+                 num_steps=self._num_steps,
+                 vision_pool_factor=self._vision_pool_factor,
+--- a/flash_rt/models/pi05/pipeline_rtx.py
++++ b/flash_rt/models/pi05/pipeline_rtx.py
+@@ -192,7 +192,8 @@
+                  decoder_kernel: str = "cublaslt",
+                  prefix_precision: str = "fp8",
+                  sde: bool = False,
+-                 decoder_precision: str = "fp8"):
++                 decoder_precision: str = "fp8",
++                 valid_num_views: int | None = None):
+         self.gemm = gemm
+         self.fvk = fvk
+         self.attn = attn_backend
+@@ -287,6 +288,16 @@
+         self.vision_seq_enc = self.vision_seq // (pf * pf)
+         self.encoder_seq_len = self.vision_seq_enc + self.max_prompt_len
+         self.total_kv = self.encoder_seq_len + self.chunk_size
++        self.valid_num_views = (self.num_views if valid_num_views is None
++                                else int(valid_num_views))
++        if not 1 <= self.valid_num_views <= self.num_views:
++            raise ValueError("valid_num_views must be in [1, num_views]")
++        self.valid_vision_seq_enc = self.valid_num_views * VIS_SEQ_PER_VIEW // (pf * pf)
++        if self.valid_num_views < self.num_views:
++            if not self._fixed_shape or pf != 1 or self.prefix_export:
++                raise ValueError("suffix-camera masking requires fixed shape, pool=1, no prefix export")
++        self.attn.set_masked_view_layout(
++            self.vision_seq_enc, self.valid_vision_seq_enc, self.max_prompt_len)
+ 
+         # Attention pointers (owned by attn_backend)
+         self._attn_ptrs = attn_backend.get_ptrs()
+@@ -549,7 +560,7 @@
+ 
+     def _set_decoder_rope_for_prompt(self, prompt_len: int) -> None:
+         """Update ``decoder_rope_weights`` for a new prompt length."""
+-        start = self.vision_seq_enc + prompt_len
++        start = self.valid_vision_seq_enc + prompt_len
+         end = start + self.chunk_size
+         self.bufs["decoder_rope_weights"].upload(
+             np.ascontiguousarray(self._rope_table_np[start:end]))
+@@ -3031,6 +3042,14 @@
+         else:
+             self._lang_embeds_buf = CudaBuffer.from_numpy(arr)
+         self._current_prompt_len = prompt_len
++        # Match openpi cumsum(valid_mask)-1 in the ORIGINAL Q-row
++        # layout. K/V alone are compacted by the attention backend.
++        valid_mask = np.zeros(self.encoder_seq_len, dtype=np.int32)
++        valid_mask[:self.valid_vision_seq_enc] = 1
++        valid_mask[self.vision_seq_enc:self.vision_seq_enc + prompt_len] = 1
++        positions = np.cumsum(valid_mask) - 1
++        self.bufs["encoder_rope_weights"].upload(
++            np.ascontiguousarray(self._rope_table_np[positions]))
+ 
+         # Update decoder RoPE slice for this prompt length
+         self._set_decoder_rope_for_prompt(prompt_len)
+@@ -3038,7 +3057,7 @@
+         # Fixed-shape: update the valid prefix length read by FA2 (seqused) +
+         # the devpos K/V append offset. Runtime device buffers; no recapture.
+         if self._fixed_shape:
+-            self.attn.set_fixed_valid_len(self.vision_seq_enc + prompt_len)
++            self.attn.set_fixed_valid_len(self.valid_vision_seq_enc + prompt_len)
+ 
+         # Initial copy into encoder_x (so the FIRST calibration pass sees
+         # the correct lang embeds without needing a prior forward() call).
+--- a/flash_rt/hardware/rtx/attn_backend.py
++++ b/flash_rt/hardware/rtx/attn_backend.py
+@@ -278,6 +278,7 @@
+         # set_prompt via :meth:`set_fixed_valid_len` — runtime inputs, never a
+         # recapture. batch=1, so each is a single int32.
+         self._fixed_shape = False
++        self._masked_view_layout = None
+         self.enc_seqused = torch.zeros(1, dtype=torch.int32, device=d)  # vis_enc+plen
+         self.dec_seqused = torch.zeros(1, dtype=torch.int32, device=d)  # +chunk
+         self.dec_devpos = torch.zeros(1, dtype=torch.int32, device=d)   # = enc_seqused
+@@ -486,6 +487,21 @@
+             stream=stream,
+         )
+ 
++    def set_masked_view_layout(self, all_vision: int, valid_vision: int,
++                               prompt_capacity: int) -> None:
++        """Configure a static suffix-camera mask; Q/GEMM shapes stay full.
++
++        Prompt K/V move into the masked camera gap. Copy the entire
++        capacity so captured memcpy nodes survive prompt-length changes.
++        The disjoint source/destination ranges avoid overlapping copies.
++        """
++        gap = int(all_vision) - int(valid_vision)
++        if gap < 0 or (gap and int(prompt_capacity) > gap):
++            raise ValueError("prompt capacity must fit the masked camera gap")
++        self._masked_view_layout = (
++            (int(all_vision), int(valid_vision), int(prompt_capacity))
++            if gap else None)
++
+     def set_fixed_shape(self, enabled: bool) -> None:
+         """Enable/disable fixed-shape (seqused/devpos) state-prompt execution.
+ 
+@@ -623,6 +639,15 @@
+         q = self.enc_Q[:seq].unsqueeze(0)                # (1, seq, 8, 256)
+         k = self.enc_K[layer_idx, :seq].unsqueeze(0)     # (1, seq, 1, 256)
+         v = self.enc_V[layer_idx, :seq].unsqueeze(0)     # (1, seq, 1, 256)
++        if self._masked_view_layout is not None:
++            if not self._fixed_shape:
++                raise RuntimeError("masked camera keys require the fixed FA2 seqused path")
++            src, dst, count = self._masked_view_layout
++            # Both copy_ calls record static D2D memcpy nodes. Their
++            # source/destination views are disjoint and use the same
++            # torch stream as graph capture and all other FA2 work.
++            k[:, dst:dst + count].copy_(k[:, src:src + count])
++            v[:, dst:dst + count].copy_(v[:, src:src + count])
+         if self._fa2_sites["encoder"]:
+             o = self._enc_O[:, :seq].contiguous()
+             if self._fixed_shape:
