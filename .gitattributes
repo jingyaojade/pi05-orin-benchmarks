@@ -1,3 +1,6 @@
 * text=auto eol=lf
 *.npy binary
 *.npz binary
+*.patch whitespace=-blank-at-eol
+*.log whitespace=-blank-at-eol
+reports/**/environment-before.txt whitespace=-blank-at-eol
