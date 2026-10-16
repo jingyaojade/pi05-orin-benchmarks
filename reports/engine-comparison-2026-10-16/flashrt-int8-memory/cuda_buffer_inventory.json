@@ -1,0 +1,2914 @@
+{
+  "production_steady_state": {
+    "unique_allocation_count": 181,
+    "unique_bytes": 208319120,
+    "allocations": [
+      {
+        "pointer_hex": "0x204df7800",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.observation_images_normalized"
+        ]
+      },
+      {
+        "pointer_hex": "0x204f4d000",
+        "nbytes": 495616,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fc6000",
+        "nbytes": 5120,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fc7400",
+        "nbytes": 2048,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_dec"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fc7c00",
+        "nbytes": 10240,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.dec_act_int8"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fca400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcb400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcc400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcd400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fce400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcf400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd0400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd1400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd2400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd3400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd4400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd5400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x",
+          "frontend.pipeline.bufs.vision_x_pooled"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce87000",
+        "nbytes": 4096,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_enc"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce88000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce88200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce88400",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce8d400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_action_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce8d800",
+        "nbytes": 204800,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_time_emb"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cebf800",
+        "nbytes": 51200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecc000",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.diffusion_noise"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecc400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prev_action_chunk"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecc800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prefix_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecca00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_guidance_weight"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ceccc00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.x_normed_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced1c00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced6c00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.valid_encoder_len"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced6e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d087000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d09b000",
+        "nbytes": 163840,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d0c3000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d0d7000",
+        "nbytes": 5308416,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d5e7000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dc35000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_pos_embed_expanded"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dde5000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.dec_act_int8_large"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddf9000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfa000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfb000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfc000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfd000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfe000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddff000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de00000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de01000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de02000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de03000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de04000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de05000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de06000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de07000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de08000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de09000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0a000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0b000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0c000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0d000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0e000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0f000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de10000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de11000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de12000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de13000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de14000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de15000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1aa00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ac00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ae00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ba00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1bc00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1be00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ca00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1cc00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ce00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1da00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1dc00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de35000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e1fd000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e5c5000",
+        "nbytes": 4956160,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ea7f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x5108bf000",
+        "nbytes": 63438848,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x51453f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x51637f000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_attn"
+        ]
+      },
+      {
+        "pointer_hex": "0x516e0b000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_ffn"
+        ]
+      },
+      {
+        "pointer_hex": "0x517897000",
+        "nbytes": 614400,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_final"
+        ]
+      },
+      {
+        "pointer_hex": "0x51792d000",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_patches"
+        ]
+      },
+      {
+        "pointer_hex": "0x517a97000",
+        "nbytes": 1982464,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.enc_act_int8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7b000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7c000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7d000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7e000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7f000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c80000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c81000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c82000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c83000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c84000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c85000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c86000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c87000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c88000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c89000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8a000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8b000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8c000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8d000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8e000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8f000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c90000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c91000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c92000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c93000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c94000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c95000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c96000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c97000",
+        "nbytes": 15859712,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.enc_act_int8_large"
+        ]
+      },
+      {
+        "pointer_hex": "0x518bb7000",
+        "nbytes": 819200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._lang_embeds_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x51a5b7000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._bias_zero_buf"
+        ]
+      }
+    ],
+    "scope": "reachable persistent CudaBuffer objects, unique base pointers; excludes Torch allocations and library/graph internals"
+  },
+  "after_diagnostic_capture": {
+    "unique_allocation_count": 181,
+    "unique_bytes": 208319120,
+    "allocations": [
+      {
+        "pointer_hex": "0x204df7800",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.observation_images_normalized"
+        ]
+      },
+      {
+        "pointer_hex": "0x204f4d000",
+        "nbytes": 495616,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fc6000",
+        "nbytes": 5120,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fc7400",
+        "nbytes": 2048,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_dec"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fc7c00",
+        "nbytes": 10240,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.dec_act_int8"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fca400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcb400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcc400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcd400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fce400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fcf400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd0400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd1400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd2400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd3400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd4400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd5400",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_1"
+        ]
+      },
+      {
+        "pointer_hex": "0x204fd6e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x",
+          "frontend.pipeline.bufs.vision_x_pooled"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce87000",
+        "nbytes": 4096,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_enc"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce88000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce88200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce88400",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce8d400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_action_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce8d800",
+        "nbytes": 204800,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_time_emb"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cebf800",
+        "nbytes": 51200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecc000",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.diffusion_noise"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecc400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prev_action_chunk"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecc800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prefix_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cecca00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_guidance_weight"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ceccc00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.x_normed_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced1c00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced6c00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.valid_encoder_len"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced6e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_0"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d087000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d09b000",
+        "nbytes": 163840,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d0c3000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d0d7000",
+        "nbytes": 5308416,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d5e7000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dc35000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_pos_embed_expanded"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dde5000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.dec_act_int8_large"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddf9000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfa000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfb000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfc000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfd000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddfe000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ddff000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de00000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de01000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de02000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de03000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de04000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de05000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de06000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de07000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de08000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de09000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0a000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0b000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0c000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0d000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0e000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de0f000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de10000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de11000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de12000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de13000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de14000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de15000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_2"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de16e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de17e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de18e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19a00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19c00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de19e00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_10"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1a800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1aa00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ac00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_11"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ae00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_12"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1b800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ba00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1bc00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_13"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1be00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_14"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1c800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ca00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1cc00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_15"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1ce00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d000",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d200",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d400",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_16"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d600",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_qkv_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1d800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_attn_o_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1da00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_gate_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de1dc00",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.decoder_ffn_down_w_17"
+        ]
+      },
+      {
+        "pointer_hex": "0x50de35000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e1fd000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e5c5000",
+        "nbytes": 4956160,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ea7f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x5108bf000",
+        "nbytes": 63438848,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x51453f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x51637f000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_attn"
+        ]
+      },
+      {
+        "pointer_hex": "0x516e0b000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_ffn"
+        ]
+      },
+      {
+        "pointer_hex": "0x517897000",
+        "nbytes": 614400,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_final"
+        ]
+      },
+      {
+        "pointer_hex": "0x51792d000",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_patches"
+        ]
+      },
+      {
+        "pointer_hex": "0x517a97000",
+        "nbytes": 1982464,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.enc_act_int8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7b000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7c000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7d000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7e000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_3"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c7f000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c80000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c81000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c82000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_4"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c83000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c84000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c85000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c86000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_5"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c87000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c88000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c89000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8a000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_6"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8b000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8c000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8d000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8e000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_7"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c8f000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c90000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c91000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c92000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_8"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c93000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_qkv_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c94000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_attn_o_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c95000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_gate_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c96000",
+        "nbytes": 3872,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.int8_act_scales.encoder_ffn_down_w_9"
+        ]
+      },
+      {
+        "pointer_hex": "0x517c97000",
+        "nbytes": 15859712,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.enc_act_int8_large"
+        ]
+      },
+      {
+        "pointer_hex": "0x518bb7000",
+        "nbytes": 819200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._lang_embeds_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x51a5b7000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._bias_zero_buf"
+        ]
+      }
+    ],
+    "scope": "reachable persistent CudaBuffer objects, unique base pointers; excludes Torch allocations and library/graph internals"
+  }
+}

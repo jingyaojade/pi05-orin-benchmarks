@@ -2,6 +2,14 @@
 
 记录已部署 OpenPI PyTorch 基线与 FlashRT 的分阶段推理耗时。
 
+最新一轮包含独立内存补测、vLLM/Omni 和 TensorRT Edge-LLM 实际兼容性探针：
+[所有技术路径与结论](summary.md)、[分步骤延时与内存对比](reports/engine-comparison-2026-10-16/comparison.md)。
+同轮纯模型 baseline **918.45 ms**，FlashRT BF16 **232.20 ms（3.96×）**；
+稳态 PID NvMap 驱动记账分别为 **7.36 / 12.79 GiB**，不是独占物理内存总和。
+vLLM/Omni 与 Edge-LLM 在当前软件栈未进入模型推理，性能为 N/A。
+新引擎各自位于 `vllm`、`tensorrt-edge-llm` 分支；综合代码和本轮数据在 `engine-comparison`。
+下文保留首轮历史数据，不能与新轮拼接计算加速比。
+
 分支约定：`main` 保存 baseline 代码、原始测量和报告；`flashrt` 在 baseline 提交之上增加独立的 FlashRT 目录和对比结果。
 
 本分支已完成 FlashRT BF16：纯模型 **230.918 ms/action chunk**，相对初次 / 相邻重测 baseline 分别加速 **3.807× / 4.207×**。动作余弦相似度 **0.999833**，RMSE **0.007630**；仅验证固定合成输入。

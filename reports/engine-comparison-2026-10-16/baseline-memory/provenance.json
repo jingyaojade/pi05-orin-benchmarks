@@ -1,0 +1,94 @@
+{
+  "backend": "baseline",
+  "precision": "official_mixed_bf16_fp32",
+  "created_utc": "2026-10-16T07:07:14.105126+00:00",
+  "pid": 74189,
+  "iterations": 3,
+  "warmup": 5,
+  "sample_interval_seconds": 0.1,
+  "fixture": "/home/nvidia/pi05-orin-benchmarks/reports/engine-comparison-2026-10-16/baseline-latency/fixed_inputs.npz",
+  "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd",
+  "reference": "/home/nvidia/pi05-orin-benchmarks/reports/engine-comparison-2026-10-16/baseline-latency/reference_actions.npy",
+  "reference_sha256": "8263e6fa13339b4268d6b8a1e031816353603994c558f139a2e085df5c1d7faa",
+  "checkpoint": "/home/nvidia/pi05-orin/models/pi05_libero",
+  "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "torch_cuda_build": "12.2",
+  "python": "3.10.12",
+  "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.35",
+  "gpu": "Orin",
+  "profiler_hashes": {
+    "memory.py": "86779151f7bff1c246b0407c9d7780140f371babb780bbadcfbddde287259bf2",
+    "memory_common.py": "daf156b35d38c4c2945a879e1a6b33644a1ce741cff6e51cc2cda742de33bb61"
+  },
+  "caveats": [
+    "Memory-only pass with synchronizations, peak resets and /proc/nvmap polling; its duration is not a latency benchmark.",
+    "Jetson unified-memory accounting domains overlap. Never sum process RSS/PSS/USS with nvmap or CUDA device used bytes.",
+    "RSS/PSS/USS are process host mappings (USS=Private_Clean+Private_Dirty); VmHWM is a process-lifetime RSS high-water mark.",
+    "nvmap self_bytes sums all debugfs clients for this PID; it includes driver-accounted allocations, not a disjoint physical-memory total.",
+    "Torch peaks are exact only for the Torch caching allocator; FlashRT cudaMalloc buffers, graph internals and libraries can be outside it.",
+    "cudaMemGetInfo used bytes cover the entire device, including other processes; changes are not exact per-process allocations.",
+    "max_observed process/nvmap values are sampled maxima or synchronized endpoints, hence lower bounds on transient peaks; no kernel allocation tracing is claimed.",
+    "Stage before/after memory includes persistent weights/KV/scratch allocations shared by stages; stage values cannot be added.",
+    "Model-total peak and detailed-stage peaks use separate passes; stage peak resets never occur inside the model-total pass.",
+    "FlashRT vision/prefill/denoise stage memory replays diagnostic graphs sharing persistent arenas; the production graph is measured separately first.",
+    "FlashRT input_prepare_and_staging combines CPU image/noise conversion and H2D/D2D staging from the unchanged frontend; no artificial CPU-only split.",
+    "Profiler bookkeeping and sampling threads consume some host memory; all values include the profiler process overhead."
+  ],
+  "source": {
+    "helper": "/home/nvidia/pi05-orin/serve.py",
+    "backend_source": "/home/nvidia/pi05-orin-benchmarks/baseline/benchmark.py"
+  },
+  "validation": {
+    "against_saved_baseline": {
+      "exact_match": true,
+      "rmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 1.0000000000000002
+    },
+    "passes": [
+      {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0000000000000002
+      },
+      {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0000000000000002
+      },
+      {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0000000000000002
+      },
+      {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0000000000000002
+      },
+      {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0000000000000002
+      },
+      {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0000000000000002
+      }
+    ],
+    "wrapper_restoration": {
+      "exact_match": true,
+      "rmse": 0.0,
+      "max_abs": 0.0,
+      "cosine": 1.0000000000000002
+    }
+  },
+  "completed": true
+}

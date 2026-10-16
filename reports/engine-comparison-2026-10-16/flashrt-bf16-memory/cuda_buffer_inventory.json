@@ -1,0 +1,594 @@
+{
+  "production_steady_state": {
+    "unique_allocation_count": 36,
+    "unique_bytes": 190114736,
+    "allocations": [
+      {
+        "pointer_hex": "0x204be7800",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.observation_images_normalized"
+        ]
+      },
+      {
+        "pointer_hex": "0x204d3d000",
+        "nbytes": 495616,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204db6000",
+        "nbytes": 5120,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204db7400",
+        "nbytes": 2048,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_dec"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cad7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x",
+          "frontend.pipeline.bufs.vision_x_pooled"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc87000",
+        "nbytes": 4096,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_enc"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc88400",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc8d400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_action_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc8d800",
+        "nbytes": 204800,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_time_emb"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccbf800",
+        "nbytes": 51200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccc000",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.diffusion_noise"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccc400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prev_action_chunk"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccc800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prefix_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccca00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_guidance_weight"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccccc00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.x_normed_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd1c00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd6c00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.valid_encoder_len"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce87000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce9b000",
+        "nbytes": 163840,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cec3000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced7000",
+        "nbytes": 5308416,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d3e7000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50da35000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_pos_embed_expanded"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dc35000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dffd000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e3c5000",
+        "nbytes": 4956160,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e87f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x5106bf000",
+        "nbytes": 63438848,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x51433f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x51617f000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_attn"
+        ]
+      },
+      {
+        "pointer_hex": "0x516c0b000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_ffn"
+        ]
+      },
+      {
+        "pointer_hex": "0x517697000",
+        "nbytes": 614400,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_final"
+        ]
+      },
+      {
+        "pointer_hex": "0x51772d000",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_patches"
+        ]
+      },
+      {
+        "pointer_hex": "0x517897000",
+        "nbytes": 819200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._lang_embeds_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x519097000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._bias_zero_buf"
+        ]
+      }
+    ],
+    "scope": "reachable persistent CudaBuffer objects, unique base pointers; excludes Torch allocations and library/graph internals"
+  },
+  "after_diagnostic_capture": {
+    "unique_allocation_count": 36,
+    "unique_bytes": 190114736,
+    "allocations": [
+      {
+        "pointer_hex": "0x204be7800",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.observation_images_normalized"
+        ]
+      },
+      {
+        "pointer_hex": "0x204d3d000",
+        "nbytes": 495616,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204db6000",
+        "nbytes": 5120,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_rope_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x204db7400",
+        "nbytes": 2048,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_dec"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cad7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x",
+          "frontend.pipeline.bufs.vision_x_pooled"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc87000",
+        "nbytes": 4096,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._rms_ones_enc"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc88400",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc8d400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_action_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cc8d800",
+        "nbytes": 204800,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_time_emb"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccbf800",
+        "nbytes": 51200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccc000",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.diffusion_noise"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccc400",
+        "nbytes": 640,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prev_action_chunk"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccc800",
+        "nbytes": 40,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_prefix_weights"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cccca00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.rtc_guidance_weight"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccccc00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.x_normed_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd1c00",
+        "nbytes": 20480,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd6c00",
+        "nbytes": 4,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.valid_encoder_len"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ccd7000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce87000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ce9b000",
+        "nbytes": 163840,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x50cec3000",
+        "nbytes": 81920,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x50ced7000",
+        "nbytes": 5308416,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50d3e7000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x50da35000",
+        "nbytes": 1769472,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_pos_embed_expanded"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dc35000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x"
+        ]
+      },
+      {
+        "pointer_hex": "0x50dffd000",
+        "nbytes": 3964928,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_x_norm"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e3c5000",
+        "nbytes": 4956160,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_QKV"
+        ]
+      },
+      {
+        "pointer_hex": "0x50e87f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_hidden"
+        ]
+      },
+      {
+        "pointer_hex": "0x5106bf000",
+        "nbytes": 63438848,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_merged"
+        ]
+      },
+      {
+        "pointer_hex": "0x51433f000",
+        "nbytes": 31719424,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.encoder_gate_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x51617f000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_attn"
+        ]
+      },
+      {
+        "pointer_hex": "0x516c0b000",
+        "nbytes": 11059200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_ffn"
+        ]
+      },
+      {
+        "pointer_hex": "0x517697000",
+        "nbytes": 614400,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.decoder_style_final"
+        ]
+      },
+      {
+        "pointer_hex": "0x51772d000",
+        "nbytes": 903168,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline.bufs.vision_patches"
+        ]
+      },
+      {
+        "pointer_hex": "0x517897000",
+        "nbytes": 819200,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._lang_embeds_buf"
+        ]
+      },
+      {
+        "pointer_hex": "0x519097000",
+        "nbytes": 6610944,
+        "managed": false,
+        "aliases": [
+          "frontend.pipeline._bias_zero_buf"
+        ]
+      }
+    ],
+    "scope": "reachable persistent CudaBuffer objects, unique base pointers; excludes Torch allocations and library/graph internals"
+  }
+}

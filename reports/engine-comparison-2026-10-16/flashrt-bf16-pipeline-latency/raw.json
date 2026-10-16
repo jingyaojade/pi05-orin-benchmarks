@@ -1,0 +1,894 @@
+{
+  "warmup": [
+    {
+      "sample": -10,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.608767,
+        "model_wall_ms": 233.973808,
+        "model_cuda_stream_elapsed_ms": 233.80361938476562,
+        "download_and_postprocess_wall_ms": 1.050234,
+        "diagnostic_policy_wall_ms": 242.632809
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -9,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.337489,
+        "model_wall_ms": 233.190981,
+        "model_cuda_stream_elapsed_ms": 232.97911071777344,
+        "download_and_postprocess_wall_ms": 1.095451,
+        "diagnostic_policy_wall_ms": 241.623921
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -8,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 10.618724,
+        "model_wall_ms": 234.095671,
+        "model_cuda_stream_elapsed_ms": 233.91481018066406,
+        "download_and_postprocess_wall_ms": 0.9629,
+        "diagnostic_policy_wall_ms": 245.677295
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -7,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 6.611849,
+        "model_wall_ms": 233.247112,
+        "model_cuda_stream_elapsed_ms": 233.0745849609375,
+        "download_and_postprocess_wall_ms": 1.091836,
+        "diagnostic_policy_wall_ms": 240.950797
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -6,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 15.009108,
+        "model_wall_ms": 234.021298,
+        "model_cuda_stream_elapsed_ms": 233.8726348876953,
+        "download_and_postprocess_wall_ms": 1.052826,
+        "diagnostic_policy_wall_ms": 250.083232
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -5,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.427849,
+        "model_wall_ms": 234.843359,
+        "model_cuda_stream_elapsed_ms": 234.65638732910156,
+        "download_and_postprocess_wall_ms": 0.898033,
+        "diagnostic_policy_wall_ms": 241.169241
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -4,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 6.142,
+        "model_wall_ms": 233.215078,
+        "model_cuda_stream_elapsed_ms": 233.05702209472656,
+        "download_and_postprocess_wall_ms": 0.990518,
+        "diagnostic_policy_wall_ms": 240.347596
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -3,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 11.322954,
+        "model_wall_ms": 232.751725,
+        "model_cuda_stream_elapsed_ms": 232.596923828125,
+        "download_and_postprocess_wall_ms": 1.084539,
+        "diagnostic_policy_wall_ms": 245.159218
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -2,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.047873,
+        "model_wall_ms": 233.36971,
+        "model_cuda_stream_elapsed_ms": 233.22569274902344,
+        "download_and_postprocess_wall_ms": 0.8684,
+        "diagnostic_policy_wall_ms": 241.285983
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": -1,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.237767,
+        "model_wall_ms": 233.243559,
+        "model_cuda_stream_elapsed_ms": 233.0577850341797,
+        "download_and_postprocess_wall_ms": 1.256613,
+        "diagnostic_policy_wall_ms": 238.737939
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    }
+  ],
+  "samples": [
+    {
+      "sample": 0,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.778588,
+        "model_wall_ms": 234.791324,
+        "model_cuda_stream_elapsed_ms": 234.5911102294922,
+        "download_and_postprocess_wall_ms": 1.17312,
+        "diagnostic_policy_wall_ms": 241.743032
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 1,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.342929,
+        "model_wall_ms": 233.80423,
+        "model_cuda_stream_elapsed_ms": 232.92271423339844,
+        "download_and_postprocess_wall_ms": 1.664763,
+        "diagnostic_policy_wall_ms": 242.811922
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 2,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.190088,
+        "model_wall_ms": 233.36107,
+        "model_cuda_stream_elapsed_ms": 233.1864013671875,
+        "download_and_postprocess_wall_ms": 1.136798,
+        "diagnostic_policy_wall_ms": 241.687956
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 3,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 9.126707,
+        "model_wall_ms": 234.685526,
+        "model_cuda_stream_elapsed_ms": 234.2112579345703,
+        "download_and_postprocess_wall_ms": 1.54002,
+        "diagnostic_policy_wall_ms": 245.352253
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 4,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 12.00552,
+        "model_wall_ms": 233.201541,
+        "model_cuda_stream_elapsed_ms": 232.82550048828125,
+        "download_and_postprocess_wall_ms": 1.663451,
+        "diagnostic_policy_wall_ms": 246.870512
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 5,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.626432,
+        "model_wall_ms": 235.371259,
+        "model_cuda_stream_elapsed_ms": 235.22508239746094,
+        "download_and_postprocess_wall_ms": 0.939572,
+        "diagnostic_policy_wall_ms": 243.937263
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 6,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.676854,
+        "model_wall_ms": 233.861545,
+        "model_cuda_stream_elapsed_ms": 233.71705627441406,
+        "download_and_postprocess_wall_ms": 0.863183,
+        "diagnostic_policy_wall_ms": 240.401582
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 7,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.685732,
+        "model_wall_ms": 234.016209,
+        "model_cuda_stream_elapsed_ms": 233.8540802001953,
+        "download_and_postprocess_wall_ms": 0.913778,
+        "diagnostic_policy_wall_ms": 242.615719
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 8,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.146786,
+        "model_wall_ms": 234.477899,
+        "model_cuda_stream_elapsed_ms": 234.31765747070312,
+        "download_and_postprocess_wall_ms": 0.973845,
+        "diagnostic_policy_wall_ms": 239.59853
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 9,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.401717,
+        "model_wall_ms": 233.358381,
+        "model_cuda_stream_elapsed_ms": 233.13119506835938,
+        "download_and_postprocess_wall_ms": 1.749343,
+        "diagnostic_policy_wall_ms": 242.509441
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 10,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 9.378016,
+        "model_wall_ms": 233.141985,
+        "model_cuda_stream_elapsed_ms": 232.95689392089844,
+        "download_and_postprocess_wall_ms": 1.163424,
+        "diagnostic_policy_wall_ms": 243.683425
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 11,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 10.974615,
+        "model_wall_ms": 234.40407,
+        "model_cuda_stream_elapsed_ms": 234.24403381347656,
+        "download_and_postprocess_wall_ms": 1.349706,
+        "diagnostic_policy_wall_ms": 246.728391
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 12,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.984532,
+        "model_wall_ms": 232.932693,
+        "model_cuda_stream_elapsed_ms": 232.7808380126953,
+        "download_and_postprocess_wall_ms": 0.950196,
+        "diagnostic_policy_wall_ms": 241.867421
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 13,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.951827,
+        "model_wall_ms": 233.202596,
+        "model_cuda_stream_elapsed_ms": 233.01394653320312,
+        "download_and_postprocess_wall_ms": 2.147413,
+        "diagnostic_policy_wall_ms": 243.301836
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 14,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.385523,
+        "model_wall_ms": 235.337433,
+        "model_cuda_stream_elapsed_ms": 235.17794799804688,
+        "download_and_postprocess_wall_ms": 1.113405,
+        "diagnostic_policy_wall_ms": 243.836361
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 15,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.400884,
+        "model_wall_ms": 234.193754,
+        "model_cuda_stream_elapsed_ms": 234.0436553955078,
+        "download_and_postprocess_wall_ms": 0.847918,
+        "diagnostic_policy_wall_ms": 242.442556
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 16,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.66067,
+        "model_wall_ms": 233.688767,
+        "model_cuda_stream_elapsed_ms": 233.5155792236328,
+        "download_and_postprocess_wall_ms": 0.828237,
+        "diagnostic_policy_wall_ms": 239.177674
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 17,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.674047,
+        "model_wall_ms": 235.307543,
+        "model_cuda_stream_elapsed_ms": 235.16531372070312,
+        "download_and_postprocess_wall_ms": 0.793164,
+        "diagnostic_policy_wall_ms": 240.774754
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 18,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.68719,
+        "model_wall_ms": 233.970702,
+        "model_cuda_stream_elapsed_ms": 233.3423309326172,
+        "download_and_postprocess_wall_ms": 2.121332,
+        "diagnostic_policy_wall_ms": 241.779224
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 19,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 9.556458,
+        "model_wall_ms": 233.578776,
+        "model_cuda_stream_elapsed_ms": 233.4264678955078,
+        "download_and_postprocess_wall_ms": 0.965429,
+        "diagnostic_policy_wall_ms": 244.100663
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 20,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.076213,
+        "model_wall_ms": 234.019505,
+        "model_cuda_stream_elapsed_ms": 233.83465576171875,
+        "download_and_postprocess_wall_ms": 1.126461,
+        "diagnostic_policy_wall_ms": 240.222179
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 21,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 11.665566,
+        "model_wall_ms": 233.028954,
+        "model_cuda_stream_elapsed_ms": 232.84375,
+        "download_and_postprocess_wall_ms": 1.212546,
+        "diagnostic_policy_wall_ms": 245.907066
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 22,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 15.368424,
+        "model_wall_ms": 233.3563,
+        "model_cuda_stream_elapsed_ms": 233.19247436523438,
+        "download_and_postprocess_wall_ms": 0.977685,
+        "diagnostic_policy_wall_ms": 249.702409
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 23,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.523918,
+        "model_wall_ms": 234.313408,
+        "model_cuda_stream_elapsed_ms": 234.16893005371094,
+        "download_and_postprocess_wall_ms": 0.899666,
+        "diagnostic_policy_wall_ms": 240.736992
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 24,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 5.687831,
+        "model_wall_ms": 233.018169,
+        "model_cuda_stream_elapsed_ms": 232.8686065673828,
+        "download_and_postprocess_wall_ms": 0.993975,
+        "diagnostic_policy_wall_ms": 239.699975
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 25,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.856937,
+        "model_wall_ms": 233.343084,
+        "model_cuda_stream_elapsed_ms": 233.18460083007812,
+        "download_and_postprocess_wall_ms": 1.066234,
+        "diagnostic_policy_wall_ms": 239.266255
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 26,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.068798,
+        "model_wall_ms": 234.23782,
+        "model_cuda_stream_elapsed_ms": 234.07171630859375,
+        "download_and_postprocess_wall_ms": 1.094108,
+        "diagnostic_policy_wall_ms": 239.400726
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 27,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 7.743911,
+        "model_wall_ms": 233.309385,
+        "model_cuda_stream_elapsed_ms": 232.9664306640625,
+        "download_and_postprocess_wall_ms": 0.932275,
+        "diagnostic_policy_wall_ms": 241.985571
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 28,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 6.787123,
+        "model_wall_ms": 233.986478,
+        "model_cuda_stream_elapsed_ms": 233.83824157714844,
+        "download_and_postprocess_wall_ms": 0.87976,
+        "diagnostic_policy_wall_ms": 241.653361
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    },
+    {
+      "sample": 29,
+      "timings": {
+        "input_preparation_and_upload_wall_ms": 4.327468,
+        "model_wall_ms": 234.944578,
+        "model_cuda_stream_elapsed_ms": 234.80838012695312,
+        "download_and_postprocess_wall_ms": 0.807597,
+        "diagnostic_policy_wall_ms": 240.079643
+      },
+      "validation": {
+        "shape": [
+          10,
+          7
+        ],
+        "all_finite": true,
+        "exact_match": true,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0
+      }
+    }
+  ],
+  "interpretation": [
+    "Separate synchronized diagnostic pass, not an untouched production policy measurement.",
+    "Input preparation combines CPU RGB normalization/casts and noise/image transfers; it is not pure H2D.",
+    "Prompt tokenization/embedding is persistent and was prepared before sampling, as in the FlashRT API.",
+    "The original full production graph is replayed; no diagnostic stage graphs participate.",
+    "Output download includes D2D staging, conversion, D2H, quantile unnormalization and seven-dimension slicing.",
+    "CUDA elapsed time includes stream gaps and is not kernel busy time."
+  ]
+}

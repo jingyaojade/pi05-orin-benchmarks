@@ -1,0 +1,19 @@
+cmake==3.31.10
+filelock==4.1.0
+-e file:///home/nvidia/pi05-orin-flashrt/vendor/FlashRT
+fsspec==2026.9.0
+jinja2==3.1.6
+markupsafe==3.0.4
+ml-dtypes==0.4.1
+mpmath==1.3.0
+networkx==3.4.2
+ninja==1.13.2
+numpy==1.26.4
+pillow==12.3.0
+pybind11==3.1.0
+pyyaml==6.0.3
+safetensors==0.8.0
+sentencepiece==0.2.2
+sympy==1.14.0
+torch @ file:///home/nvidia/pi05-orin/downloads/torch-2.3.0a0+6ddf5cf85e.nv24.04.14026654-cp310-cp310-linux_aarch64.whl
+typing-extensions==4.16.0

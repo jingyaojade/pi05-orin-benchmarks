@@ -1,0 +1,56 @@
+2026-10-16T15:04:14+08:00
+11.18 10.93 10.32 8/1466 72881
+               total        used        free      shared  buff/cache   available
+Mem:           62836       11503       31762         756       19569       49929
+Swap:          31418           0       31418
+USER         PID %CPU %MEM     ELAPSED COMMAND
+nvidia     67917 67.8  0.4       21:33 m1_recorder_ser
+nvidia     67941 67.1  0.3       21:33 servo_to_real_m
+nvidia     68395 47.4  0.1       21:30 vr_gripper_to_r
+nvidia     67668 41.8  0.1       21:36 python
+nvidia     67409 38.8  0.3       21:37 streamer
+nvidia     67909 32.9  0.1       21:33 m1_servo
+nvidia     67786 30.9  0.0       21:34 python3
+nvidia     67960 28.1  0.3       21:33 servo_to_real_m
+root        3812 22.9  0.2    03:13:38 AgentServer
+nvidia     67921 22.7  0.0       21:33 m1_ee_pose_adap
+nvidia     67913 20.5  0.1       21:33 m1_go_home
+nvidia     67911 20.4  0.1       21:33 m1_go_home
+nvidia     67933 17.1  0.1       21:33 publish_camera_
+nvidia     67849 17.0  0.0       21:34 python3
+root         722  9.5  0.0    03:13:59 sugov:4
+root         723  9.0  0.0    03:13:59 sugov:8
+root         710  8.7  0.0    03:13:59 sugov:0
+nvidia     68409  8.5  0.0       21:30 ros2_control_no
+nvidia     67915  8.4  0.0       21:33 ros2_control_no
+nvidia     67907  5.9  0.0       21:33 teleop_pipeline
+nvidia     67643  5.6  0.0       21:36 python
+nvidia     67905  3.8  0.0       21:33 component_conta
+root       60790  1.1  0.0       42:39 kworker/u25:5-uvcvideo
+root       64479  1.1  0.0       28:42 kworker/u25:1-uvcvideo
+SOC family:tegra234  Machine:NVIDIA Jetson AGX Orin Developer Kit
+Online CPUs: 0-11
+cpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2112000 IdleStates: WFI=1 c7=1 
+cpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2112000 IdleStates: WFI=1 c7=1 
+cpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu6:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu7:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu8:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu9:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2035200 IdleStates: WFI=1 c7=1 
+cpu10: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2201600 IdleStates: WFI=1 c7=1 
+cpu11: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2112000 IdleStates: WFI=1 c7=1 
+GPU MinFreq=306000000 MaxFreq=1300500000 CurrentFreq=306000000
+EMC MinFreq=204000000 MaxFreq=2133000000 CurrentFreq=2133000000 FreqOverride=1
+DLA0_CORE:   Online=1 MinFreq=0 MaxFreq=1600000000 CurrentFreq=1600000000
+DLA0_FALCON: Online=1 MinFreq=0 MaxFreq=844800000 CurrentFreq=844800000
+DLA1_CORE:   Online=1 MinFreq=0 MaxFreq=1600000000 CurrentFreq=1600000000
+DLA1_FALCON: Online=1 MinFreq=0 MaxFreq=844800000 CurrentFreq=844800000
+PVA0_VPS0: Online=1 MinFreq=0 MaxFreq=1369600000 CurrentFreq=1369600000
+PVA0_AXI:  Online=1 MinFreq=0 MaxFreq=985600000 CurrentFreq=985600000
+FAN Dynamic Speed Control=nvfancontrol hwmon1_pwm1=121
+NV Power Mode: MAXN
+NV Power Mode: MAXN
+0

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "measurement_date": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "routes": [
+    {
+      "id": "baseline",
+      "label": "OpenPI baseline",
+      "kind": "baseline",
+      "status": "runnable",
+      "branch": "main",
+      "latency": "reports/engine-comparison-2026-10-16/baseline-latency",
+      "memory": "reports/engine-comparison-2026-10-16/baseline-memory"
+    },
+    {
+      "id": "flashrt-bf16",
+      "label": "FlashRT BF16",
+      "kind": "flashrt",
+      "status": "runnable",
+      "branch": "flashrt",
+      "latency": "reports/engine-comparison-2026-10-16/flashrt-bf16-latency",
+      "memory": "reports/engine-comparison-2026-10-16/flashrt-bf16-memory",
+      "pipeline": "reports/engine-comparison-2026-10-16/flashrt-bf16-pipeline-latency"
+    },
+    {
+      "id": "flashrt-int8",
+      "label": "FlashRT INT8（实验）",
+      "kind": "flashrt",
+      "status": "numeric_rejected",
+      "branch": "flashrt",
+      "latency": "reports/engine-comparison-2026-10-16/flashrt-int8-latency",
+      "memory": "reports/engine-comparison-2026-10-16/flashrt-int8-memory",
+      "pipeline": "reports/engine-comparison-2026-10-16/flashrt-int8-pipeline-latency",
+      "reason": "同一合成输入下 cosine 0.580660、RMSE 0.415863，动作误差过大，本轮不采用；未设定或声称通过任务级精度门限。"
+    },
+    {
+      "id": "vllm",
+      "label": "vLLM / vLLM-Omni",
+      "kind": "vllm",
+      "status": "blocked",
+      "branch": "vllm",
+      "reason": "官方 Pi05Pipeline 存在，但当前 NVIDIA Torch 2.3 / Python 3.10 与新版本依赖不兼容；Orin 上导入及隔离 resolver dry-run 未进入模型构建。推理延时和模型内存均 N/A。",
+      "evidence": "vllm/results/2026-10-16/compatibility.json"
+    },
+    {
+      "id": "tensorrt-edge-llm",
+      "label": "TensorRT Edge-LLM",
+      "kind": "tensorrt-edge-llm",
+      "status": "blocked",
+      "branch": "tensorrt-edge-llm",
+      "reason": "官方 v0.11.0 原生 π0.5 支持 LIBERO，但本机 TRT 8.6 缺少 >=10.15 所需 API，glibc 2.35 不满足 wheel 2.39；实际包解析和四项 C++ API 探针失败。未执行推理，延时/模型内存 N/A。",
+      "evidence": "tensorrt_edge_llm/results/compatibility-2026-10-16/compatibility.json"
+    }
+  ]
+}

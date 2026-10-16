@@ -1,0 +1,3048 @@
+{
+  "schema_version": 1,
+  "stages": {
+    "backend_load": {
+      "after_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13096624128.0,
+        "min_bytes": 13096624128,
+        "max_bytes": 13096624128
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 7460233216.0,
+        "min_bytes": 7460233216,
+        "max_bytes": 7460233216
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902699008.0,
+        "min_bytes": 6902699008,
+        "max_bytes": 6902699008
+      },
+      "after_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 879297536.0,
+        "min_bytes": 879297536,
+        "max_bytes": 879297536
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 1,
+        "mean_bytes": 12643574272.0,
+        "min_bytes": 12643574272,
+        "max_bytes": 12643574272
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 12643574272.0,
+        "min_bytes": 12643574272,
+        "max_bytes": 12643574272
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12710838272.0,
+        "min_bytes": 12710838272,
+        "max_bytes": 12710838272
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 7440302080.0,
+        "min_bytes": 7440302080,
+        "max_bytes": 7440302080
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 78148501504.0,
+        "min_bytes": 78148501504,
+        "max_bytes": 78148501504
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "before_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 69783322624.0,
+        "min_bytes": 69783322624,
+        "max_bytes": 69783322624
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 21307904000.0,
+        "min_bytes": 21307904000,
+        "max_bytes": 21307904000
+      },
+      "before_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 383066112.0,
+        "min_bytes": 383066112,
+        "max_bytes": 383066112
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12710838272.0,
+        "min_bytes": 12710838272,
+        "max_bytes": 12710838272
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 70976188416.0,
+        "min_bytes": 70976188416,
+        "max_bytes": 70976188416
+      },
+      "after_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 867659776.0,
+        "min_bytes": 867659776,
+        "max_bytes": 867659776
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 12643574272.0,
+        "min_bytes": 12643574272,
+        "max_bytes": 12643574272
+      },
+      "before_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 364777472.0,
+        "min_bytes": 364777472,
+        "max_bytes": 364777472
+      },
+      "before_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "after_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 904101888.0,
+        "min_bytes": 904101888,
+        "max_bytes": 904101888
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 21307904000.0,
+        "min_bytes": 21307904000,
+        "max_bytes": 21307904000
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12710838272.0,
+        "min_bytes": 12710838272,
+        "max_bytes": 12710838272
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 12643574272.0,
+        "min_bytes": 12643574272,
+        "max_bytes": 12643574272
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13096624128.0,
+        "min_bytes": 13096624128,
+        "max_bytes": 13096624128
+      },
+      "before_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "before_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 90021888.0,
+        "min_bytes": 90021888,
+        "max_bytes": 90021888
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 14037516288.0,
+        "min_bytes": 14037516288,
+        "max_bytes": 14037516288
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 44580577280.0,
+        "min_bytes": 44580577280,
+        "max_bytes": 44580577280
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 51850964992.0,
+        "min_bytes": 51850964992,
+        "max_bytes": 51850964992
+      },
+      "after_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 51850964992.0,
+        "min_bytes": 51850964992,
+        "max_bytes": 51850964992
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 383283200.0,
+        "min_bytes": 383283200,
+        "max_bytes": 383283200
+      },
+      "before_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 359591936.0,
+        "min_bytes": 359591936,
+        "max_bytes": 359591936
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 7433474048.0,
+        "min_bytes": 7433474048,
+        "max_bytes": 7433474048
+      },
+      "after_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12710838272.0,
+        "min_bytes": 12710838272,
+        "max_bytes": 12710838272
+      },
+      "after_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902699008.0,
+        "min_bytes": 6902699008,
+        "max_bytes": 6902699008
+      }
+    },
+    "d2h_and_postprocess": {
+      "after_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064419328.0,
+        "min_bytes": 1063505920,
+        "max_bytes": 1064931328
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038595413.3333334,
+        "min_bytes": 1037682688,
+        "max_bytes": 1039106048
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 3,
+        "mean_bytes": 1536.0,
+        "min_bytes": 1536,
+        "max_bytes": 1536
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902729216.0,
+        "min_bytes": 6902729216,
+        "max_bytes": 6902729216
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038595413.3333334,
+        "min_bytes": 1037682688,
+        "max_bytes": 1039106048
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116296021.333332,
+        "min_bytes": 22115491840,
+        "max_bytes": 22117130240
+      },
+      "before_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064398848.0,
+        "min_bytes": 1063501824,
+        "max_bytes": 1064890368
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "after_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025952426.6666666,
+        "min_bytes": 1025040384,
+        "max_bytes": 1026461696
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902729216.0,
+        "min_bytes": 6902729216,
+        "max_bytes": 6902729216
+      },
+      "before_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038574933.3333334,
+        "min_bytes": 1037678592,
+        "max_bytes": 1039065088
+      },
+      "before_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064419328.0,
+        "min_bytes": 1063505920,
+        "max_bytes": 1064931328
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116178602.666668,
+        "min_bytes": 22115139584,
+        "max_bytes": 22117130240
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902729216.0,
+        "min_bytes": 6902729216,
+        "max_bytes": 6902729216
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116296021.333332,
+        "min_bytes": 22115491840,
+        "max_bytes": 22117130240
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772302677.333336,
+        "min_bytes": 43771351040,
+        "max_bytes": 43773341696
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772185258.666664,
+        "min_bytes": 43771351040,
+        "max_bytes": 43772989440
+      },
+      "after_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772302677.333336,
+        "min_bytes": 43771351040,
+        "max_bytes": 43773341696
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025931946.6666666,
+        "min_bytes": 1025036288,
+        "max_bytes": 1026420736
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025952426.6666666,
+        "min_bytes": 1025040384,
+        "max_bytes": 1026461696
+      },
+      "after_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "denoise": {
+      "after_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064368810.6666666,
+        "min_bytes": 1063440384,
+        "max_bytes": 1064886272
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038544896.0,
+        "min_bytes": 1037617152,
+        "max_bytes": 1039060992
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038544896.0,
+        "min_bytes": 1037617152,
+        "max_bytes": 1039060992
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116250965.333332,
+        "min_bytes": 22115487744,
+        "max_bytes": 22116642816
+      },
+      "before_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064366080.0,
+        "min_bytes": 1063436288,
+        "max_bytes": 1064882176
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "after_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025901909.3333334,
+        "min_bytes": 1024974848,
+        "max_bytes": 1026416640
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038542165.3333334,
+        "min_bytes": 1037613056,
+        "max_bytes": 1039056896
+      },
+      "before_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064368810.6666666,
+        "min_bytes": 1063440384,
+        "max_bytes": 1064886272
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116080298.666668,
+        "min_bytes": 22115487744,
+        "max_bytes": 22116614144
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116174506.666668,
+        "min_bytes": 22115258368,
+        "max_bytes": 22116642816
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772400981.333336,
+        "min_bytes": 43771867136,
+        "max_bytes": 43772993536
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772306773.333336,
+        "min_bytes": 43771838464,
+        "max_bytes": 43773222912
+      },
+      "after_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772477440.0,
+        "min_bytes": 43771867136,
+        "max_bytes": 43773222912
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025899178.6666666,
+        "min_bytes": 1024970752,
+        "max_bytes": 1026412544
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025901909.3333334,
+        "min_bytes": 1024974848,
+        "max_bytes": 1026416640
+      },
+      "after_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "diagnostic_graph_capture": {
+      "after_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 1063018496.0,
+        "min_bytes": 1063018496,
+        "max_bytes": 1063018496
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 1037195264.0,
+        "min_bytes": 1037195264,
+        "max_bytes": 1037195264
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 1037195264.0,
+        "min_bytes": 1037195264,
+        "max_bytes": 1037195264
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 71285579776.0,
+        "min_bytes": 71285579776,
+        "max_bytes": 71285579776
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 22113619968.0,
+        "min_bytes": 22113619968,
+        "max_bytes": 22113619968
+      },
+      "before_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 1060864000.0,
+        "min_bytes": 1060864000,
+        "max_bytes": 1060864000
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "after_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 1024552960.0,
+        "min_bytes": 1024552960,
+        "max_bytes": 1024552960
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 1035040768.0,
+        "min_bytes": 1035040768,
+        "max_bytes": 1035040768
+      },
+      "before_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 1063018496.0,
+        "min_bytes": 1063018496,
+        "max_bytes": 1063018496
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 22113619968.0,
+        "min_bytes": 22113619968,
+        "max_bytes": 22113619968
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13728784384.0,
+        "min_bytes": 13728784384,
+        "max_bytes": 13728784384
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 22072541184.0,
+        "min_bytes": 22072541184,
+        "max_bytes": 22072541184
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 43774861312.0,
+        "min_bytes": 43774861312,
+        "max_bytes": 43774861312
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 43815940096.0,
+        "min_bytes": 43815940096,
+        "max_bytes": 43815940096
+      },
+      "after_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 43815940096.0,
+        "min_bytes": 43815940096,
+        "max_bytes": 43815940096
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 1022398464.0,
+        "min_bytes": 1022398464,
+        "max_bytes": 1022398464
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 1024552960.0,
+        "min_bytes": 1024552960,
+        "max_bytes": 1024552960
+      },
+      "after_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "input_prepare_and_staging": {
+      "after_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064286890.6666666,
+        "min_bytes": 1063317504,
+        "max_bytes": 1064828928
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038462976.0,
+        "min_bytes": 1037494272,
+        "max_bytes": 1039003648
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 3,
+        "mean_bytes": 1024.0,
+        "min_bytes": 1024,
+        "max_bytes": 1024
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902728704.0,
+        "min_bytes": 6902728704,
+        "max_bytes": 6902728704
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038462976.0,
+        "min_bytes": 1037494272,
+        "max_bytes": 1039003648
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22115857749.333332,
+        "min_bytes": 22115168256,
+        "max_bytes": 22116782080
+      },
+      "before_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1063789909.3333334,
+        "min_bytes": 1063034880,
+        "max_bytes": 1064824832
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "after_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025819989.3333334,
+        "min_bytes": 1024851968,
+        "max_bytes": 1026359296
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902728704.0,
+        "min_bytes": 6902728704,
+        "max_bytes": 6902728704
+      },
+      "before_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1037966677.3333334,
+        "min_bytes": 1037211648,
+        "max_bytes": 1039001600
+      },
+      "before_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064286890.6666666,
+        "min_bytes": 1063317504,
+        "max_bytes": 1064828928
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22115853653.333332,
+        "min_bytes": 22115168256,
+        "max_bytes": 22116773888
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902728704.0,
+        "min_bytes": 6902728704,
+        "max_bytes": 6902728704
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22115685717.333332,
+        "min_bytes": 22114652160,
+        "max_bytes": 22116782080
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772627626.666664,
+        "min_bytes": 43771707392,
+        "max_bytes": 43773313024
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772795562.666664,
+        "min_bytes": 43771699200,
+        "max_bytes": 43773829120
+      },
+      "after_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772799658.666664,
+        "min_bytes": 43771707392,
+        "max_bytes": 43773829120
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025324373.3333334,
+        "min_bytes": 1024569344,
+        "max_bytes": 1026359296
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025819989.3333334,
+        "min_bytes": 1024851968,
+        "max_bytes": 1026359296
+      },
+      "after_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "model_total": {
+      "after_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13728784384.0,
+        "min_bytes": 13728784384,
+        "max_bytes": 13728784384
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1060782080.0,
+        "min_bytes": 1060704256,
+        "max_bytes": 1060827136
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1034958848.0,
+        "min_bytes": 1034881024,
+        "max_bytes": 1035003904
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1034958848.0,
+        "min_bytes": 1034881024,
+        "max_bytes": 1035003904
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71285579776.0,
+        "min_bytes": 71285579776,
+        "max_bytes": 71285579776
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71285579776.0,
+        "min_bytes": 71285579776,
+        "max_bytes": 71285579776
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22071634602.666668,
+        "min_bytes": 22070620160,
+        "max_bytes": 22072365056
+      },
+      "before_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1060758869.3333334,
+        "min_bytes": 1060687872,
+        "max_bytes": 1060823040
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71285579776.0,
+        "min_bytes": 71285579776,
+        "max_bytes": 71285579776
+      },
+      "after_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1022316544.0,
+        "min_bytes": 1022238720,
+        "max_bytes": 1022361600
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1034935637.3333334,
+        "min_bytes": 1034864640,
+        "max_bytes": 1034999808
+      },
+      "before_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1060782080.0,
+        "min_bytes": 1060704256,
+        "max_bytes": 1060827136
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22071571797.333332,
+        "min_bytes": 22070620160,
+        "max_bytes": 22072176640
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13728784384.0,
+        "min_bytes": 13728784384,
+        "max_bytes": 13728784384
+      },
+      "before_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13728784384.0,
+        "min_bytes": 13728784384,
+        "max_bytes": 13728784384
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22071020202.666668,
+        "min_bytes": 22069678080,
+        "max_bytes": 22072365056
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43816909482.666664,
+        "min_bytes": 43816304640,
+        "max_bytes": 43817861120
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43817461077.333336,
+        "min_bytes": 43816116224,
+        "max_bytes": 43818803200
+      },
+      "after_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43817523882.666664,
+        "min_bytes": 43816304640,
+        "max_bytes": 43818803200
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1022293333.3333334,
+        "min_bytes": 1022222336,
+        "max_bytes": 1022357504
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1022316544.0,
+        "min_bytes": 1022238720,
+        "max_bytes": 1022361600
+      },
+      "after_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "prefill": {
+      "after_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064363349.3333334,
+        "min_bytes": 1063436288,
+        "max_bytes": 1064878080
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038539434.6666666,
+        "min_bytes": 1037613056,
+        "max_bytes": 1039052800
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038539434.6666666,
+        "min_bytes": 1037613056,
+        "max_bytes": 1039052800
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116451669.333332,
+        "min_bytes": 22116089856,
+        "max_bytes": 22116642816
+      },
+      "before_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064361984.0,
+        "min_bytes": 1063432192,
+        "max_bytes": 1064878080
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "after_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025896448.0,
+        "min_bytes": 1024970752,
+        "max_bytes": 1026408448
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038538069.3333334,
+        "min_bytes": 1037608960,
+        "max_bytes": 1039052800
+      },
+      "before_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064363349.3333334,
+        "min_bytes": 1063436288,
+        "max_bytes": 1064878080
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116174506.666668,
+        "min_bytes": 22115258368,
+        "max_bytes": 22116642816
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116373845.333332,
+        "min_bytes": 22116089856,
+        "max_bytes": 22116618240
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772306773.333336,
+        "min_bytes": 43771838464,
+        "max_bytes": 43773222912
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772107434.666664,
+        "min_bytes": 43771863040,
+        "max_bytes": 43772391424
+      },
+      "after_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772384597.333336,
+        "min_bytes": 43771863040,
+        "max_bytes": 43773222912
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025895082.6666666,
+        "min_bytes": 1024966656,
+        "max_bytes": 1026408448
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025896448.0,
+        "min_bytes": 1024970752,
+        "max_bytes": 1026408448
+      },
+      "after_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "prepare_and_capture": {
+      "after_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13728784384.0,
+        "min_bytes": 13728784384,
+        "max_bytes": 13728784384
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 1058435072.0,
+        "min_bytes": 1058435072,
+        "max_bytes": 1058435072
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 1032611840.0,
+        "min_bytes": 1032611840,
+        "max_bytes": 1032611840
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 1,
+        "mean_bytes": 1835008.0,
+        "min_bytes": 1835008,
+        "max_bytes": 1835008
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6904534016.0,
+        "min_bytes": 6904534016,
+        "max_bytes": 6904534016
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 1032611840.0,
+        "min_bytes": 1032611840,
+        "max_bytes": 1032611840
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 71286894592.0,
+        "min_bytes": 71286894592,
+        "max_bytes": 71286894592
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902699008.0,
+        "min_bytes": 6902699008,
+        "max_bytes": 6902699008
+      },
+      "before_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 70976188416.0,
+        "min_bytes": 70976188416,
+        "max_bytes": 70976188416
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 22072438784.0,
+        "min_bytes": 22072438784,
+        "max_bytes": 22072438784
+      },
+      "before_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 904167424.0,
+        "min_bytes": 904167424,
+        "max_bytes": 904167424
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 1,
+        "mean_bytes": 71285579776.0,
+        "min_bytes": 71285579776,
+        "max_bytes": 71285579776
+      },
+      "after_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 1019969536.0,
+        "min_bytes": 1019969536,
+        "max_bytes": 1019969536
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6904534016.0,
+        "min_bytes": 6904534016,
+        "max_bytes": 6904534016
+      },
+      "before_process_pss_bytes": {
+        "n": 1,
+        "mean_bytes": 879363072.0,
+        "min_bytes": 879363072,
+        "max_bytes": 879363072
+      },
+      "before_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902699008.0,
+        "min_bytes": 6902699008,
+        "max_bytes": 6902699008
+      },
+      "after_process_rss_bytes": {
+        "n": 1,
+        "mean_bytes": 1058435072.0,
+        "min_bytes": 1058435072,
+        "max_bytes": 1058435072
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 22072438784.0,
+        "min_bytes": 22072438784,
+        "max_bytes": 22072438784
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 1,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6904534016.0,
+        "min_bytes": 6904534016,
+        "max_bytes": 6904534016
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13728784384.0,
+        "min_bytes": 13728784384,
+        "max_bytes": 13728784384
+      },
+      "before_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12710838272.0,
+        "min_bytes": 12710838272,
+        "max_bytes": 12710838272
+      },
+      "before_nvmap_self_bytes": {
+        "n": 1,
+        "mean_bytes": 13096624128.0,
+        "min_bytes": 13096624128,
+        "max_bytes": 13096624128
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12710838272.0,
+        "min_bytes": 12710838272,
+        "max_bytes": 12710838272
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 1,
+        "mean_bytes": 21308936192.0,
+        "min_bytes": 21308936192,
+        "max_bytes": 21308936192
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 43816042496.0,
+        "min_bytes": 43816042496,
+        "max_bytes": 43816042496
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 44579545088.0,
+        "min_bytes": 44579545088,
+        "max_bytes": 44579545088
+      },
+      "after_process_swap_bytes": {
+        "n": 1,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 1,
+        "mean_bytes": 44579545088.0,
+        "min_bytes": 44579545088,
+        "max_bytes": 44579545088
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 1,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 867725312.0,
+        "min_bytes": 867725312,
+        "max_bytes": 867725312
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 1,
+        "mean_bytes": 1019969536.0,
+        "min_bytes": 1019969536,
+        "max_bytes": 1019969536
+      },
+      "after_torch_reserved_bytes": {
+        "n": 1,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 1,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    },
+    "vision": {
+      "after_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "max_observed_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064349696.0,
+        "min_bytes": 1063428096,
+        "max_bytes": 1064853504
+      },
+      "max_observed_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "max_observed_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038525781.3333334,
+        "min_bytes": 1037604864,
+        "max_bytes": 1039028224
+      },
+      "torch_peak_above_start_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "max_observed_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038525781.3333334,
+        "min_bytes": 1037604864,
+        "max_bytes": 1039028224
+      },
+      "max_observed_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "before_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "max_observed_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116163584.0,
+        "min_bytes": 22115164160,
+        "max_bytes": 22117249024
+      },
+      "before_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064303274.6666666,
+        "min_bytes": 1063362560,
+        "max_bytes": 1064828928
+      },
+      "max_observed_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_process_virtual_bytes": {
+        "n": 3,
+        "mean_bytes": 71286628352.0,
+        "min_bytes": 71286628352,
+        "max_bytes": 71286628352
+      },
+      "after_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025882794.6666666,
+        "min_bytes": 1024962560,
+        "max_bytes": 1026383872
+      },
+      "torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "before_process_pss_bytes": {
+        "n": 3,
+        "mean_bytes": 1038479360.0,
+        "min_bytes": 1037539328,
+        "max_bytes": 1039003648
+      },
+      "before_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "after_process_rss_bytes": {
+        "n": 3,
+        "mean_bytes": 1064349696.0,
+        "min_bytes": 1063428096,
+        "max_bytes": 1064853504
+      },
+      "after_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22115833173.333332,
+        "min_bytes": 22114803712,
+        "max_bytes": 22116618240
+      },
+      "max_observed_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_total_bytes": {
+        "n": 3,
+        "mean_bytes": 65888481280.0,
+        "min_bytes": 65888481280,
+        "max_bytes": 65888481280
+      },
+      "after_torch_peak_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      },
+      "max_observed_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_nvmap_self_bytes": {
+        "n": 3,
+        "mean_bytes": 13766533120.0,
+        "min_bytes": 13766533120,
+        "max_bytes": 13766533120
+      },
+      "before_torch_peak_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "before_cuda_device_used_bytes": {
+        "n": 3,
+        "mean_bytes": 22116163584.0,
+        "min_bytes": 22115164160,
+        "max_bytes": 22117249024
+      },
+      "after_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772648106.666664,
+        "min_bytes": 43771863040,
+        "max_bytes": 43773677568
+      },
+      "before_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772317696.0,
+        "min_bytes": 43771232256,
+        "max_bytes": 43773317120
+      },
+      "after_process_swap_bytes": {
+        "n": 3,
+        "mean_bytes": 0.0,
+        "min_bytes": 0,
+        "max_bytes": 0
+      },
+      "max_observed_cuda_device_free_bytes": {
+        "n": 3,
+        "mean_bytes": 43772648106.666664,
+        "min_bytes": 43771863040,
+        "max_bytes": 43773677568
+      },
+      "before_process_lifetime_rss_high_watermark_bytes": {
+        "n": 3,
+        "mean_bytes": 7512199168.0,
+        "min_bytes": 7512199168,
+        "max_bytes": 7512199168
+      },
+      "before_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025836373.3333334,
+        "min_bytes": 1024897024,
+        "max_bytes": 1026359296
+      },
+      "max_observed_process_uss_bytes": {
+        "n": 3,
+        "mean_bytes": 1025882794.6666666,
+        "min_bytes": 1024962560,
+        "max_bytes": 1026383872
+      },
+      "after_torch_reserved_bytes": {
+        "n": 3,
+        "mean_bytes": 12712935424.0,
+        "min_bytes": 12712935424,
+        "max_bytes": 12712935424
+      },
+      "after_torch_allocated_bytes": {
+        "n": 3,
+        "mean_bytes": 6902727680.0,
+        "min_bytes": 6902727680,
+        "max_bytes": 6902727680
+      }
+    }
+  },
+  "checkpoints": [
+    {
+      "label": "python_before_numpy_torch_import",
+      "process_rss_bytes": 16334848,
+      "process_pss_bytes": 7666688,
+      "process_uss_bytes": 7438336,
+      "process_lifetime_rss_high_watermark_bytes": 16015360,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 30367744,
+      "nvmap_self_bytes": 0
+    },
+    {
+      "label": "cuda_initialized_before_backend_load",
+      "process_rss_bytes": 382115840,
+      "process_pss_bytes": 363827200,
+      "process_uss_bytes": 358641664,
+      "process_lifetime_rss_high_watermark_bytes": 381870080,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 69781835776,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0,
+      "torch_peak_allocated_bytes": 0,
+      "torch_peak_reserved_bytes": 0,
+      "cuda_device_used_bytes": 14036484096,
+      "cuda_device_free_bytes": 51851997184,
+      "cuda_device_total_bytes": 65888481280,
+      "nvmap_self_bytes": 90021888
+    },
+    {
+      "label": "backend_loaded_before_prepare",
+      "process_rss_bytes": 904159232,
+      "process_pss_bytes": 879354880,
+      "process_uss_bytes": 867717120,
+      "process_lifetime_rss_high_watermark_bytes": 7512199168,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 70976188416,
+      "torch_allocated_bytes": 6902699008,
+      "torch_reserved_bytes": 12710838272,
+      "torch_peak_allocated_bytes": 12643574272,
+      "torch_peak_reserved_bytes": 12710838272,
+      "cuda_device_used_bytes": 21308936192,
+      "cuda_device_free_bytes": 44579545088,
+      "cuda_device_total_bytes": 65888481280,
+      "nvmap_self_bytes": 13096624128
+    },
+    {
+      "label": "backend_loaded_and_production_graph_captured",
+      "process_rss_bytes": 1058455552,
+      "process_pss_bytes": 1032632320,
+      "process_uss_bytes": 1019990016,
+      "process_lifetime_rss_high_watermark_bytes": 7512199168,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 71285579776,
+      "torch_allocated_bytes": 6902727680,
+      "torch_reserved_bytes": 12712935424,
+      "torch_peak_allocated_bytes": 6904534016,
+      "torch_peak_reserved_bytes": 12712935424,
+      "cuda_device_used_bytes": 22072438784,
+      "cuda_device_free_bytes": 43816042496,
+      "cuda_device_total_bytes": 65888481280,
+      "nvmap_self_bytes": 13728784384
+    },
+    {
+      "label": "steady_state_after_warmup",
+      "process_rss_bytes": 1060659200,
+      "process_pss_bytes": 1034835968,
+      "process_uss_bytes": 1022193664,
+      "process_lifetime_rss_high_watermark_bytes": 7512199168,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 71285579776,
+      "torch_allocated_bytes": 6902727680,
+      "torch_reserved_bytes": 12712935424,
+      "torch_peak_allocated_bytes": 6904534016,
+      "torch_peak_reserved_bytes": 12712935424,
+      "cuda_device_used_bytes": 22069334016,
+      "cuda_device_free_bytes": 43819147264,
+      "cuda_device_total_bytes": 65888481280,
+      "nvmap_self_bytes": 13728784384
+    },
+    {
+      "label": "diagnostic_graphs_captured",
+      "process_rss_bytes": 1063030784,
+      "process_pss_bytes": 1037207552,
+      "process_uss_bytes": 1024565248,
+      "process_lifetime_rss_high_watermark_bytes": 7512199168,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 71286628352,
+      "torch_allocated_bytes": 6902727680,
+      "torch_reserved_bytes": 12712935424,
+      "torch_peak_allocated_bytes": 6902727680,
+      "torch_peak_reserved_bytes": 12712935424,
+      "cuda_device_used_bytes": 22114652160,
+      "cuda_device_free_bytes": 43773829120,
+      "cuda_device_total_bytes": 65888481280,
+      "nvmap_self_bytes": 13766533120
+    },
+    {
+      "label": "after_memory_passes",
+      "process_rss_bytes": 1064935424,
+      "process_pss_bytes": 1039110144,
+      "process_uss_bytes": 1026465792,
+      "process_lifetime_rss_high_watermark_bytes": 7512199168,
+      "process_swap_bytes": 0,
+      "process_virtual_bytes": 71286628352,
+      "torch_allocated_bytes": 6902727680,
+      "torch_reserved_bytes": 12712935424,
+      "torch_peak_allocated_bytes": 6902729216,
+      "torch_peak_reserved_bytes": 12712935424,
+      "cuda_device_used_bytes": 22117023744,
+      "cuda_device_free_bytes": 43771457536,
+      "cuda_device_total_bytes": 65888481280,
+      "nvmap_self_bytes": 13766533120
+    }
+  ],
+  "metadata": {
+    "backend": "flashrt",
+    "precision": "bf16",
+    "created_utc": "2026-10-16T07:09:30.298165+00:00",
+    "pid": 76435,
+    "iterations": 3,
+    "warmup": 5,
+    "sample_interval_seconds": 0.1,
+    "fixture": "/home/nvidia/pi05-orin-benchmarks/reports/engine-comparison-2026-10-16/baseline-latency/fixed_inputs.npz",
+    "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd",
+    "reference": "/home/nvidia/pi05-orin-benchmarks/reports/engine-comparison-2026-10-16/baseline-latency/reference_actions.npy",
+    "reference_sha256": "8263e6fa13339b4268d6b8a1e031816353603994c558f139a2e085df5c1d7faa",
+    "checkpoint": "/home/nvidia/pi05-orin/models/pi05_libero",
+    "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04",
+    "torch_cuda_build": "12.2",
+    "python": "3.10.12",
+    "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.35",
+    "gpu": "Orin",
+    "profiler_hashes": {
+      "memory.py": "86779151f7bff1c246b0407c9d7780140f371babb780bbadcfbddde287259bf2",
+      "memory_common.py": "daf156b35d38c4c2945a879e1a6b33644a1ce741cff6e51cc2cda742de33bb61"
+    },
+    "caveats": [
+      "Memory-only pass with synchronizations, peak resets and /proc/nvmap polling; its duration is not a latency benchmark.",
+      "Jetson unified-memory accounting domains overlap. Never sum process RSS/PSS/USS with nvmap or CUDA device used bytes.",
+      "RSS/PSS/USS are process host mappings (USS=Private_Clean+Private_Dirty); VmHWM is a process-lifetime RSS high-water mark.",
+      "nvmap self_bytes sums all debugfs clients for this PID; it includes driver-accounted allocations, not a disjoint physical-memory total.",
+      "Torch peaks are exact only for the Torch caching allocator; FlashRT cudaMalloc buffers, graph internals and libraries can be outside it.",
+      "cudaMemGetInfo used bytes cover the entire device, including other processes; changes are not exact per-process allocations.",
+      "max_observed process/nvmap values are sampled maxima or synchronized endpoints, hence lower bounds on transient peaks; no kernel allocation tracing is claimed.",
+      "Stage before/after memory includes persistent weights/KV/scratch allocations shared by stages; stage values cannot be added.",
+      "Model-total peak and detailed-stage peaks use separate passes; stage peak resets never occur inside the model-total pass.",
+      "FlashRT vision/prefill/denoise stage memory replays diagnostic graphs sharing persistent arenas; the production graph is measured separately first.",
+      "FlashRT input_prepare_and_staging combines CPU image/noise conversion and H2D/D2D staging from the unchanged frontend; no artificial CPU-only split.",
+      "Profiler bookkeeping and sampling threads consume some host memory; all values include the profiler process overhead."
+    ],
+    "source": {
+      "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+      "source_patch": {
+        "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+        "files": {
+          "flash_rt/frontends/torch/pi05_rtx.py": {
+            "upstream_sha256_lf": "5ecb7cb7b6dc60b8c1115d8aaaf09f520507a4402958a250664cd30f2f82ce42",
+            "patched_sha256_lf": "7900d753e4f1fb3f32fffaa5ad64e00a72dc9cd7ce3deb40a8a6fe40a3e93edb"
+          },
+          "flash_rt/models/pi05/pipeline_rtx.py": {
+            "upstream_sha256_lf": "de60a1f629195ed4336956afd0f47a1bdefef940c37877539f1f3cfab657ce37",
+            "patched_sha256_lf": "2135e8b21558cf26907784042cf5074d69bb9d1d3de82967cdb14e74c848d4ce"
+          },
+          "flash_rt/hardware/rtx/attn_backend.py": {
+            "upstream_sha256_lf": "aa5d78321d7b941c85e1581034d449149bf48799fe1aec2e15d1ff44fd65cff0",
+            "patched_sha256_lf": "4322877c876dcf043842fbcca4387c50764a8fc21c15efd95f70735c0bf96a56"
+          }
+        },
+        "patch_sha256": "ee55750fa7742e84cfb80fd8441f3e8c31f16a325327d157b33a0d6b7bc96372"
+      },
+      "tokenizer": {
+        "implementation": "standalone OpenPI-compatible no-state SentencePiece",
+        "model_path": "/home/nvidia/pi05-orin/cache/big_vision/paligemma_tokenizer.model",
+        "model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+        "serialized_model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+        "max_len": 200,
+        "state_in_prompt": false,
+        "prompt": "pick up the black bowl",
+        "cleaned_prompt": "pick up the black bowl",
+        "token_ids": [
+          2,
+          18075,
+          908,
+          573,
+          2656,
+          14581,
+          108,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "token_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "valid_token_ids": [
+          2,
+          18075,
+          908,
+          573,
+          2656,
+          14581,
+          108
+        ],
+        "valid_token_count": 7
+      }
+    },
+    "validation": {
+      "against_saved_baseline": {
+        "exact_match": false,
+        "rmse": 0.009123003779329368,
+        "max_abs": 0.03948429839634904,
+        "cosine": 0.9997613530570066
+      },
+      "passes": [
+        {
+          "exact_match": true,
+          "rmse": 0.0,
+          "max_abs": 0.0,
+          "cosine": 1.0
+        },
+        {
+          "exact_match": true,
+          "rmse": 0.0,
+          "max_abs": 0.0,
+          "cosine": 1.0
+        },
+        {
+          "exact_match": true,
+          "rmse": 0.0,
+          "max_abs": 0.0,
+          "cosine": 1.0
+        },
+        {
+          "exact_match": true,
+          "rmse": 0.0,
+          "max_abs": 0.0,
+          "cosine": 1.0
+        },
+        {
+          "exact_match": true,
+          "rmse": 0.0,
+          "max_abs": 0.0,
+          "cosine": 1.0
+        },
+        {
+          "exact_match": true,
+          "rmse": 0.0,
+          "max_abs": 0.0,
+          "cosine": 1.0
+        }
+      ],
+      "production_graph_restoration": {
+        "exact_match": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "cosine": 1.0
+      }
+    },
+    "completed": true
+  }
+}
