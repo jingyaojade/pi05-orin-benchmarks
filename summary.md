@@ -617,3 +617,49 @@ Qwen独立进程8082；`runtime.py`管理自己创建的子进程，不触及宿
 设备内存、RSS及主机MemAvailable不可相加；设备报告功耗不能直接当成Orin三轨合计或整机AC功耗。
 跨平台应先比较Orin PyTorch与Thor PyTorch；比较Thor PyTorch和Orin FlashRT会混入后端差异。
 已通过5项CPU检查、Python编译和shell语法检查，验证边界见[准备记录](containers/validation_2026-10-20.md)。
+
+## 16. Linux NVIDIA RTX源码构建包（2026-10-20）
+
+用户补充目标可能为Linux RTX4090/5090。新增独立目录[containers/nvidia](containers/nvidia/README.md)，
+分支`docker-nvidia`；保留`docker-thor`提交及原Thor归档。
+本地没有Docker，也没有可验收的RTX机器，交付源码和验收入口；没有构建镜像或新性能数字。
+
+### 16.1 构建路线
+
+CPU为x86_64，llama.cpp默认编译SM89和SM120，可通过CUDA_ARCHITECTURES仅选其中一种。
+固定候选NGC PyTorch25.03为CUDA12.8.1/Python3.12/Torch2.7.0a0，保留NGC Torch；
+宿主需要适配实际显卡的R570或更新驱动、Docker和NVIDIA Container Toolkit。
+版本与限制依据见[官方发布说明](https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-25-03.html)，
+架构见[计算能力表](https://developer.nvidia.com/cuda/gpus)。
+build.sh检查Linux/x86_64、解析基础tag到digest、记录inspect，将源码commit写入镜像。
+Dockerfile隔离venv、复用原OpenPI依赖及固定transformers_replace，固定OpenPI/llama.cpp commit，
+只为RTX重新编译llama.cpp，不复用Jetson二进制；保存完整pip freeze、源码SHA。
+实际完整依赖锁和镜像验收仍待真实构建，范围依赖与基础tag不是逐字节可复现承诺。
+
+模型固定五个资产SHA及原fixture/noise，与Thor/Orin一致，独立只读挂载。
+VLA是OpenPI PyTorch BF16/10轮去噪，VLM是Qwen3.5-9B Q5_K_M/FP16 vision，继续双进程。
+FlashRT原SM87断言不改，没有通过更改架构检查冒充RTX移植；RTX PyTorch与Orin FlashRT不可作为纯硬件对比。
+
+### 16.2 设备分配与进程
+
+公共device_config.py负责VLA_GPU/VLM_GPU选择，默认0/0，同卡双进程；0/1为各模型独占所选卡。
+选择是父进程可见集合的逻辑序号；父CUDA_VISIBLE_DEVICES存在时重映射到对应设备token/UUID，
+每个模型子进程只暴露一张卡，内部统一cuda:0。run.sh默认暴露全部GPU，明确不继承宿主CUDA过滤。
+doctor检查所有实际选择的卡、编译架构、显存总量、UUID及真实BF16矩阵乘法；
+测量启动前用短命子进程执行doctor并退出，使监督进程不为探针常驻CUDA上下文。
+自己的服务子进程由runtime管理，不控制宿主systemd、功耗、时钟或其他容器。
+双卡不做模型内部切分，不假定NVLink，不保证完全无CPU/PCIe等共享干扰。
+
+### 16.3 测量、遥测与交付
+
+依次doctor、verify-assets、smoke、baseline、benchmark；默认工作负载与Thor候选一致。
+baseline单独记录内部vision/prefix/action层计时，组合服务记录上传前后/模型整体/Qwen首字及prefill/decode。
+组合测试含双常驻空闲、仅VLA活动、仅VLM活动、饱和并发、目标2Hz/0.2Hz周期，报告实际完成率。
+同实例固定noise的VLA输出逐元素核对，跨架构误差单独记录；接口检查不代表机器人任务成功率。
+
+GPU监控改为按UUID分组，逐卡保存显存/温度/设备功耗/活跃率，避免只统计第一张或合并两张。
+自己进程RSS/PSS、Torch allocator和主机可用内存分开保留；独显VRAM不能与Orin统一内存直接等同。
+设备W不是整机AC功率或Orin三轨总和，N/A保留，1Hz峰值是观测下界。
+GPU环境和绑定、逐请求、服务日志及原始遥测供后续核对，失败保留completed:false。
+只有目标设备真实通过后才能产生RTX性能结论和docker save镜像；当前源码归档不含权重或凭据。
+准备检查见[记录](containers/nvidia/validation_2026-10-20.md)；源码打包工具增加--target nvidia并记录入口文档。

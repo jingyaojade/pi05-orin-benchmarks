@@ -18,6 +18,7 @@ FIXTURE = ROOT/'reports/engine-comparison-2026-10-16/baseline-latency/fixed_inpu
 sys.path.insert(0, str(ROOT/'dual_stack'))
 from clients import request_json
 from assets import digest, verify
+from device_config import profile, pins_path, bindings, child_environment
 
 
 def prepare_assets(root):
@@ -32,24 +33,45 @@ def prepare_assets(root):
 
 def doctor():
     import torch
+    target=profile(); assigned=bindings()
     data = {'utc': datetime.now(timezone.utc).isoformat(), 'machine': platform.machine(),
             'python': sys.version, 'torch': torch.__version__, 'cuda_build': torch.version.cuda,
             'benchmark_commit': os.environ.get('BENCHMARK_COMMIT'),
-            'pins': json.loads((ROOT/'containers/pins.json').read_text()),
+            'profile':target,'pins':json.loads(pins_path().read_text()),'gpu_bindings':assigned,
             'gpu_validation': False}
-    if platform.machine() != 'aarch64' or not torch.cuda.is_available():
-        raise RuntimeError('This candidate requires aarch64 Thor with working NVIDIA GPU runtime')
-    capability = torch.cuda.get_device_capability(0)
-    if capability != (11, 0):
-        raise RuntimeError('Thor candidate expects SM110, got '+str(capability))
-    a = torch.randn((128, 128), device='cuda', dtype=torch.bfloat16)
-    b = a @ a.T
-    torch.cuda.synchronize()
-    if not torch.isfinite(b).all().item():
-        raise RuntimeError('BF16 CUDA smoke failed')
-    data.update(gpu_validation=True, gpu=torch.cuda.get_device_name(0), capability=list(capability),
-                memory_total_bytes=torch.cuda.get_device_properties(0).total_memory)
+    expected_machine='x86_64' if target=='nvidia' else 'aarch64'
+    if platform.machine()!=expected_machine or not torch.cuda.is_available():
+        raise RuntimeError('This profile requires '+expected_machine+' with working NVIDIA GPU runtime')
+    codes=os.environ.get('BENCHMARK_CUDA_ARCHITECTURES','89;120' if target=='nvidia' else '110')
+    allowed={int(code) for code in codes.split(';')};data['compiled_cuda_architectures']=sorted(allowed)
+    devices={}
+    for index in sorted({value['visible_ordinal'] for value in assigned.values()}):
+        if index>=torch.cuda.device_count():raise ValueError('Selected GPU ordinal is not visible: '+str(index))
+        capability=torch.cuda.get_device_capability(index)
+        if capability[0]*10+capability[1] not in allowed:
+            raise RuntimeError('Selected GPU SM'+str(capability)+' is outside compiled targets '+codes)
+        with torch.cuda.device(index):
+            a=torch.randn((128,128),device='cuda:'+str(index),dtype=torch.bfloat16)
+            b=a@a.T;torch.cuda.synchronize(index)
+            if not torch.isfinite(b).all().item():raise RuntimeError('BF16 CUDA smoke failed on '+str(index))
+            props=torch.cuda.get_device_properties(index)
+            devices[str(index)]={'name':torch.cuda.get_device_name(index),'capability':list(capability),
+                'uuid':str(getattr(props,'uuid','unavailable')),'memory_total_bytes':props.total_memory}
+    data.update(gpu_validation=True,devices=devices,
+                model_devices={kind:devices[str(v['visible_ordinal'])] for kind,v in assigned.items()})
+    primary=data['model_devices']['vla']
+    data.update(gpu=primary['name'],capability=primary['capability'],memory_total_bytes=primary['memory_total_bytes'])
     return data
+
+
+def checked_environment():
+    # Keep the CUDA probe in a short-lived child: the benchmark supervisor owns no CUDA context.
+    result=subprocess.run([sys.executable,str(Path(__file__).resolve()),'doctor'],capture_output=True,text=True,timeout=120)
+    if result.returncode:
+        raise RuntimeError('GPU doctor failed: '+result.stderr.strip())
+    value=json.loads(result.stdout)
+    if value.get('gpu_validation') is not True:raise RuntimeError('GPU doctor did not validate CUDA')
+    return value
 
 
 def commands(assets):
@@ -71,10 +93,11 @@ class Models:
         self.logs.mkdir(parents=True, exist_ok=True)
 
     def start(self):
+        (self.logs/'gpu-bindings.json').write_text(json.dumps(bindings(),indent=2)+'\n',encoding='utf-8')
         for kind, command in commands(self.assets).items():
             stream=(self.logs/(kind+'-service.log')).open('w', encoding='utf-8'); self.streams.append(stream)
             proc=subprocess.Popen(command, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT,
-                                  start_new_session=True)
+                                  start_new_session=True,env=child_environment(kind))
             self.processes[kind]=proc
             deadline=time.monotonic()+900
             while time.monotonic()<deadline:
@@ -110,14 +133,15 @@ def main():
     p.add_argument('--warmup', type=int, default=10)
     args=p.parse_args()
     if args.command=='verify-assets':print(json.dumps(verify(args.assets), indent=2)); return
-    environment=doctor()
-    if args.command=='doctor':print(json.dumps(environment, indent=2)); return
+    if args.command=='doctor':print(json.dumps(doctor(), indent=2)); return
+    environment=checked_environment()
     manifest=prepare_assets(args.assets)
     if args.command=='baseline':
         subprocess.run([sys.executable, str(ROOT/'baseline/benchmark.py'), '--deployment-root',
                         '/opt/pi05-deployment', '--checkpoint', str(args.assets/'pi05_libero'),
                         '--iterations',str(args.iterations),'--warmup',str(args.warmup),
-                        '--output', str(args.output)], check=True, cwd=ROOT)
+                        '--output', str(args.output)], check=True, cwd=ROOT,env=child_environment('vla'))
+        (args.output/'container-environment.json').write_text(json.dumps(environment,indent=2)+'\n',encoding='utf-8')
         return
     if args.command=='benchmark':
         from benchmark_container import run
@@ -136,7 +160,7 @@ def main():
             (args.output/'environment.json').write_text(json.dumps(environment, indent=2), encoding='utf-8')
             return
         print(json.dumps({'ready':True, 'pids':{k:v.pid for k,v in models.processes.items()},
-                          'vla_backend':'PyTorch BF16; FlashRT Thor not enabled'}), flush=True)
+                          'vla_backend':'PyTorch BF16; FlashRT is not enabled'}), flush=True)
         while True:
             if any(proc.poll() is not None for proc in models.processes.values()):
                 raise RuntimeError('A model child exited; inspect container logs '+str(logs))

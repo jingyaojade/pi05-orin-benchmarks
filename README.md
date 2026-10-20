@@ -2,6 +2,10 @@
 
 记录已部署 OpenPI PyTorch 基线与 FlashRT 的分阶段推理耗时。
 
+新增[Linux NVIDIA RTX4090/5090 Docker构建包](containers/nvidia/README.md)，分支`docker-nvidia`。
+x86_64/SM89+SM120，支持单卡双模型或双卡各一个模型，按GPU UUID记录显存、温度和功耗。
+当前交付源码构建包，**尚未构建镜像或进行RTX GPU验收**；VLA先采用PyTorch BF16。
+
 新增[Thor Docker构建包](containers/README.md)，分支`docker-thor`。
 固定模型SHA、输入及上游版本，准备ARM64/SM110源码构建、双进程接口、baseline和组合测量。
 当前没有Thor且本地没有Docker：已完成CPU检查，**尚未构建镜像或进行Thor GPU验收**。

@@ -15,6 +15,7 @@ import assets
 from package_buildkit import include
 from telemetry_container import kib_fields, number
 from benchmark_container import summarize
+from device_config import bindings, child_environment, pins_path, profile
 
 
 class BuildKitTests(unittest.TestCase):
@@ -24,6 +25,7 @@ class BuildKitTests(unittest.TestCase):
                      'reports/shared-context-2026-10-20/telemetry.jsonl']:
             self.assertFalse(include(name),name)
         for name in ['containers/Dockerfile.thor','dual_stack/clients.py',
+                     'containers/nvidia/Dockerfile','containers/device_config.py',
                      'reports/engine-comparison-2026-10-16/baseline-latency/fixed_inputs.npz']:
             self.assertTrue(include(name),name)
 
@@ -35,6 +37,34 @@ class BuildKitTests(unittest.TestCase):
             self.assertEqual(entry['sha256'],pins['assets']['Qwen3.5-9B/'+entry['filename']])
         fixture=root/'reports/engine-comparison-2026-10-16/baseline-latency/fixed_inputs.npz'
         self.assertEqual(assets.digest(fixture),pins['fixture_sha256'])
+
+    def test_nvidia_and_thor_use_identical_models_and_upstream_sources(self):
+        thor=json.loads((CONTAINERS/'pins.json').read_text())
+        rtx=json.loads((CONTAINERS/'nvidia/pins.json').read_text())
+        for key in ['openpi_commit','llama_cpp_commit','assets','fixture_sha256','vla_backend']:
+            self.assertEqual(thor[key],rtx[key],key)
+        self.assertEqual(rtx['cuda_architectures'],'89;120')
+        self.assertEqual(profile({'BENCHMARK_TARGET':'nvidia'}),'nvidia')
+        self.assertEqual(pins_path({'BENCHMARK_TARGET':'nvidia'}),CONTAINERS/'nvidia/pins.json')
+        with self.assertRaises(ValueError):profile({'BENCHMARK_TARGET':'unsupported'})
+
+    def test_model_selection_preserves_parent_and_maps_visible_ordinals(self):
+        self.assertEqual(bindings({})['vla']['cuda_visible_devices'],'0')
+        for mask in ['2,4','GPU-first,GPU-second']:
+            parent={'CUDA_VISIBLE_DEVICES':mask,'VLA_GPU':'0','VLM_GPU':'1','OTHER':'kept'}
+            original=parent.copy()
+            self.assertEqual(child_environment('vla',parent)['CUDA_VISIBLE_DEVICES'],mask.split(',')[0])
+            child=child_environment('vlm',parent)
+            self.assertEqual(child['CUDA_VISIBLE_DEVICES'],mask.split(',')[1])
+            self.assertEqual(child['OTHER'],'kept');self.assertEqual(parent,original)
+        self.assertEqual(child_environment('vlm',{'VLM_GPU':'1'})['CUDA_VISIBLE_DEVICES'],'1')
+
+    def test_invalid_gpu_selection_fails_before_model_launch(self):
+        for env in [{'VLA_GPU':'-1'},{'VLM_GPU':'GPU-uuid'},{'CUDA_VISIBLE_DEVICES':''},
+                    {'CUDA_VISIBLE_DEVICES':'-1'},{'CUDA_VISIBLE_DEVICES':'0,','VLM_GPU':'0'},
+                    {'CUDA_VISIBLE_DEVICES':'2','VLM_GPU':'1'}]:
+            with self.subTest(env=env):
+                with self.assertRaises(ValueError):bindings(env)
 
     def test_asset_export_checks_before_copy_and_rejects_overwrite(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -81,8 +111,28 @@ class BuildKitTests(unittest.TestCase):
             self.assertEqual(result['vla']['n'],2)
             self.assertEqual(result['vla']['model_wall_ms']['mean'],15)
             self.assertEqual(result['vla']['model_wall_ms']['p95'],19.5)
-            self.assertIsNone(result['device_metrics']['power.draw']['mean'])
+            self.assertEqual(result['device_metrics'],{})
             self.assertIn('N/A',(root/'report_zh.md').read_text(encoding='utf-8'))
+
+    def test_multi_gpu_telemetry_is_aggregated_by_uuid_without_mixing_cards(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);phase={'name':'test','start_ns':0,'end_ns':1_000_000_000}
+            samples=[]
+            for t,power in [(1,100),(2,120)]:
+                samples.append({'monotonic_ns':t,'host_meminfo_raw':'','processes':{},'devices':[
+                    {'index':0,'uuid':'GPU-A','power.draw':power,'memory.used':1000,'temperature.gpu':50},
+                    {'index':1,'uuid':'GPU-B','power.draw':200,'memory.used':2000,'temperature.gpu':None}]})
+            # Third device has no sensor data; missing readings must remain unavailable.
+            samples[0]['devices'].append({'index':2,'uuid':'GPU-C','power.draw':None})
+            (root/'telemetry.jsonl').write_text('\n'.join(json.dumps(row) for row in samples)+'\n')
+            summarize(root,[],[phase],{'backend':'CPU fixture only; fabricated telemetry for unit test'})
+            data=json.loads((root/'summary.json').read_text())['phases']['test']['device_metrics']
+            self.assertEqual(data['GPU-A']['power.draw']['mean'],110)
+            self.assertEqual(data['GPU-B']['power.draw']['mean'],200)
+            self.assertEqual(data['GPU-A']['memory.used']['max'],1000)
+            self.assertEqual(data['GPU-B']['memory.used']['max'],2000)
+            self.assertIsNone(data['GPU-C']['power.draw']['mean'])
+            self.assertIsNone(data['GPU-B']['temperature.gpu']['max'])
 
 
 if __name__=='__main__':unittest.main()

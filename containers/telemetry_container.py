@@ -1,4 +1,4 @@
-"""Best-effort read-only Thor telemetry; unsupported sensors remain unavailable."""
+"""Best-effort read-only NVIDIA telemetry; unsupported sensors remain unavailable."""
 import csv
 import json
 from pathlib import Path
@@ -52,14 +52,14 @@ class Monitor:
                 row['processes'][kind]={'pid':proc.pid,'status_raw':(base/'status').read_text(),
                                         'smaps_rollup_raw':(base/'smaps_rollup').read_text()}
             except OSError as error:row['processes'][kind]={'pid':proc.pid,'unavailable':str(error)}
-        keys=['index','utilization.gpu','memory.used','memory.total','temperature.gpu','power.draw','clocks.sm','clocks.mem']
+        keys=['index','uuid','utilization.gpu','memory.used','memory.total','temperature.gpu','power.draw','clocks.sm','clocks.mem']
         if shutil.which('nvidia-smi'):
             try:
                 p=subprocess.run(['nvidia-smi','--query-gpu='+','.join(keys),'--format=csv,noheader,nounits'],
                                  capture_output=True,text=True,timeout=3)
                 row['nvidia_smi']={'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
                 if p.returncode==0:
-                    row['devices']=[dict(zip(keys,[number(v) for v in values]))
+                    row['devices']=[dict(zip(keys,[v.strip() if k=='uuid' else number(v) for k,v in zip(keys,values)]))
                                     for values in csv.reader(p.stdout.splitlines()) if len(values)==len(keys)]
             except (OSError,subprocess.TimeoutExpired) as error:row['nvidia_smi']={'unavailable':str(error)}
         else:row['nvidia_smi']={'unavailable':'nvidia-smi not exposed by container runtime'}

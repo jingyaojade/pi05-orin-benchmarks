@@ -60,6 +60,8 @@ def main():
     metadata={'model':'pi05_libero','backend':'OpenPI PyTorch BF16','pid':os.getpid(),
               'action_shape':[10,7],'denoise_steps':10,'torch':torch.__version__, 'cuda':torch.version.cuda,
               'gpu':torch.cuda.get_device_name(0),'fixture_sha256':hashlib.sha256(args.fixture.read_bytes()).hexdigest(),
+              'cuda_visible_devices':os.environ.get('CUDA_VISIBLE_DEVICES'),
+              'gpu_uuid':str(getattr(torch.cuda.get_device_properties(0),'uuid','unavailable')),
               'reference_actions':reference.tolist(), 'baseline_accuracy':{'rmse':float(np.sqrt(np.mean(diff**2))),
               'max_abs':float(np.max(np.abs(diff)))},
               'timing':'CPU transforms / synchronized upload / model / synchronized download; no inner-layer instrumentation'}

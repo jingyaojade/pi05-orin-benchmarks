@@ -1,4 +1,4 @@
-"""Matched workloads for the Thor PyTorch+llama candidate; no systemd interaction."""
+"""Matched workloads for NVIDIA/Thor PyTorch+llama candidates; no systemd interaction."""
 import base64
 from datetime import datetime, timezone
 import io
@@ -12,6 +12,7 @@ from runtime import ROOT, FIXTURE, Models, commands
 from telemetry_container import Monitor, kib_fields
 from clients import request_json, vla_request, vlm_request
 from report import stats
+from device_config import bindings
 
 
 def write(path,value):
@@ -36,8 +37,9 @@ def run(args,environment,manifest):
     lock=threading.Lock(); journal=(out/'requests.jsonl').open('w',encoding='utf-8')
     metadata={'completed':False,'created_utc':datetime.now(timezone.utc).isoformat(),
               'environment':environment,'assets':manifest,'commands':commands(args.assets),
-              'backend':'OpenPI PyTorch BF16 + llama.cpp SM110; not FlashRT',
-              'limitations':['Thor GPU build/acceptance is pending until actually executed.',
+              'gpu_bindings':bindings(),
+              'backend':'OpenPI PyTorch BF16 + llama.cpp CUDA; not FlashRT',
+              'limitations':['This execution does not validate FlashRT on this GPU.',
                 'Loopback API; PNG/base64 prepared in advance; synthetic fixed observations/noise.',
                 '1Hz best-effort telemetry; sampled peaks are lower bounds.',
                 'NVML device memory, process RSS and host memory have distinct/overlapping scopes; do not sum.',
@@ -122,8 +124,8 @@ def run(args,environment,manifest):
 
 
 def summarize(out,rows,phases,metadata):
-    result={'metadata':metadata,'phases':{}}
-    text=['# Thor双进程候选实测报告','',metadata['backend'],'',
+    result={'schema_version':2,'metadata':metadata,'phases':{}}
+    text=['# π0.5 + Qwen GPU双进程实测报告','',metadata['backend'],'',
           '| 场景 | VLA n / 完成Hz | VLA模型 mean / p95 ms | VLA API mean ms | VLM n / 完成Hz | VLM首字 mean ms | VLM完整 mean ms |',
           '|---|---:|---:|---:|---:|---:|---:|']
     def fmt(value):return 'N/A' if value is None else f'{value:.2f}'
@@ -148,8 +150,12 @@ def summarize(out,rows,phases,metadata):
     for phase in phases:
         samples=[r for r in telemetry if phase['start_ns']<=r['monotonic_ns']<=phase['end_ns']]
         data=result['phases'][phase['name']]
-        data['device_metrics']={key:stats([r.get('devices',[{}])[0].get(key) for r in samples if r.get('devices')])
+        def device_id(device):return device.get('uuid') or 'index:'+str(device.get('index'))
+        identities=sorted({device_id(d) for r in samples for d in r.get('devices',[])})
+        data['device_metrics']={identity:{key:stats([d.get(key) for r in samples for d in r.get('devices',[])
+                                                   if device_id(d)==identity])
                                 for key in ['memory.used','temperature.gpu','power.draw','utilization.gpu']}
+                                for identity in identities}
         data['telemetry_samples']=len(samples)
         data['host_mem_available_bytes']=stats([kib_fields(r['host_meminfo_raw']).get('MemAvailable') for r in samples])
         data['process_memory_bytes']={}
@@ -157,16 +163,23 @@ def summarize(out,rows,phases,metadata):
             data['process_memory_bytes'][kind]={key:stats([
                 kib_fields(r.get('processes',{}).get(kind,{}).get('smaps_rollup_raw','')).get(key)
                 for r in samples]) for key in ['Rss','Pss']}
-    text+=['','| 场景 | GPU设备内存 max MiB | 主机可用内存 min GiB | VLA / VLM RSS max GiB | GPU温度 max °C | 设备功耗 mean / max W |',
-           '|---|---:|---:|---:|---:|---:|']
+    text+=['','| 场景 | GPU UUID / 设备ID | GPU设备内存 max MiB | GPU温度 max °C | 设备功耗 mean / max W |',
+           '|---|---|---:|---:|---:|']
     def gib(value):return fmt(value/2**30) if value is not None else 'N/A'
     for phase in phases:
-        r=result['phases'][phase['name']];d=r['device_metrics'];m=r['process_memory_bytes']
-        text.append(f"| {phase['name']} | {fmt(d['memory.used']['max'])} | {gib(r['host_mem_available_bytes']['min'])} | {gib(m['vla']['Rss']['max'])} / {gib(m['vlm']['Rss']['max'])} | {fmt(d['temperature.gpu']['max'])} | {fmt(d['power.draw']['mean'])} / {fmt(d['power.draw']['max'])} |")
+        r=result['phases'][phase['name']]
+        for identity,d in r['device_metrics'].items():
+            text.append(f"| {phase['name']} | {identity} | {fmt(d['memory.used']['max'])} | {fmt(d['temperature.gpu']['max'])} | {fmt(d['power.draw']['mean'])} / {fmt(d['power.draw']['max'])} |")
+        if not r['device_metrics']:text.append(f"| {phase['name']} | N/A | N/A | N/A | N/A |")
+    text+=['','| 场景 | 主机可用内存 min GiB | VLA / VLM RSS max GiB |','|---|---:|---:|']
+    for phase in phases:
+        r=result['phases'][phase['name']];m=r['process_memory_bytes']
+        text.append(f"| {phase['name']} | {gib(r['host_mem_available_bytes']['min'])} | {gib(m['vla']['Rss']['max'])} / {gib(m['vlm']['Rss']['max'])} |")
     text+=['','NVML温度/设备功耗/内存统计见summary.json及原始telemetry.jsonl。',
            'memory.used单位MiB，temperature.gpu为°C，power.draw为设备报告W，utilization.gpu为%。',
            '缺失读数为N/A；没有套用Orin三轨功耗求和，也没有假定Thor支持NvMap。',
            '主机内存包含其他负载，RSS包含共享映射；这些记账范围不能与设备内存求和。',
+           'GPU指标按UUID分别记录，是设备级读数，可能包含其他任务；没有把第二张卡的指标归到第一张。',
            '这是PyTorch BF16与llama.cpp的结果，不能与Orin FlashRT之比作为纯硬件加速比。',
            'Torch单模型分层拆分另运行baseline命令；此组合报告不伪造内部vision/prefix/action独立耗时。','']
     write(out/'summary.json',result);(out/'report_zh.md').write_text('\n'.join(text),encoding='utf-8')
