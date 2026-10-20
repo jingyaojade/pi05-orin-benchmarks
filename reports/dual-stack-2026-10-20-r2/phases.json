@@ -1,0 +1,72 @@
+[
+  {
+    "name": "idle_system",
+    "start_ns": 2364806973025,
+    "end_ns": 2394807115618
+  },
+  {
+    "name": "load_vla",
+    "start_ns": 2394808071754,
+    "end_ns": 2407848061085
+  },
+  {
+    "name": "warm_vla",
+    "start_ns": 2407848705018,
+    "end_ns": 2409124415611
+  },
+  {
+    "name": "vla_standalone",
+    "start_ns": 2409125005696,
+    "end_ns": 2469354820819
+  },
+  {
+    "name": "idle_between_models",
+    "start_ns": 2469924894631,
+    "end_ns": 2499932225478
+  },
+  {
+    "name": "load_vlm",
+    "start_ns": 2499933452385,
+    "end_ns": 2506959635069
+  },
+  {
+    "name": "warm_vlm",
+    "start_ns": 2506960631286,
+    "end_ns": 2509885331844
+  },
+  {
+    "name": "vlm_standalone",
+    "start_ns": 2509886448928,
+    "end_ns": 2571156905381
+  },
+  {
+    "name": "load_vla_with_vlm",
+    "start_ns": 2571157875995,
+    "end_ns": 2585190564341
+  },
+  {
+    "name": "warm_vla_dual",
+    "start_ns": 2585191296934,
+    "end_ns": 2586469189544
+  },
+  {
+    "name": "dual_resident_idle",
+    "start_ns": 2586469853269,
+    "end_ns": 2616499905457
+  },
+  {
+    "name": "vla_dual_resident",
+    "start_ns": 2616500735543,
+    "end_ns": 2676739840627
+  },
+  {
+    "name": "vlm_dual_resident",
+    "start_ns": 2676740508929,
+    "end_ns": 2737983567853
+  },
+  {
+    "name": "concurrent_saturated",
+    "start_ns": 2737984665816,
+    "end_ns": 2920400403083
+  }
+]

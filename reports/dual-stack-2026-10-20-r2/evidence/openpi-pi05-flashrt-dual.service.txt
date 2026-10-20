@@ -1,0 +1,22 @@
+# /etc/systemd/system/openpi-pi05-flashrt-dual.service
+# Managed by pi05-orin-benchmarks/dual_stack
+[Unit]
+Description=Orin dual stack openpi-pi05-flashrt-dual
+After=network.target
+StartLimitIntervalSec=600
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=nvidia
+WorkingDirectory=/home/nvidia/pi05-orin-benchmarks
+Environment=DUAL_ROOT=/home/nvidia/pi05-orin-dual
+Environment=OMP_NUM_THREADS=6
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/bash /home/nvidia/pi05-orin-benchmarks/dual_stack/run_vla.sh
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

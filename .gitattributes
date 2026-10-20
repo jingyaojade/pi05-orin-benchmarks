@@ -4,3 +4,8 @@
 *.patch whitespace=-blank-at-eol
 *.log whitespace=-blank-at-eol
 reports/**/environment-before.txt whitespace=-blank-at-eol
+
+# Preserve measured artifact bytes, including original log whitespace and CSV CRLF.
+/dual_stack/** text eol=lf
+/dual_stack/fixtures/*.png -text
+/reports/dual-stack-2026-10-20-r2/** -text -whitespace

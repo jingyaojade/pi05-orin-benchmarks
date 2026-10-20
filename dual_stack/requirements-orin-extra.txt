@@ -1,0 +1,3 @@
+# Only the optional WebSocket compatibility bridge. Keep the existing NVIDIA Torch.
+websockets==15.0.1
+msgpack==1.1.2

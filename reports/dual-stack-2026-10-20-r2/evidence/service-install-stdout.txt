@@ -1,0 +1,4 @@
+Removed /etc/systemd/system/multi-user.target.wants/openpi-pi05.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/openpi-pi05-flashrt-dual.service → /etc/systemd/system/openpi-pi05-flashrt-dual.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/qwen35-vlm.service → /etc/systemd/system/qwen35-vlm.service.
+DUAL_SERVICES_HEALTHY

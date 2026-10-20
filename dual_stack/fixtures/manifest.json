@@ -1,0 +1,20 @@
+[
+  {
+    "file": "scene-0.png",
+    "sha256": "913ba0637b46893b721103dbc19118bd92237132605873f60d18fccef7c196b8",
+    "size": [
+      512,
+      384
+    ],
+    "purpose": "synthetic table objects; performance and visual smoke test only"
+  },
+  {
+    "file": "scene-1.png",
+    "sha256": "d5c8ac7dba5b3644d35faf24c040bfb73b4848fcc9119119e3c9b9388456bd4d",
+    "size": [
+      512,
+      384
+    ],
+    "purpose": "synthetic table objects; performance and visual smoke test only"
+  }
+]

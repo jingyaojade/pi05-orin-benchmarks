@@ -1,0 +1,26 @@
+{
+  "input_sha256_matches": {
+    "provenance.json": true,
+    "phases.json": true,
+    "requests.jsonl": true,
+    "telemetry.jsonl": true
+  },
+  "benchmark_script_matches": {
+    "run_suite.py": true,
+    "clients.py": true,
+    "download_models.py": true,
+    "websocket_bridge.py": true,
+    "telemetry.py": true,
+    "vla_server.py": true,
+    "smoke_test.py": true,
+    "report.py": false,
+    "make_fixtures.py": true,
+    "environment.py": true
+  },
+  "report_generator_sha256_matches": true,
+  "plot_generator_sha256_matches": true,
+  "vla_outputs_checked_including_warmup": 883,
+  "vlm_outputs_checked_including_warmup": 158,
+  "max_decode_rate_consistency_error": 3.552713678800501e-15,
+  "note": "report.py was improved after GPU execution; its current hash is separately pinned in postprocessing.json."
+}

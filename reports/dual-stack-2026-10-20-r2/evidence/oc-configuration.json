@@ -1,0 +1,5 @@
+{
+  "/sys/devices/platform/soctherm-oc-event/hwmon/hwmon6/oc1_throt_en": "0",
+  "/sys/devices/platform/soctherm-oc-event/hwmon/hwmon6/oc2_throt_en": "0",
+  "/sys/devices/platform/soctherm-oc-event/hwmon/hwmon6/oc3_throt_en": "1"
+}

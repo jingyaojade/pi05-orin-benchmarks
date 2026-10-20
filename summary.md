@@ -1,6 +1,6 @@
 # π0.5 LIBERO / Jetson AGX Orin：部署与加速技术总结
 
-日期：2026-10-16。本文汇总已执行的 baseline、FlashRT BF16/INT8 测量，以及 vLLM / TensorRT Edge-LLM 的真实兼容性尝试。完整逐阶段数值、p95、内存与来源见[自动生成的对比报告](reports/engine-comparison-2026-10-16/comparison.md)及[机器可读 CSV](reports/engine-comparison-2026-10-16/comparison.csv)。
+更新日期：2026-10-20。第1–12节保留2026-10-16的 baseline、FlashRT BF16/INT8 测量及 vLLM / TensorRT Edge-LLM 兼容性尝试；第13节新增π0.5与Qwen3.5-9B双模型部署和并发测试。历史引擎逐阶段数值、p95、内存与来源见[对比报告](reports/engine-comparison-2026-10-16/comparison.md)及[CSV](reports/engine-comparison-2026-10-16/comparison.csv)；双模型结果见[新报告](reports/dual-stack-2026-10-20-r2/report_zh.md)。
 
 ## 1. 本轮结论
 
@@ -318,3 +318,136 @@ python profiling/pipeline_latency.py --help
 若下一步要跑 Edge-LLM，最明确的路线是在备份/独立设备上准备官方支持的 Jetson 新 SDK，再跑已准备的四组件流程、验证现有权重完整映射和 FP16 动作偏差；这属于后续环境迁移，当前未执行。vLLM-Omni 还需 LIBERO/no-state/horizon10 与权重适配；其当前 eager recipe 不是已证明的低延迟 Orin 后端。
 
 本报告不提供未执行路径的预计性能，也未把网络/预处理 pipeline 的潜在重叠收益算进模型加速比。
+
+## 13. π0.5 + Qwen3.5-9B 双模型部署（2026-10-20）
+
+### 13.1 路线、目录与固定版本
+
+新分支为 `vla-vlm-qwen35`，从 `engine-comparison` 的 `b878a9d` 创建。
+新增代码统一位于[dual_stack](dual_stack/README.md)，正式数据位于
+`reports/dual-stack-2026-10-20-r2`，权重、上游源码和二进制均在Orin
+`/home/nvidia/pi05-orin-dual`，不进入Git。没有升级JetPack、驱动、系统CUDA或原baseline的Torch。
+
+VLA复用已验证源码补丁的FlashRT BF16和同一官方π0.5 LIBERO checkpoint，
+仍是两路有效224×224 RGB、一路masked padding、200文本token容量、10轮去噪、10×32内部动作、10×7机器人单位输出。
+该LIBERO配置不将state加入prompt；API接受8维state以兼容原观测结构。
+新服务不固定正常调用的采样噪声：未传noise时每次产生新的FP32标准正态[10,32]。
+只有测量请求显式使用已提交的固定noise。
+
+VLM采用Qwen3.5-9B的公开Unsloth GGUF：语言模型Q5_K_M，视觉/mmproj为FP16。
+匹配视觉权重不可省略，否则不能完成看图推理。固定文件及revision见
+[sources.json](dual_stack/sources.json)：
+
+| 内容 | 固定版本/身份 |
+|---|---|
+| llama.cpp | `3bb63cbcbfb62056c84fe9e521b0f3d756d29c32` |
+| GGUF repository revision | `3885219b6810b007914f3a7950a8d1b469d598a5` |
+| Qwen3.5-9B-Q5_K_M.gguf | 6,577,841,376 bytes；SHA256 `dc2a39aef291f91a9116ad214058da0d86eb648743a124bd8c333787c4b9c91c` |
+| mmproj-F16.gguf | 918,166,080 bytes；SHA256 `f70dc3509053962b0d0d3ee8a7eacebf5d60aa560cad78254ae8698516ae029f` |
+| 本轮重新校验的π0.5模型 | SHA256 `1502e1c5f765ca1bfd6f8f6be0bc769ba2cc263bf298b98bd106d8db168c02e6` |
+
+Orin直连HF/GitHub传输不稳定，先尝试经本机代理转发，再使用HF mirror的相同revision做64MiB分块、8路下载。
+连接重置后保留完整分块重试，最后组装并校验完整文件SHA；镜像只改变传输路径。
+没有把下载成功等同于文件身份正确，校验记录保存在`evidence/verified-models.json`。
+
+### 13.2 Orin原生构建与服务接口
+
+在Ubuntu22.04 / L4T36.3 / CUDA12.2上，从固定源码tar构建aarch64 SM87 Release，
+使用已有FlashRT隔离环境的CMake3.31.10；开启`GGML_CUDA`，关闭NCCL和native CPU自动选择。
+只构建本轮所用FP16 KV对应的`GGML_CUDA_FA_QUANTS=f16-f16`，减少不需要的CUDA模板编译；
+这不改变语言模型Q5_K_M权重，也不改变VLA的BF16路径。
+产物为`llama-server`和`llama-mtmd-cli`。tar包没有.git信息，因此`--version`显示commit unknown，
+精确源码身份以固定commit、tar SHA和构建产物SHA为准，保存在`evidence/build-artifacts.json`。
+
+VLM单slot、context8192、4个CPU线程、`-ngl 99`、FlashAttention开启、attention KV为默认FP16，
+关闭thinking和prompt cache；请求温度0、seed42、最多96输出token。两个512×384合成桌面图交替输入，
+实际prompt为226 tokens，输出14或15 tokens，无长度截断、无复用prompt tokens。
+这组完整回答延时对应短中文描述，不能推广到长回答或更大图像。
+
+VLA由新的loopback JSON服务包装原完整生产CUDA Graph，在上传、模型、下载边界同步计时。
+正常同prompt请求缓存文本；更改prompt会重新prepare/capture，并把setup计入该次请求。
+实际检查了固定输入重复、改变相机图像、改变prompt及恢复prompt，输出均为有限[10,7]且对观测变化有响应。
+
+持久服务为`openpi-pi05-flashrt-dual`和`qwen35-vlm`，均已active、enabled，检查时重启次数均为0。
+原baseline unit与部署文件保留，但已停止并取消自启，避免重复加载π0.5。
+新VLA HTTP为`127.0.0.1:8081`，VLM兼容接口为`127.0.0.1:8082/v1/chat/completions`。
+同一VLA进程还提供原OpenPI msgpack WebSocket `127.0.0.1:8000`及`/healthz`，通过JSON入口转发，不复制模型。
+兼容桥另安装websockets15.0.1与msgpack1.1.2，使用原官方msgpack_numpy序列化helper。
+该入口的PNG编码与内部HTTP转发增加开销；正式API延时使用8081入口，WS另外做了真实推理检查。
+可在VS Code转发上述端口。恢复原服务执行`bash dual_stack/restore_original.sh`。
+
+### 13.3 测量矩阵与计时边界
+
+正式r2按系统空闲30秒、VLA单独、VLM单独、双常驻空闲30秒、双常驻仅VLA、
+双常驻仅VLM、同时持续推理执行；单模型场景至少60秒，并发实际182.4秒。
+VLA有启动10次内部warmup和5次client warmup；VLM排除2次warmup。
+共记录1041次请求，其中1029次正式测量、12次client warmup；遥测551条，逐场景筛选时间戳。
+编译和权重下载均在测量前完成。
+
+VLA报告输入准备/上传、原完整模型、下载/动作处理与HTTP解码，所有正式输出与各自进程的首个固定输出逐元素一致。
+跨进程调优可能改变数值，两个实例相对baseline的RMSE分别0.008445和0.007907，
+cosine分别0.999796和0.999820；没有进行真实机器人rollout。
+本轮没有将原生产图替换为逐层同步图，也未重新声称测得了内部vision/prefix/action的并发独立耗时。
+历史内部拆分见第5、7、8节；不能把不同测量口径拼成一次请求。
+
+VLM TTFT从发送HTTP请求到首个非空可见content，不计role空包和reasoning。
+保存全部SSE、usage、prompt/decode内部timings和实际输出长度。
+该llama.cpp版本首token在prompt阶段产生，decode速率用后续N−1个间隔除以predicted_ms，
+与服务回传的predicted_per_second口径一致。
+prompt_ms不是独立视觉编码耗时，TTFT还包含图像处理、排队和HTTP；没有将差值伪装为精确vision kernel计时。
+两侧客户端的PNG/base64均提前准备，未计相机采集、图像编码或外部网络RTT；
+VLA API计时包括客户端JSON序列化，VLM在构造请求后开始计时。
+
+### 13.4 延时、内存、温度与功耗结果
+
+| 场景 | VLA 模型 mean / p95 ms | VLA API mean / p95 ms | VLM 首字 mean / p95 ms | VLM 完整 mean / p95 ms | VLM decode tok/s |
+|---|---:|---:|---:|---:|---:|
+| 各模型单独运行 | 220.80 / 220.99 | 250.43 / 253.92 | 688.39 / 693.08 | 1330.82 / 1356.49 | 21.02 |
+| 双常驻，仅其中一个推理 | 220.94 / 220.80 | 250.45 / 252.45 | 688.20 / 694.17 | 1330.30 / 1354.72 | 21.03 |
+| 双模型同时持续推理 | 427.42 / 472.93 | 463.69 / 511.56 | 1350.02 / 1374.63 | 2846.74 / 2915.75 | 9.01 |
+
+“仅其中一个推理”一行的VLA和VLM来自两个独立场景。VLA该场景有一次304.82ms模型耗时，
+因此均值略高于p95，这不是百分位计算错误；保留原样本和min/max。
+同时推理使VLA模型均值约为单独的1.94倍，VLM完整短回答约2.14倍。
+双常驻本身没有明显拖慢其中一个模型，而持续同时计算带来显著延时增长。
+未通过kernel级profiling进一步区分计算、带宽和GPU调度贡献。
+
+并发场景系统RAM峰值28.17GiB、MemAvailable最低33.37GiB；全部场景RAM最高28.18GiB。
+并发VLA NvMap约12.76GiB、RSS最大约1.01GiB；VLM NvMap约7.78GiB、RSS最大约1.42GiB。
+这些UMA记账有重叠，不能求和为物理总占用。Torch最终live/reserved约6.43/11.84GiB，
+allocator lifetime peak含加载阶段，不能当作推理阶段新增内存。
+系统Swap观测最大0.75MiB，不是模型独占Swap；本轮未发生OOM。
+
+三分钟并发中CPU/GPU/tj最高71.16/73.28/73.28°C，板载三轨合计平均45.82W、1Hz采样最大49.70W。
+VLA单独平均46.85W，VLM单独40.48W，双常驻空闲7.47W，系统空闲5.82W。
+总三轨为VDD_GPU_SOC+VDD_CPU_CV+VIN_SYS_5V0；DDR的VDDQ已包含于5V轨，不再重复加，SUMMATION也不再加。
+这是包含系统背景的板载传感器近似值，不是外接AC功率计结果，也未扣空闲计算模型净功耗。
+[NVIDIA电源轨与OC说明](https://docs.nvidia.com/jetson/archives/r36.3/DeveloperGuide/SD/PlatformPowerAndPerformance/JetsonOrinNanoSeriesJetsonOrinNxSeriesAndJetsonAgxOrinSeries.html#software-based-power-consumption-modeling)。
+
+OC3计数在两次VLA加载场景分别增加1和3，正式持续推理场景的首末采样未观察到增加；
+1Hz轨功耗可能漏掉触发限制的瞬时尖峰，不能据此声称完全没有限频。
+全程保留原MAXN、CPU/GPU动态频率、现有EMC override与动态风扇状态，没有更改功耗或热策略。
+固定场景顺序、几分钟测试不构成长时间热稳态认证。
+
+### 13.5 监控修正、原始证据和复现
+
+首轮发现tegrastats若在GPU温度传感器不可读时启动，后续可能持续省略GPU温度。
+该轮主动终止，未当作完成结果；Orin保留未完成原始目录，正式报告中仅附其provenance和原因。
+`telemetry.py`新增每秒直接读取cpu/gpu/tj/tboard thermal sysfs，保存原始毫摄氏度或不可读状态，
+休眠时GPU缺失值不填零、不以tj代替。修正后完整重跑r2，正式推理场景均取得GPU温度。
+
+监控拥有自己的tegrastats子进程，不使用全局`--stop`；逐秒保存原始电源轨、温度、GR3D负载、
+RAM、进程RSS/PSS/USS、NvMap、MemAvailable、Swap、OC事件和采集开销。
+读取非原子、1Hz峰值可能漏掉瞬时峰值，监控开销没有单独标定。
+原始请求在`requests.jsonl`，原始遥测在`telemetry.jsonl`，全部统计见`summary.json`和`metrics.csv`。
+环境前后快照、构建参数、模型和二进制hash、API检查、systemd状态与原服务状态均保存在正式目录及`evidence/`。
+GPU运行时脚本SHA保存在provenance；报告生成和绘图属于后处理，实际源码SHA、输入SHA和图表SHA另记在postprocessing.json。
+
+完整复现和服务恢复命令见[dual_stack README](dual_stack/README.md)。
+已通过Orin实际CUDA构建、完整场景测量、输出一致性/观测变化检查、WS/兼容API检查、
+4项功耗/首字/百分位CPU检查和shell语法检查。
+报告附[实测时间轴](reports/dual-stack-2026-10-20-r2/timeline.png)，不插值补造缺失温度。
+
+当前部署让两种模型独立提供服务，没有连接物理机器人或让VLM自动执行控制。
+若更重视动作更新延时，可先按事件/低频触发VLM；持续并发的优先级或协同调度尚未实施测试，
+不能把未来pipeline、调度或提高分辨率的潜在收益计入本轮结果。

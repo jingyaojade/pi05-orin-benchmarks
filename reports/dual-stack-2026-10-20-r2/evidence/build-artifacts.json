@@ -1,0 +1,98 @@
+{
+  "/home/nvidia/pi05-orin-dual/vendor/llama-3bb63cbcbfb62056c84fe9e521b0f3d756d29c32.tar.gz": {
+    "bytes": 38379602,
+    "sha256": "ff9ecfc1aab2b115ef08ef49e6d1460497e3a696f80ab0c595fb8ad223a5cbe0"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/llama-server": {
+    "bytes": 15032,
+    "sha256": "bce53fffd42ad9272d6c46430d60b4d986650ea1803a1ae18132ec61e31fe37e"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-base.so.0.27.0": {
+    "bytes": 802680,
+    "sha256": "acda8817569212a97574a03867992a66d8556347bfb0a042ebea28b78dc0af80"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama-common.so.0": {
+    "bytes": 5687304,
+    "sha256": "d5586345996c36f4b6dc5adc7750c7f13ef6dfbe929bfcf6d99c96ed8f8ab2ba"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-cuda.so": {
+    "bytes": 206403496,
+    "sha256": "d230c962f404ea7d78e0c4f01b0d6418892355aedd1f61c734e380f89591b5bd"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libmtmd.so": {
+    "bytes": 1827456,
+    "sha256": "c2a5fb40d82d997f164123a49523f871421b287ad3042d1488fcd6b83fce4f70"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libmtmd.so.0.7.0": {
+    "bytes": 1827456,
+    "sha256": "c2a5fb40d82d997f164123a49523f871421b287ad3042d1488fcd6b83fce4f70"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-base.so": {
+    "bytes": 802680,
+    "sha256": "acda8817569212a97574a03867992a66d8556347bfb0a042ebea28b78dc0af80"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml.so.0": {
+    "bytes": 44584,
+    "sha256": "f689f09e48ca0deb39b5bdb49713889efae12accc710f1bba3ae924790692f57"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml.so": {
+    "bytes": 44584,
+    "sha256": "f689f09e48ca0deb39b5bdb49713889efae12accc710f1bba3ae924790692f57"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-cuda.so.0.27.0": {
+    "bytes": 206403496,
+    "sha256": "d230c962f404ea7d78e0c4f01b0d6418892355aedd1f61c734e380f89591b5bd"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-cpu.so.0.27.0": {
+    "bytes": 975928,
+    "sha256": "db6243430e8689077eeb6464fb4bccd33b9b5a9f04163e71120f7bd5a40508a2"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama.so.0.7.0": {
+    "bytes": 4708880,
+    "sha256": "2b3bf4fb1794fa54733d2064ec18c3212ca105035f414b1c26bc140029e16f7f"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama-server-impl.so": {
+    "bytes": 6944624,
+    "sha256": "2faf0bf10bc5f04210817de7cfb0dd05eb60223e1164f23c2c004d23c116dbcc"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama.so.0": {
+    "bytes": 4708880,
+    "sha256": "2b3bf4fb1794fa54733d2064ec18c3212ca105035f414b1c26bc140029e16f7f"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml.so.0.27.0": {
+    "bytes": 44584,
+    "sha256": "f689f09e48ca0deb39b5bdb49713889efae12accc710f1bba3ae924790692f57"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-cpu.so": {
+    "bytes": 975928,
+    "sha256": "db6243430e8689077eeb6464fb4bccd33b9b5a9f04163e71120f7bd5a40508a2"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-base.so.0": {
+    "bytes": 802680,
+    "sha256": "acda8817569212a97574a03867992a66d8556347bfb0a042ebea28b78dc0af80"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-cpu.so.0": {
+    "bytes": 975928,
+    "sha256": "db6243430e8689077eeb6464fb4bccd33b9b5a9f04163e71120f7bd5a40508a2"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama-common.so": {
+    "bytes": 5687304,
+    "sha256": "d5586345996c36f4b6dc5adc7750c7f13ef6dfbe929bfcf6d99c96ed8f8ab2ba"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libggml-cuda.so.0": {
+    "bytes": 206403496,
+    "sha256": "d230c962f404ea7d78e0c4f01b0d6418892355aedd1f61c734e380f89591b5bd"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama.so": {
+    "bytes": 4708880,
+    "sha256": "2b3bf4fb1794fa54733d2064ec18c3212ca105035f414b1c26bc140029e16f7f"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libllama-common.so.0.7.0": {
+    "bytes": 5687304,
+    "sha256": "d5586345996c36f4b6dc5adc7750c7f13ef6dfbe929bfcf6d99c96ed8f8ab2ba"
+  },
+  "/home/nvidia/pi05-orin-dual/build/bin/libmtmd.so.0": {
+    "bytes": 1827456,
+    "sha256": "c2a5fb40d82d997f164123a49523f871421b287ad3042d1488fcd6b83fce4f70"
+  }
+}

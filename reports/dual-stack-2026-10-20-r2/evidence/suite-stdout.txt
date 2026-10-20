@@ -1,0 +1,15 @@
+{"event": "phase", "name": "idle_system"}
+{"event": "phase", "name": "load_vla"}
+{"event": "phase", "name": "warm_vla"}
+{"event": "phase", "name": "vla_standalone"}
+{"event": "phase", "name": "idle_between_models"}
+{"event": "phase", "name": "load_vlm"}
+{"event": "phase", "name": "warm_vlm"}
+{"event": "phase", "name": "vlm_standalone"}
+{"event": "phase", "name": "load_vla_with_vlm"}
+{"event": "phase", "name": "warm_vla_dual"}
+{"event": "phase", "name": "dual_resident_idle"}
+{"event": "phase", "name": "vla_dual_resident"}
+{"event": "phase", "name": "vlm_dual_resident"}
+{"event": "phase", "name": "concurrent_saturated"}
+{"event": "suite_complete", "completed": true, "output": "/home/nvidia/pi05-orin-benchmarks/reports/dual-stack-2026-10-20-r2"}

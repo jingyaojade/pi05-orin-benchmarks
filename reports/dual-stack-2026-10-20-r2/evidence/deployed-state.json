@@ -1,0 +1,29 @@
+{
+  "pids": {
+    "vla": 27922,
+    "vlm": 27923
+  },
+  "units": {
+    "openpi-pi05-flashrt-dual": {
+      "active": "active",
+      "enabled": "enabled",
+      "status": "MainPID=27922\nNRestarts=0\nSubState=running\n"
+    },
+    "qwen35-vlm": {
+      "active": "active",
+      "enabled": "enabled",
+      "status": "MainPID=27923\nNRestarts=0\nSubState=running\n"
+    },
+    "openpi-pi05": {
+      "active": "inactive",
+      "enabled": "disabled",
+      "status": "MainPID=0\nNRestarts=0\nSubState=dead\n"
+    }
+  },
+  "telemetry_samples": 5,
+  "monitor_error": null,
+  "original_saved_state": {
+    "enabled": "enabled",
+    "active": "active"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "llama_cpp_commit": "3bb63cbcbfb62056c84fe9e521b0f3d756d29c32",
+  "llama_cpp_commit_date": "2026-10-19T23:47:21Z",
+  "model_id": "Qwen/Qwen3.5-9B",
+  "gguf_repository": "unsloth/Qwen3.5-9B-GGUF",
+  "gguf_revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+  "files": [
+    {
+      "filename": "Qwen3.5-9B-Q5_K_M.gguf",
+      "size_bytes": 6577841376,
+      "sha256": "dc2a39aef291f91a9116ad214058da0d86eb648743a124bd8c333787c4b9c91c"
+    },
+    {
+      "filename": "mmproj-F16.gguf",
+      "size_bytes": 918166080,
+      "sha256": "f70dc3509053962b0d0d3ee8a7eacebf5d60aa560cad78254ae8698516ae029f"
+    }
+  ],
+  "precision": "Q5_K_M language model + F16 vision/mmproj",
+  "target": "aarch64 SM87 CUDA12.2"
+}

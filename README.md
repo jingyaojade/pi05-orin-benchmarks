@@ -2,7 +2,15 @@
 
 记录已部署 OpenPI PyTorch 基线与 FlashRT 的分阶段推理耗时。
 
-最新一轮包含独立内存补测、vLLM/Omni 和 TensorRT Edge-LLM 实际兼容性探针：
+2026-10-20：已部署 **π0.5 FlashRT BF16 + Qwen3.5-9B Q5_K_M / FP16 vision** 双服务，
+代码位于[dual_stack](dual_stack/README.md)，分支为 `vla-vlm-qwen35`。
+VLA单独/同时推理的模型均值为 **220.80 / 427.42 ms**；VLM首字 **688.39 / 1350.02 ms**。
+并发系统RAM峰值 **28.17 GiB**、GPU最高 **73.28°C**、板载三轨功耗平均 **45.82 W**。
+[完整测试报告与时间轴](reports/dual-stack-2026-10-20-r2/report_zh.md)记录单独、双常驻、同时推理各场景及p95。
+部署为systemd自启服务，保留8000 WebSocket，新增VLA HTTP 8081和VLM兼容API 8082，均监听回环。
+原baseline服务已保存配置并停用，可通过`dual_stack/restore_original.sh`恢复。
+
+2026-10-16一轮包含独立内存补测、vLLM/Omni 和 TensorRT Edge-LLM 实际兼容性探针：
 [所有技术路径与结论](summary.md)、[分步骤延时与内存对比](reports/engine-comparison-2026-10-16/comparison.md)。
 同轮纯模型 baseline **918.45 ms**，FlashRT BF16 **232.20 ms（3.96×）**；
 稳态 PID NvMap 驱动记账分别为 **7.36 / 12.79 GiB**，不是独占物理内存总和。

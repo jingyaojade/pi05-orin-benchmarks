@@ -1,0 +1,16 @@
+{
+  "generator_sha256": "614614bfb2a43e867248aa911d221d10125f3ef65f75cebe809c30ad5d6cda12",
+  "inputs_sha256": {
+    "provenance.json": "d901cf1bba8dc184e5b034d61853ad8bf3d78e0d2ac96c7a4a850bd6a5ed350e",
+    "phases.json": "28cbebbd19ad3f8f87f0a8327e31f9eb22e28bc1e4243876284c28653ba9ca36",
+    "requests.jsonl": "a69b05a7f9b3d316de64584890ce6b197f452a423e124f69ed6d0a3fefa7e851",
+    "telemetry.jsonl": "bf622d6695e376f948529b77b45abf9e06cbc90411012b7f51af6002ba3111c4"
+  },
+  "note": "Postprocessing is separate from GPU benchmark execution; this hash identifies the report generator.",
+  "plot_generator_sha256": "5f62b8f9f9e1a30cf7491298e5b99d6f8cf2f9b540add94b920169b61affe4e9",
+  "matplotlib_version": "3.9.4",
+  "plot_files_sha256": {
+    "timeline.png": "9678ea0aeef5d05569ee371e3fed33610c2dc97a9d41a4fe5c6bc7caa05c2e10",
+    "timeline.svg": "9728f4c537fa919f8d89ab82b2376ee3f8be6848b4ce7661b5b6545b2c37c0c9"
+  }
+}
