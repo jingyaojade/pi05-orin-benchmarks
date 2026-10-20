@@ -1,0 +1,18 @@
+{
+  "target": "Jetson Thor, aarch64, CUDA capability 11.0",
+  "status": "build kit only; no Thor build or GPU validation yet",
+  "base_image": "nvcr.io/nvidia/pytorch:25.08-py3",
+  "openpi_commit": "215abfb217dbac7d5f1273282331b9b1866c0479",
+  "llama_cpp_commit": "3bb63cbcbfb62056c84fe9e521b0f3d756d29c32",
+  "cuda_architectures": "110",
+  "vla_backend": "OpenPI PyTorch BF16, 10 denoising steps",
+  "flashrt_thor_status": "not ported; existing SM87 adapter is intentionally unchanged",
+  "assets": {
+    "pi05_libero/model.safetensors": "1502e1c5f765ca1bfd6f8f6be0bc769ba2cc263bf298b98bd106d8db168c02e6",
+    "pi05_libero/assets/physical-intelligence/libero/norm_stats.json": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+    "tokenizer/paligemma_tokenizer.model": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+    "Qwen3.5-9B/Qwen3.5-9B-Q5_K_M.gguf": "dc2a39aef291f91a9116ad214058da0d86eb648743a124bd8c333787c4b9c91c",
+    "Qwen3.5-9B/mmproj-F16.gguf": "f70dc3509053962b0d0d3ee8a7eacebf5d60aa560cad78254ae8698516ae029f"
+  },
+  "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd"
+}

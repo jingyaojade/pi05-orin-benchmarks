@@ -1,0 +1,65 @@
+{
+  "purpose": "Historical Orin environment reference, not a Thor runtime lock or new measurement",
+  "source_commit": "74a311d34c202c79674f86086fb1bba7ceee20ef",
+  "source_files_sha256": {
+    "reports/shared-context-2026-10-20/environment-before.json": "15d8181540a16dd4c7cf39e27151e67220ec1eeaa293f65a451cc0ca1f9ed289",
+    "reports/baseline-2026-10-16/provenance.json": "fd145bb32e23b0aa464eda7815ad4c74ba4a31b864bf8a457385ef03f8a95453"
+  },
+  "platform": "Linux-5.15.136-tegra-aarch64-with-glibc2.35",
+  "baseline_versions": {
+    "torch": "2.3.0a0+6ddf5cf85e.nv24.4",
+    "torchvision": null,
+    "transformers": "4.53.2",
+    "safetensors": "0.8.0",
+    "jax": "0.5.3",
+    "jaxlib": "0.5.3",
+    "flax": "0.10.2",
+    "numpy": "1.26.4",
+    "websockets": "15.0.1",
+    "sentencepiece": "0.2.2"
+  },
+  "checkpoint": {
+    "directory": "/home/nvidia/pi05-orin/models/pi05_libero",
+    "model_sha256": "1502e1c5f765ca1bfd6f8f6be0bc769ba2cc263bf298b98bd106d8db168c02e6",
+    "size_bytes": 7233650408,
+    "norm_stats_sha256": "b3a44bb2810436fb62917decaea58bd4d9110255df527dea21e8fd40c960bd84",
+    "tokenizer_model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6"
+  },
+  "flashrt_venv_freeze": "cmake==3.31.10\nfilelock==4.1.0\n-e file:///home/nvidia/pi05-orin-flashrt/vendor/FlashRT\nfsspec==2026.9.0\njinja2==3.1.6\nmarkupsafe==3.0.4\nml-dtypes==0.4.1\nmpmath==1.3.0\nmsgpack==1.1.2\nnetworkx==3.4.2\nninja==1.13.2\nnumpy==1.26.4\npillow==12.3.0\npybind11==3.1.0\npyyaml==6.0.3\nsafetensors==0.8.0\nsentencepiece==0.2.2\nsympy==1.14.0\ntorch @ file:///home/nvidia/pi05-orin/downloads/torch-2.3.0a0+6ddf5cf85e.nv24.04.14026654-cp310-cp310-linux_aarch64.whl\ntyping-extensions==4.16.0\nwebsockets==15.0.1\n",
+  "historical_host_commands": {
+    "l4t": {
+      "command": [
+        "cat",
+        "/etc/nv_tegra_release"
+      ],
+      "returncode": 0,
+      "stdout": "# R36 (release), REVISION: 3.0, GCID: 36191598, BOARD: generic, EABI: aarch64, DATE: Mon May  6 17:34:21 UTC 2024\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia\n",
+      "stderr": ""
+    },
+    "cuda_compiler": {
+      "command": [
+        "/usr/local/cuda/bin/nvcc",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Aug_15_22:08:11_PDT_2023\nCuda compilation tools, release 12.2, V12.2.140\nBuild cuda_12.2.r12.2/compiler.33191640_0\n",
+      "stderr": ""
+    },
+    "power_mode": {
+      "command": [
+        "sudo",
+        "-n",
+        "nvpmodel",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "NV Power Mode: MAXN\n0\n",
+      "stderr": ""
+    }
+  },
+  "notes": [
+    "Do not copy the Orin Torch wheel/venv or SM87 binary onto Thor.",
+    "The old source-oriented FlashRT build flags remain in flashrt/prepare_orin.sh.",
+    "No new SSH capture was obtained; the source is the completed historical measurement."
+  ]
+}

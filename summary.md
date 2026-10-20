@@ -587,3 +587,33 @@ Torch live/reserved仍约6.43/11.84GiB，并不包含原生llama的全部CUDA内
 成功证据见`evidence/lifecycle-validation.json`和两个API smoke文件。
 正式性能数据先于这些切换检查产生，未混入诊断/服务切换耗时。
 完整步骤见[shared_context README](shared_context/README.md)。
+
+
+## 15. Thor Docker源码构建包（2026-10-20）
+
+用户后续目标可能为Thor，目前没有可连接设备，故交付源码构建包，GPU验收待设备到位。
+分支`docker-thor`，独立目录[containers](containers/README.md)。没有修改原模型、FlashRT适配器或双进程实现。
+本地无Docker，当前Orin SSH超时；不能声称已经生成可运行镜像或测得Thor性能。
+
+Thor与本轮Orin同为ARM64，但GPU为SM110/SM87，候选用户态为CUDA13/12.2、Python3.12/3.10。
+NVIDIA PyTorch25.08与JetPack7.0兼容表对应，作为固定候选基础；最终需检查目标机实际版本。
+Dockerfile在独立venv中保留基础容器Torch，安装原OpenPI依赖及官方4.53.2 transformers_replace，
+固定OpenPI和llama.cpp commit，llama.cpp重新按SM110构建；基础镜像tag在构建时解析为digest并留档。
+完整pip freeze及源码SHA保存在构建镜像内；完整transitive lock尚需首次Thor构建后固化。
+
+Thor首版VLA明确为PyTorch BF16、10轮去噪，Qwen仍为Q5_K_M语言权重+FP16 vision，双进程。
+现有FlashRT写明SM87限制，源码/补丁保留，未仅改架构断言冒充完成Thor适配。
+`vla_pytorch_server.py`复用baseline加载、输入准备、模型调用和输出变换，提供8081 HTTP及8000 WS，
+Qwen独立进程8082；`runtime.py`管理自己创建的子进程，不触及宿主机systemd、功耗、风扇或其他容器。
+`benchmark_container.py`使用相同fixture、noise、图片问题和触发方式，保存逐请求数据及组件计时。
+原baseline分层插桩另通过baseline命令运行；没有把FlashRT图或旧计时伪装成Thor PyTorch数据。
+
+`assets.py`只导出并逐个验证五个指定权重/tokenizer/norm文件，约14.73GB，模型独立只读挂载。
+`package_buildkit.py`从提交的Git blob生成带逐文件SHA的源码tar.gz，不带权重、编译二进制或凭据。
+权重可以从恢复连接后的Orin导出，也可从其他已有副本提供，不要求构建时连接原Orin。
+最终镜像经Thor doctor/模型接口/数值/测量验收后再docker save，用于其他兼容Thor。
+
+监控采用Thor候选NVML查询、自己子进程proc及原始hwmon，缺失为N/A，不假定NvMap或Orin三轨规则适用。
+设备内存、RSS及主机MemAvailable不可相加；设备报告功耗不能直接当成Orin三轨合计或整机AC功耗。
+跨平台应先比较Orin PyTorch与Thor PyTorch；比较Thor PyTorch和Orin FlashRT会混入后端差异。
+已通过5项CPU检查、Python编译和shell语法检查，验证边界见[准备记录](containers/validation_2026-10-20.md)。

@@ -2,6 +2,11 @@
 
 记录已部署 OpenPI PyTorch 基线与 FlashRT 的分阶段推理耗时。
 
+新增[Thor Docker构建包](containers/README.md)，分支`docker-thor`。
+固定模型SHA、输入及上游版本，准备ARM64/SM110源码构建、双进程接口、baseline和组合测量。
+当前没有Thor且本地没有Docker：已完成CPU检查，**尚未构建镜像或进行Thor GPU验收**。
+Thor候选VLA先采用PyTorch BF16；现有FlashRT SM87适配器保持原样，不能直接当作Thor实现。
+
 2026-10-20 新版：[同进程共享CUDA上下文测评](reports/shared-context-2026-10-20/report_zh.md)，
 独立代码目录[shared_context](shared_context/README.md)，分支`vla-vlm-shared-context`。
 重新测量双进程对照：同时推理时VLA模型 **427.71→428.22 ms**，Qwen完整短回答 **2856.64→2302.75 ms（约缩短19.4%）**。
