@@ -1,0 +1,14 @@
+{
+  "openpi-pi05-flashrt-dual": {
+    "is-active": "active",
+    "is-enabled": "enabled"
+  },
+  "qwen35-vlm": {
+    "is-active": "active",
+    "is-enabled": "enabled"
+  },
+  "openpi-pi05": {
+    "is-active": "inactive",
+    "is-enabled": "disabled"
+  }
+}

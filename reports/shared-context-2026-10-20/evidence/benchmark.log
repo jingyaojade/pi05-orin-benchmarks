@@ -1,0 +1,25 @@
+{"event": "phase", "variant": "two_process", "name": "idle_system"}
+{"event": "phase", "variant": "two_process", "name": "load_models"}
+{"event": "phase", "variant": "two_process", "name": "warm_models"}
+{"event": "phase", "variant": "two_process", "name": "dual_resident_idle"}
+{"event": "phase", "variant": "two_process", "name": "vla_dual_resident"}
+{"event": "phase", "variant": "two_process", "name": "vlm_dual_resident"}
+{"event": "phase", "variant": "two_process", "name": "concurrent_saturated"}
+{"event": "phase", "variant": "two_process", "name": "periodic_2hz_0p2hz"}
+{"event": "variant_complete", "variant": "two_process", "completed": true}
+{"event": "phase", "variant": "shared_stream", "name": "idle_system"}
+{"event": "phase", "variant": "shared_stream", "name": "load_models"}
+{"event": "phase", "variant": "shared_stream", "name": "warm_models"}
+{"event": "phase", "variant": "shared_stream", "name": "dual_resident_idle"}
+{"event": "phase", "variant": "shared_stream", "name": "vla_dual_resident"}
+{"event": "phase", "variant": "shared_stream", "name": "vlm_dual_resident"}
+{"event": "phase", "variant": "shared_stream", "name": "concurrent_saturated"}
+{"event": "phase", "variant": "shared_stream", "name": "periodic_2hz_0p2hz"}
+{"event": "variant_complete", "variant": "shared_stream", "completed": true}
+{"event": "phase", "variant": "shared_stream", "name": "idle_system"}
+{"event": "phase", "variant": "shared_stream", "name": "load_models"}
+{"event": "phase", "variant": "shared_stream", "name": "warm_models"}
+{"event": "phase", "variant": "shared_stream", "name": "dual_resident_idle"}
+{"event": "phase", "variant": "shared_stream", "name": "memory_capacity_probe"}
+{"event": "variant_complete", "variant": "shared_stream", "completed": true}
+{"event": "experiment_complete", "completed": true}

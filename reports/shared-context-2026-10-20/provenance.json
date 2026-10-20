@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-10-20T07:06:27.478778+00:00",
+  "completed": true,
+  "variants": [
+    "two_process",
+    "shared_stream"
+  ],
+  "config": {
+    "output": "reports/shared-context-2026-10-20",
+    "phase_seconds": 60,
+    "concurrent_seconds": 180,
+    "idle_seconds": 30,
+    "periodic_seconds": 60,
+    "variants": [
+      "two_process",
+      "shared_stream"
+    ],
+    "memory_probe": true
+  },
+  "source": {
+    "schema_version": 1,
+    "llama_cpp_commit": "3bb63cbcbfb62056c84fe9e521b0f3d756d29c32",
+    "llama_cpp_commit_date": "2026-10-19T23:47:21Z",
+    "model_id": "Qwen/Qwen3.5-9B",
+    "gguf_repository": "unsloth/Qwen3.5-9B-GGUF",
+    "gguf_revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+    "files": [
+      {
+        "filename": "Qwen3.5-9B-Q5_K_M.gguf",
+        "size_bytes": 6577841376,
+        "sha256": "dc2a39aef291f91a9116ad214058da0d86eb648743a124bd8c333787c4b9c91c"
+      },
+      {
+        "filename": "mmproj-F16.gguf",
+        "size_bytes": 918166080,
+        "sha256": "f70dc3509053962b0d0d3ee8a7eacebf5d60aa560cad78254ae8698516ae029f"
+      }
+    ],
+    "precision": "Q5_K_M language model + F16 vision/mmproj",
+    "target": "aarch64 SM87 CUDA12.2"
+  },
+  "script_sha256": {
+    "shared_context/service.py": "27f26c29da77849ed24400109d2f4136dd5e80cf0c72987decfa3b642695a7c5",
+    "shared_context/build_bridge.sh": "999a066324f442daa0326b24d1a41c25c114a32cae46e02045acbcd38f982fca",
+    "shared_context/preflight.py": "78ce85bd9c289084cb5a5fd801d2a2279f811a6ca11ccb625b0c097459a27583",
+    "shared_context/support.py": "e96607569a37fe0b3ee960e599559fdacfeda5d6e15202bf47efa7b5c6639868",
+    "shared_context/bridge.cpp": "f21a0ef6f427eb4f4c1c0b4acc87ad14a06c8e16566a07b16984e9d98e2a65ca",
+    "shared_context/benchmark.py": "aab8acf834185a01adf7ca04a8bf2ab9b37438a1f9709b4b05229e3e42319f04",
+    "dual_stack/run_vlm.sh": "2af5b52e742e92a43d9ac74b7a0901c1459d4705e292eb7e3aa1187844783cb3",
+    "dual_stack/run_suite.py": "572903d78f43c13936067bdba03eb7b3cb919d60ed1d70d51cf55a7fe89aa793",
+    "dual_stack/clients.py": "680017f5d5f67be8b3ce0b22255d3fe50c3736b89a6ac80b688c761b8e250c96",
+    "dual_stack/download_models.py": "93b34eda3f46fc9ec5d68800fecbc3a5ea073938938122516b0ab097b307acb2",
+    "dual_stack/restore_original.sh": "9e78f47d9356849a191757aa7db8db854088cf486f886c3d16efc37f843babd1",
+    "dual_stack/websocket_bridge.py": "437733ccf68334c3f6422966dbbbd55ddde5b5a9600915e8f23531da8d594c29",
+    "dual_stack/telemetry.py": "4ac72efc10decbd2fc14853ff4b7eaf4afe15b367649843f247201344aef2177",
+    "dual_stack/vla_server.py": "3b659f53db7039e41fce9e0dd91c1e5b906786532bd2742f311eb8d643cd9425",
+    "dual_stack/smoke_test.py": "fb3265f20be3052d4be41f6cdbb5f1a55af7a704007ae6a2624768b63a8ee62a",
+    "dual_stack/report.py": "614614bfb2a43e867248aa911d221d10125f3ef65f75cebe809c30ad5d6cda12",
+    "dual_stack/install_services.sh": "a1b1582114ec2b1cb60820390582ff44dbb650b54e85ee025f4ece605a355ae9",
+    "dual_stack/make_fixtures.py": "b950e6da0b65a4f6d035478b5f1f3cf3f2b338d2c772702e4c06e18dd78d8a3e",
+    "dual_stack/run_vla.sh": "6456766426f3b134f2aaf95d2a1422a748c6243189419973e32a2ce51df23a52",
+    "dual_stack/plot_results.py": "5f62b8f9f9e1a30cf7491298e5b99d6f8cf2f9b540add94b920169b61affe4e9",
+    "dual_stack/environment.py": "2a2d5ebbdf0ce499dc71fa654ebee1bf22f86f09b8aeb8b7cd7b58de99e09dd9",
+    "dual_stack/setup_orin.sh": "34e921835bc28c95dd42d1948b504430157ca741fb5a655f24bd20062e99a898"
+  },
+  "bridge_sha256": "93ef00449b8ee7e8a6c0501246d75857dfccc39bd68fe264891f9360e720515c",
+  "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd",
+  "limitations": [
+    "Fixed order, dynamic clocks and background OS remain; no thermal steady-state claim.",
+    "1 Hz observers add uncalibrated overhead; sampled memory peaks are lower bounds.",
+    "Two-process per-PID memory and shared-PID memory have overlapping UMA accounting domains.",
+    "Synthetic images and fixed VLA noise; no physical robot or task-success evaluation.",
+    "Shared service pins prompt during co-residency to avoid unsafe concurrent graph recapture.",
+    "CUPTI identity proof is a separate preflight; disabled during timed runs."
+  ],
+  "finished_utc": "2026-10-20T07:23:03.620402+00:00"
+}

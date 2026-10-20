@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/nvidia/pi05-orin-benchmarks/shared_context/preflight.py", line 44, in <module>
+    if __name__=='__main__':main()
+  File "/home/nvidia/pi05-orin-benchmarks/shared_context/preflight.py", line 25, in main
+    wait_ready(process,'http://127.0.0.1:8081',request_json)
+  File "/home/nvidia/pi05-orin-benchmarks/shared_context/support.py", line 52, in wait_ready
+    if process.poll() is not None:raise RuntimeError(f'Service exited {process.returncode}: {url}')
+RuntimeError: Service exited 1: http://127.0.0.1:8081

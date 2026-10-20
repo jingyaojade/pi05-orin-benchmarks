@@ -1,0 +1,54 @@
+  File "<stdin>", line 17
+    (e/"deployed-state.json").write_text(json.dumps(state,indent=2)+"
+                                                                    ^
+SyntaxError: unterminated string literal (detected at line 17)
+Removed /etc/systemd/system/multi-user.target.wants/openpi-vla-vlm-shared.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/openpi-pi05-flashrt-dual.service → /etc/systemd/system/openpi-pi05-flashrt-dual.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/qwen35-vlm.service → /etc/systemd/system/qwen35-vlm.service.
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.10/http/client.py", line 1283, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1329, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/usr/lib/python3.10/http/client.py", line 942, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/nvidia/pi05-orin-benchmarks/dual_stack/smoke_test.py", line 72, in <module>
+    if __name__=='__main__':main()
+  File "/home/nvidia/pi05-orin-benchmarks/dual_stack/smoke_test.py", line 30, in main
+    results={'health':request_json('http://127.0.0.1:8081/health')}
+  File "/home/nvidia/pi05-orin-benchmarks/dual_stack/clients.py", line 11, in request_json
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+  File "/usr/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.10/urllib/request.py", line 1377, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "/usr/lib/python3.10/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+active
+active
+enabled
+enabled

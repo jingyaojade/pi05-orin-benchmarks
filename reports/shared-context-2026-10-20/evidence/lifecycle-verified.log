@@ -1,0 +1,10 @@
+Removed /etc/systemd/system/multi-user.target.wants/qwen35-vlm.service.
+Removed /etc/systemd/system/multi-user.target.wants/openpi-pi05-flashrt-dual.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/openpi-vla-vlm-shared.service → /etc/systemd/system/openpi-vla-vlm-shared.service.
+SHARED_SERVICE_HEALTHY
+{"passed": true, "output": "/home/nvidia/pi05-orin-benchmarks/reports/shared-context-2026-10-20/evidence/deployed-api-smoke.json"}
+Removed /etc/systemd/system/multi-user.target.wants/openpi-vla-vlm-shared.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/openpi-pi05-flashrt-dual.service → /etc/systemd/system/openpi-pi05-flashrt-dual.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/qwen35-vlm.service → /etc/systemd/system/qwen35-vlm.service.
+{"passed": true, "output": "/home/nvidia/pi05-orin-benchmarks/reports/shared-context-2026-10-20/evidence/restored-api-smoke.json"}
+{"lifecycle_passed": true}

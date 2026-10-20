@@ -451,3 +451,139 @@ GPU运行时脚本SHA保存在provenance；报告生成和绘图属于后处理�
 当前部署让两种模型独立提供服务，没有连接物理机器人或让VLM自动执行控制。
 若更重视动作更新延时，可先按事件/低频触发VLM；持续并发的优先级或协同调度尚未实施测试，
 不能把未来pipeline、调度或提高分辨率的潜在收益计入本轮结果。
+
+
+## 14. 同进程共享CUDA上下文实验（2026-10-20）
+
+### 14.1 改造目标与实现路径
+
+分支`vla-vlm-shared-context`，新增独立目录`shared_context/`；原`dual_stack/`未修改。
+目标是检验同一Python进程、同一个CUDA context能否改善双模型同时推理，保持同一模型、量化、输入和服务协议。
+正式报告为[同进程共享上下文版测评](reports/shared-context-2026-10-20/report_zh.md)。
+
+查验固定llama.cpp版本后发现，`llama-server`入口只是调用`llama_server(argc, argv)`；
+完整HTTP/SSE、视觉与文本后端已经编译在`libllama-server-impl.so`。
+因此没有重写Qwen推理或另装版本不同的llama-cpp-python，也没有重编原llama动态库。
+`bridge.cpp`给既有C++入口添加C ABI；`ctypes.CDLL`在Python原生线程里调用它，调用期间释放GIL。
+原生服务及其线程仍在，但不存在独立llama-server模型进程。
+22个原llama动态库路径的SHA均与之前部署记录一致；模型与fixture SHA沿用原实验。
+
+Torch先进行一次实际CUDA分配与stream等待，建立主上下文。仅调用set_device会惰性初始化，
+首轮预检因此失败；随后VLA请求线程和原生Qwen入口显式cuCtxSetCurrent到这个context。
+VLA仍回放原完整生产CUDA Graph，逐请求图像和noise上传、输出下载不变；
+将VLA全设备等待改为其自身stream等待，输出转换也在自身stream执行。
+C++后端内部同步保持原实现，本轮没有逐层重写后端，也没有保证所有kernel会同时执行。
+
+```mermaid
+flowchart LR
+    A[相机 / VLA请求] --> H[Python HTTP / WS线程]
+    B[VLM请求] --> C[C++ HTTP / SSE线程]
+    subgraph P[同一个Python PID]
+      H --> V[π0.5 FlashRT完整图 / 自身stream]
+      C --> Q[原libllama-server-impl.so / Qwen]
+      V --> U[同一个CUDA主上下文]
+      Q --> U
+    end
+    U --> G[同一Orin GPU计算单元 / DRAM带宽]
+```
+
+共享上下文和VLA同步范围是组合改动，主实验没有分别估计两者的独立贡献。
+上下文共享本身不共享两个模型的权重、KV cache或逻辑张量，也不会增加硬件带宽。
+CUDA上下文机制见[NVIDIA CUDA 12.2文档](https://docs.nvidia.com/cuda/archive/12.2.2/cuda-c-programming-guide/index.html#concurrent-kernel-execution)。
+
+### 14.2 证明上下文相同，而非只看PID
+
+`bridge.cpp`的CUPTI launch API callbacks记录context指针/UID、原生线程ID、角色和API名。
+`preflight.py`加载两模型后执行真实VLA请求与Qwen图文请求，要求两个角色的launch都在同一非零context，
+且VLA存在GraphLaunch、Qwen存在Launch、记录无丢弃。
+独立预检得到VLA角色16条、Qwen角色16592条launch API记录，全部相同context。
+这些是API调用记录数，可能包含runtime/driver两层，不等于kernel数。
+证据见`evidence/context-validation.json`和`context-audit.json`。
+
+普通用户CUPTI返回错误35（权限不足），故仅此独立诊断使用sudo运行，正式性能实验仍使用nvidia普通用户。
+首轮惰性初始化与第二轮权限失败日志保留，不将失败当成成功结果。
+CUPTI没有在主延时测量中启用；本轮未量出kernel重叠率、SM/Tensor Core或DRAM峰值利用率。
+
+### 14.3 新的对照方法
+
+`benchmark.py`重新测量原双进程A，再测量共享上下文B；相同VLA fixture/noise，
+同一Qwen Q5_K_M + FP16 mmproj、8192 context、单slot、-ngl99、相同batch/ubatch/线程数与flash-attn。
+相同两张512×384合成图片交替输入，prompt cache关闭、thinking关闭、temperature0、seed42、最多96输出tokens。
+实际回答14/15 tokens，226 prompt tokens，没有cache复用或长度截断。
+
+每个变体包含系统空闲30s、加载、排除内部/客户端预热、双常驻空闲30s、
+只运行VLA约60s、只运行VLM约60s、同时持续推理至少180s、VLA2Hz/VLM0.2Hz约60s。
+持续负载每模型最多一个在途请求、完成立即触发下一次；指定频率采用跳过过期触发策略，避免无限排队。
+主对照1721个正式请求、14个客户端预热；16K另8个正式短请求、7个预热。
+主变体阶段内遥测分别440/442条，保留逐次JSONL，不用理论估算代替GPU测量。
+
+所有固定VLA输出在各实例内逐元素一致；相对官方baseline的cosine为0.999796/0.999813，
+RMSE为0.008445/0.008085。相机变化会改变动作，未传noise时逐次采样。
+两模型没有连接真实机器人，固定合成输入不代表任务成功率。
+
+### 14.4 实际收益与代价
+
+| 同时持续推理指标 | 本轮双进程A | 同进程共享上下文B |
+|---|---:|---:|
+| VLA模型 mean / p95 ms | 427.71 / 473.68 | 428.22 / 504.69 |
+| VLA API mean / p95 ms | 464.09 / 511.68 | 460.37 / 537.48 |
+| VLM首字 mean / p95 ms | 1359.17 / 1375.74 | 1222.87 / 1255.51 |
+| VLM完整 mean / p95 ms | 2856.64 / 2923.37 | 2302.75 / 2346.91 |
+| VLM decode tok/s | 9.01 | 12.50 |
+| 系统RAM max / MemAvailable min GiB | 29.00 / 32.51 | 29.03 / 32.49 |
+| GPU / CPU最高 °C | 71.44 / 69.06 | 75.88 / 72.31 |
+| 板载三轨平均 / 最大 W | 46.09 / 49.84 | 48.95 / 52.81 |
+
+共享版VLM短回答耗时缩短约19.4%，decode提高约38.7%；VLA模型均值基本不变，p95变差。
+两模型双常驻但仅其中一个计算时，两实现都约VLA221ms、VLM完整1.34s，说明主差别发生在同时计算。
+指定VLA2Hz/VLM0.2Hz时，VLA实际完成率A/B分别1.807/1.640Hz，
+VLM均约0.201Hz；VLA模型均值313.52/301.59ms，但p95为482.24/512.00ms。
+因此不能用均值略降就声称动作控制达到稳定2Hz，候选版未改善VLA尾延时。
+
+本次结果修正了“同进程可以消除并发翻倍”的预期：减少进程/上下文边界只解决一部分问题，
+计算单元、带宽、同步与调度仍然共享。没有kernel级证据，不能给这些瓶颈分别分配百分比。
+功耗/温度固定先A后B，起始温度不同，原动态频率/风扇/功耗策略未改变，不把温差全归因于代码。
+共享模型加载阶段OC3增加7，持续并发阶段A/B均未观测增加；不能据此排除全部瞬时限频。
+
+### 14.5 内存占用与如何利用余量
+
+Orin的CPU/GPU共享SoC DRAM，容量有余量不等于计算或内存带宽有余量。
+[NVIDIA Tegra内存说明](https://docs.nvidia.com/cuda/archive/12.2.2/cuda-for-tegra-appnote/index.html#memory-management)。
+共享进程NvMap约20.45GiB，只记录一次PID；RSS、PSS、NvMap、Torch allocator和系统RAM存在重叠，不能相加。
+Torch live/reserved仍约6.43/11.84GiB，并不包含原生llama的全部CUDA内存。
+共享版并发RAM约29GiB、可用约32.5GiB，容量并未耗尽；GPU活跃时间平均约97.29%，
+但这个百分比不是SM/Tensor Core占用率，也不是DRAM带宽利用率。
+
+本轮额外将Qwen单slot context容量从8192增加到16384，共享PID在双常驻空闲时NvMap最大值
+20.453→20.729GiB，增加0.275GiB。日志显示配置已生效，8个短图片问答成功；
+这只是容量与短请求探针，没有执行16K实际长度输入，也不能把整个PID差值严格归因为单独KV buffer。
+
+有效利用余量的方向：更长上下文/历史、更多视觉token、Q8或FP16语言权重、
+多请求槽位或批量、正确失效的前缀/特征缓存和复用缓冲。
+这些分别服务于长对话、细节/精度或吞吐；没有保证单次延时下降，部分会加重VLA争用。
+当前π0.5仍固定经过验证的224×224输入，提高原相机分辨率不会自动让该模型使用更多token。
+本轮仅context8K→16K实际运行，其他方向未冒充实测结论。
+不通过空tensor、无用cache或重复加载模型来追求占用比例；关注任务质量、p95、吞吐、带宽及功耗的共同收益。
+
+### 14.6 文件职责、复现与部署状态
+
+- `bridge.cpp`、`build_bridge.sh`：C ABI、显式context绑定、独立CUPTI诊断，编译小型shim。
+- `service.py`、`run_service.sh`：同进程模型、HTTP/SSE/WS兼容入口、VLA stream同步。
+- `preflight.py`：独立上下文身份证据与接口检查。
+- `benchmark.py`、`support.py`：匹配A/B负载、周期触发、原服务状态保存和恢复。
+- `report.py`、`plot_results.py`：读取原始数据生成分步统计、内存/温度/功耗报告及时间轴；后处理源码与输入SHA单记。
+- `activate.sh`、`rollback.sh`、`lifecycle_test.py`：hash门槛、systemd候选切换、三个端口同PID验证、接口检查与回退。
+
+候选服务`openpi-vla-vlm-shared`已在8081/8082/8000实际运行并通过测试；
+原生线程同属一个Python PID，没有独立llama-server子进程。
+为了避免Qwen活动期间重捕获VLA CUDA Graph，本候选版固定原fixture任务prompt，
+不同任务明确返回409；尚无更换任务的配置入口，单纯重启不会改变任务。
+当前默认已回退原`openpi-pi05-flashrt-dual`和`qwen35-vlm`，均恢复active/enabled；
+恢复后动态任务、图像响应、HTTP/SSE和WS重新检查通过。
+候选unit和二进制保留，可按README切换，不影响原双进程实现。
+
+首次切换验证记录已保存；后续有一次临时取证命令转义错误、紧接恢复后检查早于API就绪，
+该次操作日志保留并标为未完成。新增生命周期脚本等待各API就绪后重新完成全流程，
+成功证据见`evidence/lifecycle-validation.json`和两个API smoke文件。
+正式性能数据先于这些切换检查产生，未混入诊断/服务切换耗时。
+完整步骤见[shared_context README](shared_context/README.md)。

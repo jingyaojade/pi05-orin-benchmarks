@@ -1,0 +1,24 @@
+{
+  "generator_sha256": "c0f63b9b61d25f227406e87f7de5eda97290b024c7bae17727932e40332889e8",
+  "inputs_sha256": {
+    "provenance.json": "ae3f45e083c2d1826b67f83f40d3371ae4b155de634ff5457ec5f7b1e46fc9f9",
+    "two_process\\provenance.json": "f2998b3a6a3405dc2cede9a26dcdf9575e7bf996e1952ce8c3ee125446ec0dc1",
+    "two_process\\phases.json": "0eda2d030eaf4a240151ed699a7ed27db3832f5f314958fea2ad0f49c42e1463",
+    "two_process\\requests.jsonl": "3c46d581c066a19a29ba4c1761ce987f9b8021137f91c89fe70aec5b0ecde227",
+    "two_process\\telemetry.jsonl": "4e85afbbe9950527f3cc24c1453d303b9e964c91a4bec9544ab640496a8b83f6",
+    "shared_stream\\provenance.json": "1a5ec24a19872b577e61e292519f6164d5e02fdd6f1dd7abf4d000c1a5e735f8",
+    "shared_stream\\phases.json": "355c1098c6b178b1785ab61a6c2bcdce5dce2946439a3129ee47fe3cd321c054",
+    "shared_stream\\requests.jsonl": "0f17ec60412e65e36413cc6f48dcda89aee206a818350fbd37086e29e7326a98",
+    "shared_stream\\telemetry.jsonl": "246d357c4382c5aea515fa1d315799bc9737025795d622af855985b8700b1bfe",
+    "shared_context_16k\\provenance.json": "c8ba6bc4ac53f09535cffa75310096b6bbbb70aa279dc437a80723ef47a38461",
+    "shared_context_16k\\phases.json": "3d440ef210c9b4e1cf9e0c9511685384c54f39a3f54b9f181c74770d5f2383aa",
+    "shared_context_16k\\requests.jsonl": "af82e27febfe5d6b294674b156ac7536d334a3e702404ff9e9bfab4e8e4c0c79",
+    "shared_context_16k\\telemetry.jsonl": "e685d99e3884205b0bcef61efbaf79a6965055bdb5fd9a3c0e941f46304f9421"
+  },
+  "plot_generator_sha256": "829464e82889098daf59b8ba8d24c11ec4c310d63877c8c06047afcd40741643",
+  "matplotlib_version": "3.9.4",
+  "plot_files_sha256": {
+    "timeline.png": "c37405e668ee45df3ab21fdbfea96d0004e98f79b5689acd759f4e0ecf987117",
+    "timeline.svg": "94202fbf19101bfbe2da4f2c7a4c9ca16a2b07a41add8b6c2ff149aa2a71b6d2"
+  }
+}

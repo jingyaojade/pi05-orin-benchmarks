@@ -1,0 +1,177 @@
+FVK_PI05_RTX_FORCE_BF16=1 set: disabling FP8 paths for the Pi0.5 RTX pipeline.
+  autotune: tested 8 algos, best=1 (134.214 us)
+  autotune: tested 8 algos, best=4 (211.421 us)
+  autotune: tested 8 algos, best=6 (80.3232 us)
+  autotune: tested 8 algos, best=5 (263.254 us)
+  autotune: tested 8 algos, best=7 (238.435 us)
+  autotune: tested 8 algos, best=7 (115.299 us)
+  autotune: tested 8 algos, best=7 (297.933 us)
+  autotune: tested 8 algos, best=7 (239.498 us)
+  autotune: tested 8 algos, best=0 (1880.82 us)
+  autotune: tested 8 algos, best=5 (1868.36 us)
+  autotune: tested 8 algos, best=7 (1725.38 us)
+  autotune: tested 6 algos, best=1 (5.7472 us)
+  autotune: tested 5 algos, best=0 (39.0656 us)
+  autotune: tested 7 algos, best=4 (21.568 us)
+  autotune: tested 7 algos, best=2 (55.504 us)
+  autotune: tested 7 algos, best=3 (55.4816 us)
+  autotune: tested 7 algos, best=3 (61.52 us)
+  autotune: tested 1 algos, best=0 (10.256 us)
+0.00.005.366 W Setting 'enable_thinking' via --chat-template-kwargs is deprecated. Use --reasoning on / --reasoning off instead.
+0.00.005.602 I srv  llama_server: initializing ...
+0.00.005.621 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.005.790 I srv  init_listene: The UI is disabled
+0.00.005.794 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.005.948 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.007.981 I srv    load_model: loading model '/home/nvidia/pi05-orin-dual/models/Qwen3.5-9B/Qwen3.5-9B-Q5_K_M.gguf'
+0.05.688.840 I cmn          init: llama threadpool init, n_threads = 4
+0.05.876.995 W load_hparams: Qwen-VL models require at minimum 1024 image tokens to function correctly on grounding tasks
+0.05.877.006 W load_hparams: if you encounter problems with accuracy, try adding --image-min-tokens 1024
+0.05.877.007 W load_hparams: more info: https://github.com/ggml-org/llama.cpp/issues/16842
+
+0.06.711.819 I srv    load_model: loaded multimodal model, '/home/nvidia/pi05-orin-dual/models/Qwen3.5-9B/mmproj-F16.gguf'
+0.06.853.793 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+0.06.860.407 I srv  llama_server: model loaded
+0.06.860.418 I srv  llama_server: listening on http://127.0.0.1:8082
+{"event": "shared_ready", "pid": 41396, "model": "pi05_libero", "topology": "single Python PID, embedded native llama implementation", "cuda_context": 187650657619808, "torch_version": "2.3.0a0+6ddf5cf85e.nv24.04", "cuda_build": "12.2", "models": "both", "sync": "stream", "context_capacity": 16384, "action_shape": [10, 7], "fixture_sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd", "prompt_reconfiguration": "requires maintenance/restart while native VLM is resident", "reference_actions": [[-0.4446912407875061, 0.08504313230514526, -0.4908117949962616, -0.0027272403240203857, -0.10713984072208405, 0.2107323408126831, 0.987884521484375], [-0.4085007905960083, 0.056849777698516846, -0.41758424043655396, -0.00041447579860687256, -0.08078642189502716, 0.15142971277236938, 0.9839789867401123], [-0.3591502010822296, 0.03072798252105713, -0.3260497450828552, 0.0007731691002845764, -0.04416544735431671, 0.0941038429737091, 0.999600887298584], [-0.352570116519928, 0.033304810523986816, -0.2894359827041626, -0.0020396634936332703, -0.029790863394737244, 0.06284642219543457, -0.9921890497207642], [-0.3163796663284302, 0.1731598973274231, -0.1704411506652832, -0.016291335225105286, -0.017469778656959534, 0.02701777219772339, -0.9921890497207642], [-0.30650952458381653, 0.2645103335380554, -0.10087496042251587, -0.031793154776096344, -0.008742347359657288, 0.015774980187416077, 1.0074117183685303], [-0.21603339910507202, 0.2709776759147644, -0.04458123445510864, -0.03629367798566818, -0.00951242446899414, 0.008362159132957458, -0.9921890497207642], [-0.0877218246459961, 0.2273234724998474, 0.03894394636154175, -0.039794087409973145, -0.008228972554206848, 0.0034202784299850464, -0.9960945248603821], [-0.04330629110336304, 0.18690288066864014, 0.18105125427246094, -0.039794087409973145, -0.000956118106842041, -0.0042396485805511475, -0.9921890497207642], [-0.03096860647201538, 0.18043559789657593, 0.2945539951324463, -0.04204435646533966, 0.0011829584836959839, -0.003498360514640808, -0.9921890497207642]], "tokenizer": {"implementation": "standalone OpenPI-compatible no-state SentencePiece", "model_path": "/home/nvidia/pi05-orin/cache/big_vision/paligemma_tokenizer.model", "model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6", "serialized_model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6", "max_len": 200, "state_in_prompt": false, "prompt": "pick up the black bowl", "cleaned_prompt": "pick up the black bowl", "token_ids": [2, 18075, 908, 573, 2656, 14581, 108, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "token_mask": [true, true, true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], "valid_token_ids": [2, 18075, 908, 573, 2656, 14581, 108], "valid_token_count": 7}, "baseline_accuracy": {"shape": [10, 7], "all_finite": true, "exact_match": false, "cosine": 0.9997959943990333, "rmse": 0.008445327178452127, "max_abs": 0.03765360133671769, "mean_abs": 0.0049784872241998785}, "vlm_command": ["embedded-llama", "-m", "/home/nvidia/pi05-orin-dual/models/Qwen3.5-9B/Qwen3.5-9B-Q5_K_M.gguf", "--mmproj", "/home/nvidia/pi05-orin-dual/models/Qwen3.5-9B/mmproj-F16.gguf", "--host", "127.0.0.1", "--port", "8082", "-ngl", "99", "-c", "16384", "-np", "1", "-t", "4", "-tb", "4", "-b", "512", "-ub", "128", "--flash-attn", "on", "--jinja", "--chat-template-kwargs", "{\"enable_thinking\":false}", "--no-cache-prompt", "--metrics", "--no-webui"]}
+0.08.726.365 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.08.726.559 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.08.994.181 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.08.994.198 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.08.994.515 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.09.051.588 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.09.213.344 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.09.213.471 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.10.079.270 I slot print_timing: id  0 | task 0 | prompt eval time =     718.75 ms /   226 tokens (    3.18 ms per token,   314.43 tokens per second)
+0.10.079.288 I slot print_timing: id  0 | task 0 |        eval time =     633.88 ms /    14 tokens (   48.76 ms per token,    20.51 tokens per second)
+0.10.079.293 I slot print_timing: id  0 | task 0 |       total time =    1352.63 ms /   240 tokens
+0.10.079.296 I slot print_timing: id  0 | task 0 |    graphs reused =         13
+0.10.079.301 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.10.079.354 I slot      release: id  0 | task 0 | stop processing: n_tokens = 239, truncated = 0
+0.10.095.993 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 239, t_last = 16111199283
+0.10.142.212 I slot launch_slot_: id  0 | task 17 | processing task, is_child = 0
+0.10.335.352 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.10.335.377 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.10.335.849 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.10.367.118 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.10.536.757 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.10.536.885 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.11.433.957 I slot print_timing: id  0 | task 17 | prompt eval time =     624.84 ms /   226 tokens (    2.76 ms per token,   361.69 tokens per second)
+0.11.433.974 I slot print_timing: id  0 | task 17 |        eval time =     666.82 ms /    15 tokens (   47.63 ms per token,    21.00 tokens per second)
+0.11.433.977 I slot print_timing: id  0 | task 17 |       total time =    1291.65 ms /   241 tokens
+0.11.433.980 I slot print_timing: id  0 | task 17 |    graphs reused =         26
+0.11.433.986 I slot print_timing: id  0 | task 17 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.11.434.029 I slot      release: id  0 | task 17 | stop processing: n_tokens = 240, truncated = 0
+0.41.483.878 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 240, t_last = 16112553959
+0.41.676.046 I slot launch_slot_: id  0 | task 35 | processing task, is_child = 0
+0.41.933.399 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.41.933.424 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.41.933.939 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.41.983.017 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.42.162.857 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.42.162.992 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.43.019.452 I slot print_timing: id  0 | task 35 | prompt eval time =     716.86 ms /   226 tokens (    3.17 ms per token,   315.26 tokens per second)
+0.43.019.466 I slot print_timing: id  0 | task 35 |        eval time =     626.42 ms /    14 tokens (   48.19 ms per token,    20.75 tokens per second)
+0.43.019.469 I slot print_timing: id  0 | task 35 |       total time =    1343.28 ms /   240 tokens
+0.43.019.472 I slot print_timing: id  0 | task 35 |    graphs reused =         38
+0.43.019.475 I slot print_timing: id  0 | task 35 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.43.019.515 I slot      release: id  0 | task 35 | stop processing: n_tokens = 239, truncated = 0
+0.43.036.157 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 239, t_last = 16144139445
+0.43.100.284 I slot launch_slot_: id  0 | task 52 | processing task, is_child = 0
+0.43.283.068 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.43.283.092 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.43.283.582 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.43.325.579 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.43.483.656 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.43.483.781 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.44.383.312 I slot print_timing: id  0 | task 52 | prompt eval time =     613.91 ms /   226 tokens (    2.72 ms per token,   368.13 tokens per second)
+0.44.383.330 I slot print_timing: id  0 | task 52 |        eval time =     669.02 ms /    15 tokens (   47.79 ms per token,    20.93 tokens per second)
+0.44.383.333 I slot print_timing: id  0 | task 52 |       total time =    1282.93 ms /   241 tokens
+0.44.383.336 I slot print_timing: id  0 | task 52 |    graphs reused =         51
+0.44.383.339 I slot print_timing: id  0 | task 52 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.44.383.382 I slot      release: id  0 | task 52 | stop processing: n_tokens = 240, truncated = 0
+0.44.399.936 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 240, t_last = 16145503311
+0.44.463.988 I slot launch_slot_: id  0 | task 70 | processing task, is_child = 0
+0.44.646.283 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.44.646.306 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.44.646.827 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.44.688.778 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.44.847.294 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.44.847.431 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.45.697.317 I slot print_timing: id  0 | task 70 | prompt eval time =     613.30 ms /   226 tokens (    2.71 ms per token,   368.50 tokens per second)
+0.45.697.333 I slot print_timing: id  0 | task 70 |        eval time =     619.92 ms /    14 tokens (   47.69 ms per token,    20.97 tokens per second)
+0.45.697.336 I slot print_timing: id  0 | task 70 |       total time =    1233.22 ms /   240 tokens
+0.45.697.340 I slot print_timing: id  0 | task 70 |    graphs reused =         63
+0.45.697.342 I slot print_timing: id  0 | task 70 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.45.697.386 I slot      release: id  0 | task 70 | stop processing: n_tokens = 239, truncated = 0
+0.45.736.128 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 239, t_last = 16146817316
+0.45.798.151 I slot launch_slot_: id  0 | task 87 | processing task, is_child = 0
+0.45.978.946 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.45.978.970 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.45.979.494 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.46.021.619 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.46.180.207 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.46.180.337 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.47.078.136 I slot print_timing: id  0 | task 87 | prompt eval time =     612.46 ms /   226 tokens (    2.71 ms per token,   369.00 tokens per second)
+0.47.078.150 I slot print_timing: id  0 | task 87 |        eval time =     667.43 ms /    15 tokens (   47.67 ms per token,    20.98 tokens per second)
+0.47.078.154 I slot print_timing: id  0 | task 87 |       total time =    1279.89 ms /   241 tokens
+0.47.078.157 I slot print_timing: id  0 | task 87 |    graphs reused =         76
+0.47.078.159 I slot print_timing: id  0 | task 87 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.47.078.200 I slot      release: id  0 | task 87 | stop processing: n_tokens = 240, truncated = 0
+0.47.094.807 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 240, t_last = 16148198130
+0.47.159.259 I slot launch_slot_: id  0 | task 105 | processing task, is_child = 0
+0.47.339.733 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.47.339.757 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.47.340.312 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.47.381.376 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.47.540.869 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.47.541.005 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.48.389.003 I slot print_timing: id  0 | task 105 | prompt eval time =     610.86 ms /   226 tokens (    2.70 ms per token,   369.97 tokens per second)
+0.48.389.018 I slot print_timing: id  0 | task 105 |        eval time =     618.80 ms /    14 tokens (   47.60 ms per token,    21.01 tokens per second)
+0.48.389.021 I slot print_timing: id  0 | task 105 |       total time =    1229.65 ms /   240 tokens
+0.48.389.024 I slot print_timing: id  0 | task 105 |    graphs reused =         88
+0.48.389.026 I slot print_timing: id  0 | task 105 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.48.389.075 I slot      release: id  0 | task 105 | stop processing: n_tokens = 239, truncated = 0
+0.48.405.442 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 239, t_last = 16149509005
+0.48.470.065 I slot launch_slot_: id  0 | task 122 | processing task, is_child = 0
+0.48.650.792 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.48.650.816 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.48.651.348 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.48.693.532 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.48.852.146 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.48.852.280 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.49.748.869 I slot print_timing: id  0 | task 122 | prompt eval time =     612.18 ms /   226 tokens (    2.71 ms per token,   369.17 tokens per second)
+0.49.748.883 I slot print_timing: id  0 | task 122 |        eval time =     666.52 ms /    15 tokens (   47.61 ms per token,    21.00 tokens per second)
+0.49.748.886 I slot print_timing: id  0 | task 122 |       total time =    1278.71 ms /   241 tokens
+0.49.748.889 I slot print_timing: id  0 | task 122 |    graphs reused =        101
+0.49.748.891 I slot print_timing: id  0 | task 122 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.49.748.936 I slot      release: id  0 | task 122 | stop processing: n_tokens = 240, truncated = 0
+0.49.774.568 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 240, t_last = 16150868866
+0.49.838.334 I slot launch_slot_: id  0 | task 140 | processing task, is_child = 0
+0.50.019.031 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.50.019.055 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.50.019.590 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.50.061.692 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.50.220.454 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.50.220.587 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.51.072.384 I slot print_timing: id  0 | task 140 | prompt eval time =     612.41 ms /   226 tokens (    2.71 ms per token,   369.04 tokens per second)
+0.51.072.399 I slot print_timing: id  0 | task 140 |        eval time =     621.55 ms /    14 tokens (   47.81 ms per token,    20.92 tokens per second)
+0.51.072.403 I slot print_timing: id  0 | task 140 |       total time =    1233.96 ms /   240 tokens
+0.51.072.409 I slot print_timing: id  0 | task 140 |    graphs reused =        113
+0.51.072.412 I slot print_timing: id  0 | task 140 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.51.072.453 I slot      release: id  0 | task 140 | stop processing: n_tokens = 239, truncated = 0
+0.51.088.774 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 239, t_last = 16152192382
+0.51.153.071 I slot launch_slot_: id  0 | task 157 | processing task, is_child = 0
+0.51.334.381 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.51.334.407 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.51.334.952 W find_slot: non-consecutive token position 4 after 3 for sequence 0 with 128 new tokens
+0.51.365.348 W find_slot: non-consecutive token position 4 after 4 for sequence 0 with 64 new tokens
+0.51.535.847 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.51.535.979 W find_slot: non-consecutive token position 45 after 4 for sequence 0 with 26 new tokens
+0.52.432.952 I slot print_timing: id  0 | task 157 | prompt eval time =     612.83 ms /   226 tokens (    2.71 ms per token,   368.78 tokens per second)
+0.52.432.966 I slot print_timing: id  0 | task 157 |        eval time =     666.97 ms /    15 tokens (   47.64 ms per token,    20.99 tokens per second)
+0.52.432.970 I slot print_timing: id  0 | task 157 |       total time =    1279.80 ms /   241 tokens
+0.52.432.973 I slot print_timing: id  0 | task 157 |    graphs reused =        126
+0.52.432.978 I slot print_timing: id  0 | task 157 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.52.433.023 I slot      release: id  0 | task 157 | stop processing: n_tokens = 240, truncated = 0
+0.52.939.582 I srv    operator(): operator(): cleaning up before exit...

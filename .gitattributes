@@ -9,3 +9,5 @@ reports/**/environment-before.txt whitespace=-blank-at-eol
 /dual_stack/** text eol=lf
 /dual_stack/fixtures/*.png -text
 /reports/dual-stack-2026-10-20-r2/** -text -whitespace
+/shared_context/** text eol=lf
+/reports/shared-context-2026-10-20/** -text -whitespace

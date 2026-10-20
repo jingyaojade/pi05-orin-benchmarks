@@ -2,6 +2,14 @@
 
 记录已部署 OpenPI PyTorch 基线与 FlashRT 的分阶段推理耗时。
 
+2026-10-20 新版：[同进程共享CUDA上下文测评](reports/shared-context-2026-10-20/report_zh.md)，
+独立代码目录[shared_context](shared_context/README.md)，分支`vla-vlm-shared-context`。
+重新测量双进程对照：同时推理时VLA模型 **427.71→428.22 ms**，Qwen完整短回答 **2856.64→2302.75 ms（约缩短19.4%）**。
+VLA p95 **473.68→504.69 ms**，没有改善；并发系统RAM峰值 **29.03 GiB**。
+已用CUPTI验证实际launch上下文相同，并通过单PID三端口服务与回退检查。
+候选版本固定fixture任务prompt，改变任务返回409；当前默认恢复原双进程服务。
+8K→16K上下文容量另做实测，内存用途、温度、功耗、分步耗时和限制均见报告及[summary.md第14节](summary.md#14-同进程共享cuda上下文实验2026-10-20)。
+
 2026-10-20：已部署 **π0.5 FlashRT BF16 + Qwen3.5-9B Q5_K_M / FP16 vision** 双服务，
 代码位于[dual_stack](dual_stack/README.md)，分支为 `vla-vlm-qwen35`。
 VLA单独/同时推理的模型均值为 **220.80 / 427.42 ms**；VLM首字 **688.39 / 1350.02 ms**。

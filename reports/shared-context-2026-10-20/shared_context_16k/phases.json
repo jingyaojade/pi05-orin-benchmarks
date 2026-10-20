@@ -1,0 +1,27 @@
+[
+  {
+    "name": "idle_system",
+    "start_ns": 16057798792263,
+    "end_ns": 16087829073938
+  },
+  {
+    "name": "load_models",
+    "start_ns": 16087829962504,
+    "end_ns": 16108481654576
+  },
+  {
+    "name": "warm_models",
+    "start_ns": 16108482041369,
+    "end_ns": 16112555560854
+  },
+  {
+    "name": "dual_resident_idle",
+    "start_ns": 16112556391337,
+    "end_ns": 16142586662142
+  },
+  {
+    "name": "memory_capacity_probe",
+    "start_ns": 16142587728884,
+    "end_ns": 16153554372506
+  }
+]

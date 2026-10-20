@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "pid": 29899,
+  "cuda_context": 187651525943808,
+  "launches_by_role": {
+    "1": 16,
+    "2": 16592
+  },
+  "unique_contexts": [
+    187651525943808
+  ],
+  "method": "CUPTI runtime/driver API launch callbacks, not a before/after context assumption"
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "idle_system",
+    "start_ns": 15608471749284,
+    "end_ns": 15638476064756
+  },
+  {
+    "name": "load_models",
+    "start_ns": 15638476918701,
+    "end_ns": 15659124605175
+  },
+  {
+    "name": "warm_models",
+    "start_ns": 15659125064404,
+    "end_ns": 15663223300764
+  },
+  {
+    "name": "dual_resident_idle",
+    "start_ns": 15663224154262,
+    "end_ns": 15693254427604
+  },
+  {
+    "name": "vla_dual_resident",
+    "start_ns": 15693255544075,
+    "end_ns": 15753345369582
+  },
+  {
+    "name": "vlm_dual_resident",
+    "start_ns": 15753346279335,
+    "end_ns": 15813632102823
+  },
+  {
+    "name": "concurrent_saturated",
+    "start_ns": 15813633032479,
+    "end_ns": 15995679593315
+  },
+  {
+    "name": "periodic_2hz_0p2hz",
+    "start_ns": 15995680671491,
+    "end_ns": 16055450024081
+  }
+]

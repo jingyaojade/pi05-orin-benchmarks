@@ -1,0 +1,28 @@
+{
+  "services": {
+    "openpi-vla-vlm-shared": {
+      "is-active": "inactive",
+      "is-enabled": "disabled"
+    },
+    "openpi-pi05-flashrt-dual": {
+      "is-active": "active",
+      "is-enabled": "enabled"
+    },
+    "qwen35-vlm": {
+      "is-active": "active",
+      "is-enabled": "enabled"
+    },
+    "openpi-pi05": {
+      "is-active": "inactive",
+      "is-enabled": "disabled"
+    }
+  },
+  "apis": {},
+  "post_benchmark_scripts_sha256": {
+    "shared_context/activate.sh": "1d311d9d210015448cef776dce2ff40ff979c28d6102a3938d7580d2ea8c27a3",
+    "shared_context/rollback.sh": "0920693271f41aa9ef9a224176c7585a10b3633c62aab5d7a428b3afa49a5ec6",
+    "shared_context/run_service.sh": "2a54db2ddd37bae30a3d114dac4bce8b5146f7d42e3e544874c1f790ddfbb6e3",
+    "shared_context/lifecycle_test.py": "4783af0512c66243be3ef4ed01522bf5bd4b5b337015f1ddd61a062a4aba2b12"
+  },
+  "listeners": "State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess                                 \nLISTEN 0      5          127.0.0.1:8081      0.0.0.0:*    users:((\"python\",pid=42989,fd=40))     \nLISTEN 0      512        127.0.0.1:8082      0.0.0.0:*    users:((\"llama-server\",pid=43027,fd=7))\nLISTEN 0      100        127.0.0.1:8000      0.0.0.0:*    users:((\"python\",pid=42989,fd=44))     \n"
+}
