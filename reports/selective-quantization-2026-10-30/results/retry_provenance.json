@@ -1,0 +1,203 @@
+{
+  "started_unix": 1793368402.622833,
+  "pending": [
+    "bf16_2valid_968",
+    "int8_encoder_all",
+    "int8_decoder_all",
+    "int8_both_all",
+    "int8_encoder_ffn"
+  ],
+  "runs": [
+    {
+      "name": "bf16_2valid_968_retry",
+      "original": "bf16_2valid_968",
+      "returncode": 0
+    },
+    {
+      "name": "int8_encoder_all_retry",
+      "original": "int8_encoder_all",
+      "returncode": 0
+    },
+    {
+      "name": "int8_decoder_all_retry",
+      "original": "int8_decoder_all",
+      "returncode": 0
+    },
+    {
+      "name": "int8_both_all_retry",
+      "original": "int8_both_all",
+      "returncode": 0
+    },
+    {
+      "name": "int8_encoder_ffn_retry",
+      "original": "int8_encoder_ffn",
+      "returncode": 0
+    },
+    {
+      "name": "int8_decoder_ffn_compact_519",
+      "original": null,
+      "returncode": 0
+    },
+    {
+      "name": "int8_decoder_ffn_3valid_compact_775",
+      "original": null,
+      "returncode": 0
+    },
+    {
+      "name": "int8_encoder_strict",
+      "original": null,
+      "returncode": 0
+    },
+    {
+      "name": "int8_strict_encoder_decoder_ffn_compact_519",
+      "original": null,
+      "returncode": 0
+    }
+  ],
+  "extra_configurations": [
+    {
+      "name": "int8_decoder_ffn_compact_519",
+      "num_views": 2,
+      "valid_num_views": 2,
+      "max_prompt_len": 7,
+      "num_steps": 10,
+      "decoder_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "modules": [
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ]
+    },
+    {
+      "name": "int8_decoder_ffn_3valid_compact_775",
+      "num_views": 3,
+      "valid_num_views": 3,
+      "max_prompt_len": 7,
+      "num_steps": 10,
+      "decoder_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "modules": [
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ]
+    },
+    {
+      "name": "int8_encoder_strict",
+      "num_views": 3,
+      "valid_num_views": 2,
+      "max_prompt_len": 200,
+      "num_steps": 10,
+      "encoder_layers": [
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "name": "int8_strict_encoder_decoder_ffn_compact_519",
+      "num_views": 2,
+      "valid_num_views": 2,
+      "max_prompt_len": 7,
+      "num_steps": 10,
+      "encoder_layers": [
+        15,
+        16,
+        17
+      ],
+      "decoder_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "encoder_modules": [
+        "qkv",
+        "o",
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ],
+      "decoder_modules": [
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ]
+    }
+  ],
+  "service_state_before": {
+    "openpi-pi05": "inactive",
+    "openpi-pi05-flashrt-dual": "active",
+    "qwen35-vlm": "active",
+    "pi05-qwen-shared": "inactive"
+  },
+  "completed": true,
+  "restore": {
+    "openpi-pi05-flashrt-dual": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "qwen35-vlm": {
+      "returncode": 0,
+      "stderr": ""
+    }
+  },
+  "service_state_after": {
+    "openpi-pi05": "inactive",
+    "openpi-pi05-flashrt-dual": "active",
+    "qwen35-vlm": "active",
+    "pi05-qwen-shared": "inactive"
+  },
+  "finished_unix": 1793368968.3546982
+}

@@ -1,0 +1,7 @@
+{
+  "num_views": 3,
+  "valid_num_views": 2,
+  "max_prompt_len": 200,
+  "num_steps": 10,
+  "name": "bf16_2valid_968_retry"
+}

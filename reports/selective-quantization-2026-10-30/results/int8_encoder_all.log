@@ -1,0 +1,29 @@
+FVK_PI05_RTX_FORCE_BF16=1 set: disabling FP8 paths for the Pi0.5 RTX pipeline.
+Selective W8A8 prepared 86 active weights; kept BF16 norms/GELU, INT8 copies=1790.0 MiB; scratch=15.1 MiB
+  autotune: tested 8 algos, best=1 (75.1968 us)
+  autotune: tested 8 algos, best=4 (199.421 us)
+  autotune: tested 8 algos, best=6 (75.9072 us)
+  autotune: tested 8 algos, best=5 (249.251 us)
+  autotune: tested 8 algos, best=7 (238.995 us)
+  autotune: tested 8 algos, best=7 (117.389 us)
+  autotune: tested 8 algos, best=7 (300.49 us)
+  autotune: tested 8 algos, best=7 (243.571 us)
+  autotune: tested 8 algos, best=5 (2020.94 us)
+  autotune: tested 8 algos, best=4 (2016.74 us)
+  autotune: tested 8 algos, best=1 (1969.97 us)
+  autotune: tested 6 algos, best=3 (6.0064 us)
+  autotune: tested 5 algos, best=4 (39.1776 us)
+  autotune: tested 7 algos, best=4 (24.9824 us)
+  autotune: tested 7 algos, best=3 (56.672 us)
+  autotune: tested 7 algos, best=4 (57.1232 us)
+  autotune: tested 7 algos, best=3 (62.0928 us)
+  autotune: tested 1 algos, best=0 (10.4992 us)
+{"event": "latency_complete", "name": "int8_encoder_all", "latency": {"n": 50, "mean_ms": 205.36835652, "median_ms": 205.4271165, "p95_ms": 206.00609485, "min_ms": 204.225445, "max_ms": 206.361302, "std_ms": 0.500247898498943}, "cosine": 0.9470770646957927}
+Traceback (most recent call last):
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/worker.py", line 160, in <module>
+    if __name__=='__main__':main()
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/worker.py", line 153, in main
+    try:run(a)
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/worker.py", line 116, in run
+    raise RuntimeError('Insufficient telemetry samples; this variant cannot support a memory/temperature report')
+RuntimeError: Insufficient telemetry samples; this variant cannot support a memory/temperature report

@@ -1,0 +1,36 @@
+{"event": "start", "name": "references", "unix": 1793367126.3327403}
+{"event": "finished", "name": "references", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/references.log", "finished_unix": 1793367264.496354}
+{"event": "start", "name": "bf16_2valid_968", "unix": 1793367264.4981785}
+{"event": "finished", "name": "bf16_2valid_968", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_2valid_968.log", "finished_unix": 1793367328.4476125}
+{"event": "start", "name": "screening", "unix": 1793367328.4491892}
+{"event": "finished", "name": "screening", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/screening.log", "finished_unix": 1793367478.8708432}
+{"event": "start", "name": "int8_encoder_all", "unix": 1793367478.8820302}
+{"event": "finished", "name": "int8_encoder_all", "returncode": 1, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_encoder_all.log", "finished_unix": 1793367538.3863122}
+{"event": "start", "name": "int8_decoder_all", "unix": 1793367538.3887746}
+{"event": "finished", "name": "int8_decoder_all", "returncode": 1, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_decoder_all.log", "finished_unix": 1793367597.0293531}
+{"event": "start", "name": "int8_both_all", "unix": 1793367597.0310686}
+{"event": "finished", "name": "int8_both_all", "returncode": 1, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_both_all.log", "finished_unix": 1793367655.511543}
+{"event": "start", "name": "int8_encoder_ffn", "unix": 1793367655.5136607}
+{"event": "finished", "name": "int8_encoder_ffn", "returncode": 1, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_encoder_ffn.log", "finished_unix": 1793367715.0585933}
+{"event": "start", "name": "int8_decoder_ffn", "unix": 1793367715.0602727}
+{"event": "finished", "name": "int8_decoder_ffn", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_decoder_ffn.log", "finished_unix": 1793367778.132525}
+{"event": "start", "name": "int8_encoder_screened", "unix": 1793367778.1341422}
+{"event": "finished", "name": "int8_encoder_screened", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_encoder_screened.log", "finished_unix": 1793367841.6599631}
+{"event": "start", "name": "int8_both_screened", "unix": 1793367841.6628664}
+{"event": "finished", "name": "int8_both_screened", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_both_screened.log", "finished_unix": 1793367904.296127}
+{"event": "start", "name": "bf16_2valid_text_compact_775", "unix": 1793367904.2975488}
+{"event": "finished", "name": "bf16_2valid_text_compact_775", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_2valid_text_compact_775.log", "finished_unix": 1793367967.344665}
+{"event": "start", "name": "bf16_2valid_full_compact_519", "unix": 1793367967.3461797}
+{"event": "finished", "name": "bf16_2valid_full_compact_519", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_2valid_full_compact_519.log", "finished_unix": 1793368025.5025609}
+{"event": "start", "name": "bf16_2valid_steps8", "unix": 1793368025.5041072}
+{"event": "finished", "name": "bf16_2valid_steps8", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_2valid_steps8.log", "finished_unix": 1793368088.5631654}
+{"event": "start", "name": "bf16_2valid_steps5", "unix": 1793368088.5657268}
+{"event": "finished", "name": "bf16_2valid_steps5", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_2valid_steps5.log", "finished_unix": 1793368150.2500386}
+{"event": "start", "name": "bf16_3valid_968", "unix": 1793368150.2517054}
+{"event": "finished", "name": "bf16_3valid_968", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_3valid_968.log", "finished_unix": 1793368214.1886594}
+{"event": "start", "name": "bf16_3valid_compact_775", "unix": 1793368214.190304}
+{"event": "finished", "name": "bf16_3valid_compact_775", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_3valid_compact_775.log", "finished_unix": 1793368277.112704}
+{"event": "start", "name": "int8_screened_compact_519", "unix": 1793368277.1144059}
+{"event": "finished", "name": "int8_screened_compact_519", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/int8_screened_compact_519.log", "finished_unix": 1793368333.8197732}
+{"event": "start", "name": "bf16_2valid_968_end_control", "unix": 1793368333.823656}
+{"event": "finished", "name": "bf16_2valid_968_end_control", "returncode": 0, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/bf16_2valid_968_end_control.log", "finished_unix": 1793368399.4628644}

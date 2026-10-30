@@ -663,3 +663,55 @@ GPU监控改为按UUID分组，逐卡保存显存/温度/设备功耗/活跃率�
 GPU环境和绑定、逐请求、服务日志及原始遥测供后续核对，失败保留completed:false。
 只有目标设备真实通过后才能产生RTX性能结论和docker save镜像；当前源码归档不含权重或凭据。
 准备检查见[记录](containers/nvidia/validation_2026-10-20.md)；源码打包工具增加--target nvidia并记录入口文档。
+
+## 17. 选择性量化与补充候选实测（2026-10-30）
+
+代码位于 [selective_quantization](selective_quantization/README.md)，完整表格与原始数据见
+[实验报告](reports/selective-quantization-2026-10-30/report/report_zh.md)、
+[comparison.csv](reports/selective-quantization-2026-10-30/report/comparison.csv)、
+[36层筛查](reports/selective-quantization-2026-10-30/report/layers.csv)。
+分支为 `experiments/selective-quantization-2026-10-30`，Orin实验目录为
+`/home/nvidia/pi05-orin-selective-quantization-20261030`。
+
+### 17.1 路径与数值语义
+
+旧原生INT8融合中SiLU与原GELU不一致；本轮没有改动vendor或旧服务，而以独立GEMM代理替换指定BF16矩阵乘法。
+权重采用每输出通道INT8，激活采用动态逐行INT8，INT32累加后输出BF16；Norm、GELU、残差和去噪积分保持BF16原路径。
+支持encoder/decoder逐层及QKV、O、FFN gate/up/down选择；选择前先校验实际BF16权重指针与形状。
+所有量化缓冲在图捕获前建立并保活，实际执行原完整CUDA Graph，未在计时循环中由Python逐算子调度。
+本实现保留BF16原权重并增加INT8副本，NvMap没有显著下降；不能称内存压缩部署。
+
+### 17.2 数据与测量
+
+保留历史合成输入，加入FlashRT附带8组LIBERO图像，每组两份固定噪声，共17个case；所有case使用同一基准prompt。
+原OpenPI环境生成两有效视图和三有效视图参考，历史case的新参考与旧reference逐元素完全相同。
+三路有效试验的第三图为front副本，仅验证形状、mask和数值，不是实机三相机数据或任务成功率。
+先用discovery子集逐一筛查36层，再以新进程验证组合及留出图像/噪声；单层通过不等于组合通过。
+每个完整候选预热10次、主计时50次，另做30秒满速负载与0.5秒遥测采样；20个完整候选共1000个主计时样本。
+主计时之外恢复noise，阶段图在主延迟/内存测量后捕获；逐项检查阶段链和恢复后的原图与本进程原输出完全一致。
+早期thermal sysfs返回None导致的5组不完整遥测已用独立目录补齐，失败日志未删除。精度teacher始终保留最初版本。
+
+### 17.3 主要结果
+
+| 有效相机组 | 配置 | 模型mean / p95 ms | NvMap / RSS max GiB | GPU / CPU最高°C | OpenPI cosine |
+|---|---|---:|---:|---:|---:|
+| 2路 | BF16，968行，独立补测 | 230.80 / 231.37 | 12.786 / 0.993 | 79.00 / 77.44 | 0.999985 |
+| 2路 | 仅Decoder FFN W8A8 | 214.84 / 216.02 | 12.829 / 1.078 | 76.62 / 74.47 | 0.999976 |
+| 2路 | 去文本padding和masked相机，519行 | 171.50 / 171.72 | 12.688 / 1.059 | 76.56 / 75.03 | 0.999995 |
+| 2路 | Decoder FFN W8A8＋519行 | 160.42 / 160.77 | 12.757 / 1.092 | 77.22 / 75.69 | 0.999989 |
+| 2路 | 保守encoder＋Decoder FFN＋519行 | 158.80 / 159.12 | 12.757 / 1.105 | 77.41 / 75.91 | 0.999983 |
+| 3路形状验证 | BF16，968行 | 224.35 / 227.38 | 12.784 / 1.006 | 79.19 / 76.66 | 0.999859 |
+| 3路形状验证 | Decoder FFN W8A8＋775行 | 206.18 / 207.83 | 12.799 / 1.099 | 78.53 / 76.31 | 0.999954 |
+
+2路组合相对补测BF16均值减少约30.5%；额外encoder仅再少约1.6ms，不足以排除控制漂移。
+8/5轮去噪分别为217.00/201.83ms，cosine为0.999965/0.993100；动作chunk仍为10。
+全encoder或简单拼接单层筛选集合出现更大误差，报告另列最差case、记录图像/合成图、前六维动作及夹爪诊断，不能只看聚合cosine。
+3路有效组只做组内比较；不能将2路519行结果或不同组BF16的延时差解释为相机数量收益。
+
+### 17.4 限制与服务恢复
+
+原功耗模式MAXN及动态频率保持不变，首尾BF16均值232.18→228.32ms，独立补测230.80ms；存在运行顺序和tactic等组合波动。
+部分持续负载窗口OC3计数增加，不能排除瞬态频率/功耗限制；温度是30秒满速负载窗口而非热稳态，也不是同业务频率下的降温结论。
+RSS、NvMap、Torch及设备全局记账不能相加；具体源代码、扩展SHA、时钟和HTTP健康见
+[environment_after.json](reports/selective-quantization-2026-10-30/results/environment_after.json)。
+原VLA/Qwen双进程服务均已恢复，8081/8082健康检查返回200。当前线上推理策略未切换到实验候选。

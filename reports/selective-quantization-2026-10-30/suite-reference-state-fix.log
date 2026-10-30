@@ -1,0 +1,10 @@
+{"event": "start", "name": "references", "unix": 1793366934.9789996}
+{"event": "finished", "name": "references", "returncode": 1, "log": "/home/nvidia/pi05-orin-selective-quantization-20261030/results/references.log", "finished_unix": 1793367047.3465743}
+Traceback (most recent call last):
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/run_suite.py", line 124, in <module>
+    if __name__=='__main__':main()
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/run_suite.py", line 81, in main
+    child('references',[a.baseline_python,str(code/'reference.py'),
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/run_suite.py", line 57, in child
+    if required and run.returncode:raise RuntimeError(f'{name} failed: see {logfile}')
+RuntimeError: references failed: see /home/nvidia/pi05-orin-selective-quantization-20261030/results/references.log

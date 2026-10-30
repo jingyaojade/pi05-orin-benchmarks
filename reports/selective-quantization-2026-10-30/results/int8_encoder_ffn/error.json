@@ -1,0 +1,4 @@
+{
+  "error": "RuntimeError('Insufficient telemetry samples; this variant cannot support a memory/temperature report')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/worker.py\", line 153, in main\n    try:run(a)\n  File \"/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/worker.py\", line 116, in run\n    raise RuntimeError('Insufficient telemetry samples; this variant cannot support a memory/temperature report')\nRuntimeError: Insufficient telemetry samples; this variant cannot support a memory/temperature report\n"
+}

@@ -1,0 +1,5642 @@
+{
+  "config": {
+    "num_views": 3,
+    "valid_num_views": 2,
+    "max_prompt_len": 200,
+    "num_steps": 10,
+    "name": "int8_encoder_all",
+    "encoder_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "case_names": [
+    "legacy_synthetic",
+    "libero_frame_0_noise_0",
+    "libero_frame_0_noise_1",
+    "libero_frame_1_noise_0",
+    "libero_frame_1_noise_1",
+    "libero_frame_2_noise_0",
+    "libero_frame_2_noise_1",
+    "libero_frame_3_noise_0",
+    "libero_frame_3_noise_1",
+    "libero_frame_4_noise_0",
+    "libero_frame_4_noise_1",
+    "libero_frame_5_noise_0",
+    "libero_frame_5_noise_1",
+    "libero_frame_6_noise_0",
+    "libero_frame_6_noise_1",
+    "libero_frame_7_noise_0",
+    "libero_frame_7_noise_1"
+  ],
+  "completed": false,
+  "input_sha256": "86f0ef74e97bdb5e64f5cadbae276b459a38e824a6349819cfea080d540946e5",
+  "timing_case": "libero_frame_0_noise_0",
+  "load_started_unix": 1793367480.9366002,
+  "load_finished_unix": 1793367490.97979,
+  "metadata": {
+    "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+    "source_patch": {
+      "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+      "files": {
+        "flash_rt/frontends/torch/pi05_rtx.py": {
+          "upstream_sha256_lf": "5ecb7cb7b6dc60b8c1115d8aaaf09f520507a4402958a250664cd30f2f82ce42",
+          "patched_sha256_lf": "7900d753e4f1fb3f32fffaa5ad64e00a72dc9cd7ce3deb40a8a6fe40a3e93edb"
+        },
+        "flash_rt/models/pi05/pipeline_rtx.py": {
+          "upstream_sha256_lf": "de60a1f629195ed4336956afd0f47a1bdefef940c37877539f1f3cfab657ce37",
+          "patched_sha256_lf": "2135e8b21558cf26907784042cf5074d69bb9d1d3de82967cdb14e74c848d4ce"
+        },
+        "flash_rt/hardware/rtx/attn_backend.py": {
+          "upstream_sha256_lf": "aa5d78321d7b941c85e1581034d449149bf48799fe1aec2e15d1ff44fd65cff0",
+          "patched_sha256_lf": "4322877c876dcf043842fbcca4387c50764a8fc21c15efd95f70735c0bf96a56"
+        }
+      },
+      "patch_sha256": "ee55750fa7742e84cfb80fd8441f3e8c31f16a325327d157b33a0d6b7bc96372"
+    },
+    "precision": "selective_int8",
+    "num_views": 3,
+    "valid_num_views": 2,
+    "max_prompt_len": 200,
+    "encoder_rows": 968,
+    "num_steps": 10,
+    "action_horizon": 10,
+    "action_dim": 32,
+    "encoder_layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "decoder_layers": [],
+    "modules": [
+      "qkv",
+      "o",
+      "ffn_gate",
+      "ffn_up",
+      "ffn_down"
+    ],
+    "encoder_modules": null,
+    "decoder_modules": null,
+    "state_in_model_conditioning": false,
+    "cache_frames": 1,
+    "tokenizer": {
+      "implementation": "standalone OpenPI-compatible no-state SentencePiece",
+      "model_path": "/home/nvidia/pi05-orin/cache/big_vision/paligemma_tokenizer.model",
+      "model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+      "serialized_model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+      "max_len": 200,
+      "state_in_prompt": false,
+      "prompt": "pick up the black bowl",
+      "cleaned_prompt": "pick up the black bowl",
+      "token_ids": [
+        2,
+        18075,
+        908,
+        573,
+        2656,
+        14581,
+        108,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "token_mask": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "valid_token_ids": [
+        2,
+        18075,
+        908,
+        573,
+        2656,
+        14581,
+        108
+      ],
+      "valid_token_count": 7,
+      "capacity_200_reference": {
+        "implementation": "standalone OpenPI-compatible no-state SentencePiece",
+        "model_path": "/home/nvidia/pi05-orin/cache/big_vision/paligemma_tokenizer.model",
+        "model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+        "serialized_model_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+        "max_len": 200,
+        "state_in_prompt": false,
+        "prompt": "pick up the black bowl",
+        "cleaned_prompt": "pick up the black bowl",
+        "token_ids": [
+          2,
+          18075,
+          908,
+          573,
+          2656,
+          14581,
+          108,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "token_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "valid_token_ids": [
+          2,
+          18075,
+          908,
+          573,
+          2656,
+          14581,
+          108
+        ],
+        "valid_token_count": 7
+      },
+      "valid_ids_equal_capacity_200": true
+    },
+    "quantization": {
+      "method": "selective_W8A8_bf16_GEMM_proxy",
+      "activation_quantization": "runtime_symmetric_per_row",
+      "weight_quantization": "symmetric_per_output_channel_INT8",
+      "activation_function": "original_BF16_GELU_unchanged",
+      "bf16_weights_retained": true,
+      "global_fp8_int8_flags": false,
+      "encoder_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "decoder_layers": [],
+      "encoder_modules": [
+        "qkv",
+        "o",
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ],
+      "decoder_modules": [
+        "qkv",
+        "o",
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ],
+      "prepared_encoder_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "prepared_decoder_layers": [],
+      "prepared_encoder_modules": [
+        "qkv",
+        "o",
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ],
+      "prepared_decoder_modules": [
+        "qkv",
+        "o",
+        "ffn_gate",
+        "ffn_up",
+        "ffn_down"
+      ],
+      "prepared_weights": [
+        {
+          "name": "encoder_attn_qkv_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_17",
+          "domain": "encoder",
+          "layer": 17,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        }
+      ],
+      "selected_active_weights": [
+        {
+          "name": "encoder_attn_qkv_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_0",
+          "domain": "encoder",
+          "layer": 0,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_1",
+          "domain": "encoder",
+          "layer": 1,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_2",
+          "domain": "encoder",
+          "layer": 2,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_3",
+          "domain": "encoder",
+          "layer": 3,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_4",
+          "domain": "encoder",
+          "layer": 4,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_5",
+          "domain": "encoder",
+          "layer": 5,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_6",
+          "domain": "encoder",
+          "layer": 6,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_7",
+          "domain": "encoder",
+          "layer": 7,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_8",
+          "domain": "encoder",
+          "layer": 8,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_9",
+          "domain": "encoder",
+          "layer": 9,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_10",
+          "domain": "encoder",
+          "layer": 10,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_11",
+          "domain": "encoder",
+          "layer": 11,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_12",
+          "domain": "encoder",
+          "layer": 12,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_13",
+          "domain": "encoder",
+          "layer": 13,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_14",
+          "domain": "encoder",
+          "layer": 14,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_15",
+          "domain": "encoder",
+          "layer": 15,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_o_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "o",
+          "K": 2048,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 8388608,
+          "weight_int8_bytes": 4194304,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_gate_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "ffn_gate",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_up_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "ffn_up",
+          "K": 2048,
+          "N": 16384,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 65536,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              16384,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_ffn_down_w_16",
+          "domain": "encoder",
+          "layer": 16,
+          "module": "ffn_down",
+          "K": 16384,
+          "N": 2048,
+          "max_rows": 968,
+          "source_weight_bytes": 67108864,
+          "weight_int8_bytes": 33554432,
+          "weight_scale_bytes": 8192,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2048,
+              16384
+            ]
+          ],
+          "last_cutlass_status": 0
+        },
+        {
+          "name": "encoder_attn_qkv_w_17",
+          "domain": "encoder",
+          "layer": 17,
+          "module": "qkv",
+          "K": 2048,
+          "N": 2560,
+          "max_rows": 968,
+          "source_weight_bytes": 10485760,
+          "weight_int8_bytes": 5242880,
+          "weight_scale_bytes": 10240,
+          "active": true,
+          "python_kernel_submissions": 5,
+          "submitted_shapes": [
+            [
+              968,
+              2560,
+              2048
+            ]
+          ],
+          "last_cutlass_status": 0
+        }
+      ],
+      "inactive_requested_weights": [
+        {
+          "name": "encoder_attn_o_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        },
+        {
+          "name": "encoder_ffn_gate_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        },
+        {
+          "name": "encoder_ffn_up_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        },
+        {
+          "name": "encoder_ffn_down_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        }
+      ],
+      "prepared_inactive_requested_weights": [
+        {
+          "name": "encoder_attn_o_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        },
+        {
+          "name": "encoder_ffn_gate_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        },
+        {
+          "name": "encoder_ffn_up_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        },
+        {
+          "name": "encoder_ffn_down_w_17",
+          "reason": "last-prefix-layer O/FFN is not executed"
+        }
+      ],
+      "selection_generation": 0,
+      "selection_change_requires_full_graph_recapture": true,
+      "resident_memory_scope": "All prepared quantized copies stay resident, including currently inactive weights. Screening memory is not fresh-deployment memory.",
+      "prepared_weight_int8_bytes": 1876951040,
+      "active_weight_int8_bytes": 1876951040,
+      "preparation_memory": {
+        "seconds": 1.7129878050000116,
+        "torch_allocated_before_bytes": 6902727680,
+        "torch_allocated_after_bytes": 8800703488,
+        "torch_reserved_before_bytes": 12710838272,
+        "torch_reserved_after_bytes": 12712935424,
+        "source_bf16_selected_bytes_retained": 3753902080,
+        "persistent_weight_int8_bytes": 1876951040,
+        "persistent_weight_scale_bytes": 2691072,
+        "persistent_activation_scratch_bytes": 15863584,
+        "torch_allocated_delta_bytes": 1897975808,
+        "torch_reserved_delta_bytes": 2097152
+      },
+      "submission_counter_note": "Counts Python kernel submissions during warmup/preparation/capture. CUDA graph replays do not reenter Python and do not increment these counters.",
+      "stream_contract": "serial execution on one stream; shared quantization scratch"
+    }
+  },
+  "accuracy_openpi": {
+    "shape": [
+      17,
+      10,
+      7
+    ],
+    "all_finite": true,
+    "scope": "numerical_action_agreement_not_robot_task_success",
+    "cosine": 0.9470770646957927,
+    "rmse": 0.15109651548399447,
+    "max_abs": 2.0063802716550825,
+    "mean_abs": 0.041426495491754194,
+    "p95_abs": 0.12875506383688304,
+    "exact_match": false,
+    "per_case": [
+      {
+        "case_index": 0,
+        "cosine": 0.628947871537139,
+        "rmse": 0.3491703015516033,
+        "max_abs": 2.0063802716550825,
+        "mean_abs": 0.11715302317605529,
+        "p95_abs": 0.19143678073770706,
+        "exact_match": false
+      },
+      {
+        "case_index": 1,
+        "cosine": 0.9926788588293992,
+        "rmse": 0.05572413561171693,
+        "max_abs": 0.14952605414152154,
+        "mean_abs": 0.0353084772014653,
+        "p95_abs": 0.13747029158485383,
+        "exact_match": false
+      },
+      {
+        "case_index": 2,
+        "cosine": 0.994225013821423,
+        "rmse": 0.05003416935140907,
+        "max_abs": 0.14197445021027333,
+        "mean_abs": 0.030865748709114176,
+        "p95_abs": 0.12502672099787004,
+        "exact_match": false
+      },
+      {
+        "case_index": 3,
+        "cosine": 0.997512347841918,
+        "rmse": 0.035529096562184115,
+        "max_abs": 0.09081142971730238,
+        "mean_abs": 0.026227092905369724,
+        "p95_abs": 0.07409322222970738,
+        "exact_match": false
+      },
+      {
+        "case_index": 4,
+        "cosine": 0.9981564252497528,
+        "rmse": 0.0309632509693338,
+        "max_abs": 0.08084418341898925,
+        "mean_abs": 0.02362249544472918,
+        "p95_abs": 0.05041205612937304,
+        "exact_match": false
+      },
+      {
+        "case_index": 5,
+        "cosine": 0.9990415955157604,
+        "rmse": 0.025659527866644327,
+        "max_abs": 0.11056670085084441,
+        "mean_abs": 0.017631317157509707,
+        "p95_abs": 0.039682308002764566,
+        "exact_match": false
+      },
+      {
+        "case_index": 6,
+        "cosine": 0.998817471251375,
+        "rmse": 0.028130851503830375,
+        "max_abs": 0.07416186089307064,
+        "mean_abs": 0.019497855551764545,
+        "p95_abs": 0.05778045655123271,
+        "exact_match": false
+      },
+      {
+        "case_index": 7,
+        "cosine": 0.993331300527127,
+        "rmse": 0.0660064845382462,
+        "max_abs": 0.19590884791183472,
+        "mean_abs": 0.039899170327131916,
+        "p95_abs": 0.16117373235463486,
+        "exact_match": false
+      },
+      {
+        "case_index": 8,
+        "cosine": 0.9936367205682384,
+        "rmse": 0.06413105122373712,
+        "max_abs": 0.18166832853031156,
+        "mean_abs": 0.038378712764622194,
+        "p95_abs": 0.15817141557782874,
+        "exact_match": false
+      },
+      {
+        "case_index": 9,
+        "cosine": 0.9975866431556192,
+        "rmse": 0.029077582100564367,
+        "max_abs": 0.10360254286622994,
+        "mean_abs": 0.01870401601996349,
+        "p95_abs": 0.06669081938386551,
+        "exact_match": false
+      },
+      {
+        "case_index": 10,
+        "cosine": 0.9978098229639116,
+        "rmse": 0.027411800377669583,
+        "max_abs": 0.10390389090120777,
+        "mean_abs": 0.017035997647108468,
+        "p95_abs": 0.05606351792777772,
+        "exact_match": false
+      },
+      {
+        "case_index": 11,
+        "cosine": 0.9932428115182677,
+        "rmse": 0.05010968524733022,
+        "max_abs": 0.14109659665417662,
+        "mean_abs": 0.034442667216932836,
+        "p95_abs": 0.11861524881244302,
+        "exact_match": false
+      },
+      {
+        "case_index": 12,
+        "cosine": 0.9950421593645477,
+        "rmse": 0.04305373583996515,
+        "max_abs": 0.11699511253249639,
+        "mean_abs": 0.030241488449412098,
+        "p95_abs": 0.10323368357666116,
+        "exact_match": false
+      },
+      {
+        "case_index": 13,
+        "cosine": 0.6502785259802613,
+        "rmse": 0.34687711277424,
+        "max_abs": 1.9982253673588635,
+        "mean_abs": 0.1071763410935016,
+        "p95_abs": 0.2313667249719261,
+        "exact_match": false
+      },
+      {
+        "case_index": 14,
+        "cosine": 0.6555591597872338,
+        "rmse": 0.34633023878278185,
+        "max_abs": 2.004187622361422,
+        "mean_abs": 0.10416502544309991,
+        "p95_abs": 0.21605139480824462,
+        "exact_match": false
+      },
+      {
+        "case_index": 15,
+        "cosine": 0.997553134834124,
+        "rmse": 0.03182029069869804,
+        "max_abs": 0.09036358705353753,
+        "mean_abs": 0.022494554250369343,
+        "p95_abs": 0.08089448465901614,
+        "exact_match": false
+      },
+      {
+        "case_index": 16,
+        "cosine": 0.9970259313477616,
+        "rmse": 0.03465998536842242,
+        "max_abs": 0.14142751742285475,
+        "mean_abs": 0.021406440001671606,
+        "p95_abs": 0.08289642837271673,
+        "exact_match": false
+      }
+    ],
+    "per_action_dim": [
+      {
+        "dimension": 0,
+        "cosine": 0.987699090044519,
+        "rmse": 0.06985563592870273,
+        "max_abs": 0.16602432007610807,
+        "mean_abs": 0.05529102029936203,
+        "p95_abs": 0.1399163792777388,
+        "exact_match": false
+      },
+      {
+        "dimension": 1,
+        "cosine": 0.9923952088601571,
+        "rmse": 0.04443183897816629,
+        "max_abs": 0.17944972169947615,
+        "mean_abs": 0.03432047940169261,
+        "p95_abs": 0.08319267678585643,
+        "exact_match": false
+      },
+      {
+        "dimension": 2,
+        "cosine": 0.9803390620097715,
+        "rmse": 0.10101271534349307,
+        "max_abs": 0.3335187075850963,
+        "mean_abs": 0.07809897853440083,
+        "p95_abs": 0.19439866284095947,
+        "exact_match": false
+      },
+      {
+        "dimension": 3,
+        "cosine": 0.9145158939727199,
+        "rmse": 0.014960776206202557,
+        "max_abs": 0.038731189239996744,
+        "mean_abs": 0.010879516618197076,
+        "p95_abs": 0.029669611072122088,
+        "exact_match": false
+      },
+      {
+        "dimension": 4,
+        "cosine": 0.8947057914981932,
+        "rmse": 0.02902591841054397,
+        "max_abs": 0.0749586394930005,
+        "mean_abs": 0.02270200676911438,
+        "p95_abs": 0.05841366677764945,
+        "exact_match": false
+      },
+      {
+        "dimension": 5,
+        "cosine": 0.8663946644852256,
+        "rmse": 0.025544288947253867,
+        "max_abs": 0.16869005283057942,
+        "mean_abs": 0.01547109530782153,
+        "p95_abs": 0.046888242474099895,
+        "exact_match": false
+      },
+      {
+        "dimension": 6,
+        "cosine": 0.9292324927702086,
+        "rmse": 0.3755458595573858,
+        "max_abs": 2.0063802716550825,
+        "mean_abs": 0.07322237151169093,
+        "p95_abs": 0.012974108097793188,
+        "exact_match": false
+      }
+    ],
+    "gripper": {
+      "dimension": 6,
+      "cosine": 0.9292324927702086,
+      "rmse": 0.3755458595573858,
+      "max_abs": 2.0063802716550825,
+      "mean_abs": 0.07322237151169093,
+      "p95_abs": 0.012974108097793188,
+      "exact_match": false,
+      "threshold_mismatches": {
+        "0.0": {
+          "count": 6,
+          "fraction": 0.03529411764705882
+        },
+        "0.5": {
+          "count": 6,
+          "fraction": 0.03529411764705882
+        }
+      },
+      "threshold_scope": "diagnostic_only_no_robot_gripper_convention_assumed"
+    }
+  },
+  "accuracy_bf16": {
+    "shape": [
+      17,
+      10,
+      7
+    ],
+    "all_finite": true,
+    "scope": "numerical_action_agreement_not_robot_task_success",
+    "cosine": 0.9470715771155653,
+    "rmse": 0.15105971931875423,
+    "max_abs": 2.0074117183685303,
+    "mean_abs": 0.041424382462346254,
+    "p95_abs": 0.12831162065267562,
+    "exact_match": false,
+    "per_case": [
+      {
+        "case_index": 0,
+        "cosine": 0.6277920625354227,
+        "rmse": 0.34904458985844417,
+        "max_abs": 2.0074117183685303,
+        "mean_abs": 0.1167341129056045,
+        "p95_abs": 0.19909620285034169,
+        "exact_match": false
+      },
+      {
+        "case_index": 1,
+        "cosine": 0.992572942635791,
+        "rmse": 0.056134464553373724,
+        "max_abs": 0.15011656284332275,
+        "mean_abs": 0.03550562267856938,
+        "p95_abs": 0.13894926607608793,
+        "exact_match": false
+      },
+      {
+        "case_index": 2,
+        "cosine": 0.9942139073944072,
+        "rmse": 0.05003872507916711,
+        "max_abs": 0.1418830156326294,
+        "mean_abs": 0.030948778561183384,
+        "p95_abs": 0.12485306262969968,
+        "exact_match": false
+      },
+      {
+        "case_index": 3,
+        "cosine": 0.9975455245946914,
+        "rmse": 0.03538209180270691,
+        "max_abs": 0.08970367908477783,
+        "mean_abs": 0.026160162474427904,
+        "p95_abs": 0.07261663377285003,
+        "exact_match": false
+      },
+      {
+        "case_index": 4,
+        "cosine": 0.998173975582574,
+        "rmse": 0.030843577402336557,
+        "max_abs": 0.0778043270111084,
+        "mean_abs": 0.023521639087370465,
+        "p95_abs": 0.05077511519193648,
+        "exact_match": false
+      },
+      {
+        "case_index": 5,
+        "cosine": 0.9990362164065656,
+        "rmse": 0.025414278164873048,
+        "max_abs": 0.10984134674072266,
+        "mean_abs": 0.017362377579723087,
+        "p95_abs": 0.04000005461275577,
+        "exact_match": false
+      },
+      {
+        "case_index": 6,
+        "cosine": 0.998827997513941,
+        "rmse": 0.02777153307060314,
+        "max_abs": 0.0723809003829956,
+        "mean_abs": 0.019453726496015275,
+        "p95_abs": 0.05774019956588744,
+        "exact_match": false
+      },
+      {
+        "case_index": 7,
+        "cosine": 0.9933219150226638,
+        "rmse": 0.06566144604966256,
+        "max_abs": 0.19588375091552734,
+        "mean_abs": 0.039870772723640716,
+        "p95_abs": 0.15936151742935176,
+        "exact_match": false
+      },
+      {
+        "case_index": 8,
+        "cosine": 0.9936672215916826,
+        "rmse": 0.0637625978913479,
+        "max_abs": 0.17940759658813477,
+        "mean_abs": 0.038363241723605564,
+        "p95_abs": 0.15597479343414306,
+        "exact_match": false
+      },
+      {
+        "case_index": 9,
+        "cosine": 0.9975511431174036,
+        "rmse": 0.02940394284688787,
+        "max_abs": 0.10526466369628906,
+        "mean_abs": 0.019006570747920445,
+        "p95_abs": 0.0648507267236709,
+        "exact_match": false
+      },
+      {
+        "case_index": 10,
+        "cosine": 0.9978793408051394,
+        "rmse": 0.027025091001390233,
+        "max_abs": 0.10480701923370361,
+        "mean_abs": 0.017131344228982926,
+        "p95_abs": 0.055924579501152,
+        "exact_match": false
+      },
+      {
+        "case_index": 11,
+        "cosine": 0.9931979849325998,
+        "rmse": 0.05016807903644623,
+        "max_abs": 0.14279377460479736,
+        "mean_abs": 0.03445407184106963,
+        "p95_abs": 0.11724414229393004,
+        "exact_match": false
+      },
+      {
+        "case_index": 12,
+        "cosine": 0.9949278239648536,
+        "rmse": 0.04347645894216702,
+        "max_abs": 0.11716413497924805,
+        "mean_abs": 0.030702036938496997,
+        "p95_abs": 0.10407470464706417,
+        "exact_match": false
+      },
+      {
+        "case_index": 13,
+        "cosine": 0.6500181853997974,
+        "rmse": 0.34706240933930105,
+        "max_abs": 1.999600887298584,
+        "mean_abs": 0.10654097231371062,
+        "p95_abs": 0.2300260931253432,
+        "exact_match": false
+      },
+      {
+        "case_index": 14,
+        "cosine": 0.6564401516809327,
+        "rmse": 0.3459903040909612,
+        "max_abs": 1.999600887298584,
+        "mean_abs": 0.10407932326197625,
+        "p95_abs": 0.21904197037219988,
+        "exact_match": false
+      },
+      {
+        "case_index": 15,
+        "cosine": 0.9975657002454982,
+        "rmse": 0.03172520933353433,
+        "max_abs": 0.09006482362747192,
+        "mean_abs": 0.02257954605988094,
+        "p95_abs": 0.07990956902503965,
+        "exact_match": false
+      },
+      {
+        "case_index": 16,
+        "cosine": 0.9968650301311408,
+        "rmse": 0.03562363936723048,
+        "max_abs": 0.1447618007659912,
+        "mean_abs": 0.02180020223770823,
+        "p95_abs": 0.08777140676975242,
+        "exact_match": false
+      }
+    ],
+    "per_action_dim": [
+      {
+        "dimension": 0,
+        "cosine": 0.9876925390840124,
+        "rmse": 0.06994687747133697,
+        "max_abs": 0.1628570556640625,
+        "mean_abs": 0.05595125713769127,
+        "p95_abs": 0.13818173259496688,
+        "exact_match": false
+      },
+      {
+        "dimension": 1,
+        "cosine": 0.99231650286372,
+        "rmse": 0.044782929418726344,
+        "max_abs": 0.17785048484802246,
+        "mean_abs": 0.034949881890240835,
+        "p95_abs": 0.08738924860954282,
+        "exact_match": false
+      },
+      {
+        "dimension": 2,
+        "cosine": 0.9803937256617254,
+        "rmse": 0.1009157102173069,
+        "max_abs": 0.3693416118621826,
+        "mean_abs": 0.07722312141867245,
+        "p95_abs": 0.19547184407711027,
+        "exact_match": false
+      },
+      {
+        "dimension": 3,
+        "cosine": 0.9150216587128185,
+        "rmse": 0.014992507247251643,
+        "max_abs": 0.038692034780979156,
+        "mean_abs": 0.010883629081003807,
+        "p95_abs": 0.030069148167967786,
+        "exact_match": false
+      },
+      {
+        "dimension": 4,
+        "cosine": 0.8965626413610879,
+        "rmse": 0.028685018033479618,
+        "max_abs": 0.0751243382692337,
+        "mean_abs": 0.022488732153878494,
+        "p95_abs": 0.057190340757369985,
+        "exact_match": false
+      },
+      {
+        "dimension": 5,
+        "cosine": 0.8670271235264535,
+        "rmse": 0.02547231048024361,
+        "max_abs": 0.1685182750225067,
+        "mean_abs": 0.015487721343250835,
+        "p95_abs": 0.04672551453113555,
+        "exact_match": false
+      },
+      {
+        "dimension": 6,
+        "cosine": 0.9292294196713624,
+        "rmse": 0.3754394364825137,
+        "max_abs": 2.0074117183685303,
+        "mean_abs": 0.07298633421168607,
+        "p95_abs": 0.01386443674564355,
+        "exact_match": false
+      }
+    ],
+    "gripper": {
+      "dimension": 6,
+      "cosine": 0.9292294196713624,
+      "rmse": 0.3754394364825137,
+      "max_abs": 2.0074117183685303,
+      "mean_abs": 0.07298633421168607,
+      "p95_abs": 0.01386443674564355,
+      "exact_match": false,
+      "threshold_mismatches": {
+        "0.0": {
+          "count": 6,
+          "fraction": 0.03529411764705882
+        },
+        "0.5": {
+          "count": 6,
+          "fraction": 0.03529411764705882
+        }
+      },
+      "threshold_scope": "diagnostic_only_no_robot_gripper_convention_assumed"
+    }
+  },
+  "repeat_vs_first": {
+    "shape": [
+      10,
+      7
+    ],
+    "all_finite": true,
+    "scope": "numerical_action_agreement_not_robot_task_success",
+    "cosine": 1.0,
+    "rmse": 0.0,
+    "max_abs": 0.0,
+    "mean_abs": 0.0,
+    "p95_abs": 0.0,
+    "exact_match": true,
+    "per_case": [
+      {
+        "case_index": 0,
+        "cosine": 1.0,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      }
+    ],
+    "per_action_dim": [
+      {
+        "dimension": 0,
+        "cosine": 1.0,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      },
+      {
+        "dimension": 1,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      },
+      {
+        "dimension": 2,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      },
+      {
+        "dimension": 3,
+        "cosine": 0.9999999999999998,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      },
+      {
+        "dimension": 4,
+        "cosine": 1.0,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      },
+      {
+        "dimension": 5,
+        "cosine": 0.9999999999999999,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      },
+      {
+        "dimension": 6,
+        "cosine": 0.9999999999999998,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "p95_abs": 0.0,
+        "exact_match": true
+      }
+    ],
+    "gripper": {
+      "dimension": 6,
+      "cosine": 0.9999999999999998,
+      "rmse": 0.0,
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "p95_abs": 0.0,
+      "exact_match": true,
+      "threshold_mismatches": {
+        "0.0": {
+          "count": 0,
+          "fraction": 0.0
+        },
+        "0.5": {
+          "count": 0,
+          "fraction": 0.0
+        }
+      },
+      "threshold_scope": "diagnostic_only_no_robot_gripper_convention_assumed"
+    }
+  },
+  "latency": {
+    "model_wall": {
+      "n": 50,
+      "mean_ms": 205.36835652,
+      "median_ms": 205.4271165,
+      "p95_ms": 206.00609485,
+      "min_ms": 204.225445,
+      "max_ms": 206.361302,
+      "std_ms": 0.500247898498943
+    },
+    "model_cuda_stream": {
+      "n": 50,
+      "mean_ms": 205.15536743164063,
+      "median_ms": 205.23694610595703,
+      "p95_ms": 205.7483139038086,
+      "min_ms": 204.06874084472656,
+      "max_ms": 206.02064514160156,
+      "std_ms": 0.4671648942755395
+    },
+    "warmup_wall_ms": [
+      204.692193,
+      205.619227,
+      205.391772,
+      205.692891,
+      205.457181,
+      205.356413,
+      205.656059,
+      205.942648,
+      205.612795,
+      205.225918
+    ],
+    "samples_wall_ms": [
+      205.009855,
+      205.630396,
+      204.514531,
+      205.610908,
+      205.318301,
+      205.15843,
+      205.141118,
+      205.51878,
+      205.197726,
+      205.646106,
+      204.598979,
+      205.418205,
+      205.856346,
+      205.550555,
+      204.872768,
+      205.257054,
+      205.975929,
+      205.838777,
+      204.949472,
+      205.75097,
+      205.450236,
+      205.064383,
+      204.682561,
+      206.361302,
+      206.166583,
+      205.486972,
+      204.819713,
+      205.549628,
+      205.407549,
+      205.525084,
+      204.225445,
+      205.371389,
+      205.436028,
+      205.388765,
+      204.581955,
+      205.670234,
+      205.960536,
+      206.030776,
+      204.751297,
+      205.66969,
+      205.358717,
+      205.390429,
+      204.376196,
+      205.29683,
+      205.884633,
+      205.683739,
+      204.284228,
+      205.914745,
+      205.848761,
+      205.964216
+    ],
+    "samples_cuda_ms": [
+      204.8543701171875,
+      205.45791625976562,
+      204.3275146484375,
+      205.4674530029297,
+      205.17359924316406,
+      204.97491455078125,
+      204.95578002929688,
+      205.3441925048828,
+      205.04550170898438,
+      205.32150268554688,
+      204.43350219726562,
+      205.20941162109375,
+      205.66458129882812,
+      205.33619689941406,
+      204.6519012451172,
+      205.050048828125,
+      205.65724182128906,
+      205.6631317138672,
+      204.73269653320312,
+      205.6029815673828,
+      205.1287078857422,
+      204.8690948486328,
+      204.52511596679688,
+      205.90969848632812,
+      206.02064514160156,
+      205.35350036621094,
+      204.66355895996094,
+      205.40325927734375,
+      205.2842254638672,
+      205.38467407226562,
+      204.06874084472656,
+      205.12384033203125,
+      205.28440856933594,
+      205.231201171875,
+      204.41587829589844,
+      205.36009216308594,
+      205.78038024902344,
+      205.24269104003906,
+      204.51724243164062,
+      205.43740844726562,
+      205.13465881347656,
+      205.22543334960938,
+      204.22122192382812,
+      205.0641326904297,
+      205.6185302734375,
+      205.51565551757812,
+      204.1537322998047,
+      205.53036499023438,
+      205.70912170410156,
+      205.66671752929688
+    ],
+    "boundary": "GPU-ready input -> original full CUDA graph -> GPU synchronized; staging/download excluded"
+  }
+}

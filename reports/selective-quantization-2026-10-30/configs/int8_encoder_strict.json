@@ -1,0 +1,12 @@
+{
+  "name": "int8_encoder_strict",
+  "num_views": 3,
+  "valid_num_views": 2,
+  "max_prompt_len": 200,
+  "num_steps": 10,
+  "encoder_layers": [
+    15,
+    16,
+    17
+  ]
+}

@@ -1,0 +1,57 @@
+FVK_PI05_RTX_FORCE_BF16=1 set: disabling FP8 paths for the Pi0.5 RTX pipeline.
+Selective W8A8 prepared 176 active weights; kept BF16 norms/GELU, INT8 copies=2087.0 MiB; scratch=15.1 MiB
+  autotune: tested 8 algos, best=1 (74.4576 us)
+  autotune: tested 8 algos, best=4 (203.088 us)
+  autotune: tested 8 algos, best=6 (76.6272 us)
+  autotune: tested 8 algos, best=3 (263.568 us)
+  autotune: tested 8 algos, best=7 (239.581 us)
+  autotune: tested 8 algos, best=7 (116.288 us)
+  autotune: tested 8 algos, best=7 (301.629 us)
+  autotune: tested 8 algos, best=7 (243.069 us)
+  autotune: tested 8 algos, best=4 (2124.15 us)
+  autotune: tested 8 algos, best=4 (2084.44 us)
+  autotune: tested 8 algos, best=2 (1961.89 us)
+  autotune: tested 6 algos, best=3 (6.0224 us)
+  autotune: tested 5 algos, best=0 (38.8384 us)
+  autotune: tested 7 algos, best=4 (23.3888 us)
+  autotune: tested 7 algos, best=2 (56.208 us)
+  autotune: tested 7 algos, best=3 (57.1168 us)
+  autotune: tested 7 algos, best=5 (59.456 us)
+  autotune: tested 1 algos, best=0 (10.3168 us)
+{"event": "screen_layer", "domain": "encoder", "layer": 0, "cosine": 0.9999107166644785, "min_case_cosine": 0.9995961309592977, "rmse": 0.006736278369298517, "probe_ms": 230.1755632, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 1, "cosine": 0.998325096846879, "min_case_cosine": 0.9898062280465132, "rmse": 0.028465465598924395, "probe_ms": 230.25210039999996, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 2, "cosine": 0.9735250686309741, "min_case_cosine": 0.8227445245291475, "rmse": 0.11271308779913004, "probe_ms": 230.2993958, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 3, "cosine": 0.9746242032198897, "min_case_cosine": 0.8209505260523774, "rmse": 0.1098970651255166, "probe_ms": 230.2040426, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 4, "cosine": 0.9749004541951783, "min_case_cosine": 0.8287138602469982, "rmse": 0.10959853446363886, "probe_ms": 230.192459, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 5, "cosine": 0.9751587707977003, "min_case_cosine": 0.8233505904821365, "rmse": 0.10866984765005162, "probe_ms": 229.93070040000003, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 6, "cosine": 0.9995389085913783, "min_case_cosine": 0.9986758237317638, "rmse": 0.014827647113097125, "probe_ms": 230.0400756, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 7, "cosine": 0.9995637638566739, "min_case_cosine": 0.9981795422788967, "rmse": 0.0144220812977186, "probe_ms": 230.2889634, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 8, "cosine": 0.9998268664879928, "min_case_cosine": 0.9995344768718203, "rmse": 0.009083077118570912, "probe_ms": 230.2370086, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 9, "cosine": 0.9996809191502161, "min_case_cosine": 0.9982115034898127, "rmse": 0.012365515589822872, "probe_ms": 230.26336320000001, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 10, "cosine": 0.9998514087390985, "min_case_cosine": 0.999391482607175, "rmse": 0.00852119579971147, "probe_ms": 230.0457586, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 11, "cosine": 0.9999094265956862, "min_case_cosine": 0.9995148867707623, "rmse": 0.006570635480780164, "probe_ms": 230.1692774, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 12, "cosine": 0.9743652669105545, "min_case_cosine": 0.8166088208244179, "rmse": 0.11036086729753432, "probe_ms": 230.769926, "screen_pass": false}
+{"event": "screen_layer", "domain": "encoder", "layer": 13, "cosine": 0.9999040915175668, "min_case_cosine": 0.9995199585739579, "rmse": 0.006822110521217029, "probe_ms": 230.157278, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 14, "cosine": 0.9999404847133886, "min_case_cosine": 0.9997168301683743, "rmse": 0.005336806648028098, "probe_ms": 230.2574368, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 15, "cosine": 0.9999927421814333, "min_case_cosine": 0.999972188227507, "rmse": 0.00186478942877679, "probe_ms": 230.42578740000005, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 16, "cosine": 0.9999918124727636, "min_case_cosine": 0.9999646717600261, "rmse": 0.0021049484325338626, "probe_ms": 229.9870576, "screen_pass": true}
+{"event": "screen_layer", "domain": "encoder", "layer": 17, "cosine": 0.999998614788498, "min_case_cosine": 0.9999976470017519, "rmse": 0.0008147558608101291, "probe_ms": 232.1900056, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 0, "cosine": 0.999997354727283, "min_case_cosine": 0.999995213857609, "rmse": 0.0011276778281725755, "probe_ms": 231.19275779999998, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 1, "cosine": 0.9999955726307111, "min_case_cosine": 0.9999944884416331, "rmse": 0.0014531481967942907, "probe_ms": 231.03311060000001, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 2, "cosine": 0.999996238503007, "min_case_cosine": 0.999995327851212, "rmse": 0.001339098842834943, "probe_ms": 231.1509978, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 3, "cosine": 0.9999977960710673, "min_case_cosine": 0.9999970283269066, "rmse": 0.0010250141012743636, "probe_ms": 231.437703, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 4, "cosine": 0.9999981942744669, "min_case_cosine": 0.9999977757368962, "rmse": 0.0009303654926816984, "probe_ms": 231.25568800000002, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 5, "cosine": 0.9999980667450951, "min_case_cosine": 0.99999530074249, "rmse": 0.00095982275231767, "probe_ms": 231.02098919999997, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 6, "cosine": 0.9999991239098703, "min_case_cosine": 0.9999983114474766, "rmse": 0.0006475973257051304, "probe_ms": 231.1667418, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 7, "cosine": 0.9999984478966529, "min_case_cosine": 0.9999976537677118, "rmse": 0.0008720217957624495, "probe_ms": 231.0574172, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 8, "cosine": 0.9999985545729986, "min_case_cosine": 0.9999978745961091, "rmse": 0.0008308336889877489, "probe_ms": 231.0434526, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 9, "cosine": 0.9999990580182019, "min_case_cosine": 0.9999981501188702, "rmse": 0.0006710597540333737, "probe_ms": 231.31245560000002, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 10, "cosine": 0.9999981340899108, "min_case_cosine": 0.9999970224587141, "rmse": 0.0009521015402549813, "probe_ms": 230.9919714, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 11, "cosine": 0.9999986408854424, "min_case_cosine": 0.9999974349752577, "rmse": 0.0008059713037176675, "probe_ms": 230.827198, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 12, "cosine": 0.999999053248092, "min_case_cosine": 0.9999983803768324, "rmse": 0.0006722051572290787, "probe_ms": 231.205589, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 13, "cosine": 0.9999984841750316, "min_case_cosine": 0.999997841471741, "rmse": 0.0008525215332613836, "probe_ms": 231.0137118, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 14, "cosine": 0.999997066536619, "min_case_cosine": 0.9999921545811989, "rmse": 0.0011841096319021615, "probe_ms": 230.9546464, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 15, "cosine": 0.9999987950239256, "min_case_cosine": 0.9999980569077229, "rmse": 0.0007589171341693572, "probe_ms": 231.4524476, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 16, "cosine": 0.9999971112697271, "min_case_cosine": 0.9999963258330647, "rmse": 0.0012801878521300413, "probe_ms": 231.19951499999996, "screen_pass": true}
+{"event": "screen_layer", "domain": "decoder", "layer": 17, "cosine": 0.9999971776138219, "min_case_cosine": 0.9999941237475698, "rmse": 0.0011606471466479485, "probe_ms": 231.08647260000004, "screen_pass": true}
+{"event": "screen_complete", "selected_layers": {"encoder": [0, 8, 10, 11, 13, 14, 15, 16, 17], "decoder": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]}}

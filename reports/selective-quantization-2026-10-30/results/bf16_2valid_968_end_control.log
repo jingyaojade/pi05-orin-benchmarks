@@ -1,0 +1,21 @@
+FVK_PI05_RTX_FORCE_BF16=1 set: disabling FP8 paths for the Pi0.5 RTX pipeline.
+  autotune: tested 8 algos, best=3 (78.0832 us)
+  autotune: tested 8 algos, best=5 (227.856 us)
+  autotune: tested 8 algos, best=6 (76.8512 us)
+  autotune: tested 8 algos, best=3 (269.613 us)
+  autotune: tested 8 algos, best=4 (278.512 us)
+  autotune: tested 8 algos, best=7 (120.797 us)
+  autotune: tested 8 algos, best=6 (319.994 us)
+  autotune: tested 8 algos, best=7 (282.048 us)
+  autotune: tested 8 algos, best=5 (2263.06 us)
+  autotune: tested 8 algos, best=5 (2261 us)
+  autotune: tested 8 algos, best=7 (2147 us)
+  autotune: tested 6 algos, best=1 (5.7888 us)
+  autotune: tested 5 algos, best=0 (38.6176 us)
+  autotune: tested 7 algos, best=4 (26.9632 us)
+  autotune: tested 7 algos, best=2 (56.2272 us)
+  autotune: tested 7 algos, best=2 (56.6912 us)
+  autotune: tested 7 algos, best=5 (57.4784 us)
+  autotune: tested 1 algos, best=0 (10.2848 us)
+{"event": "latency_complete", "name": "bf16_2valid_968_end_control", "latency": {"n": 50, "mean_ms": 228.31982718, "median_ms": 224.52196700000002, "p95_ms": 239.64228189999997, "min_ms": 223.183577, "max_ms": 242.59432, "std_ms": 5.688153860342942}, "cosine": 0.9999863752727427}
+{"event": "variant_complete", "name": "bf16_2valid_968_end_control"}

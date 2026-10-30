@@ -1,0 +1,7 @@
+{
+  "num_views": 3,
+  "valid_num_views": 3,
+  "max_prompt_len": 7,
+  "num_steps": 10,
+  "name": "bf16_3valid_compact_775"
+}

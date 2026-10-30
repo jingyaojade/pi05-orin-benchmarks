@@ -2,6 +2,13 @@
 
 记录已部署 OpenPI PyTorch 基线与 FlashRT 的分阶段推理耗时。
 
+2026-10-30：[选择性量化与补充候选实测报告](reports/selective-quantization-2026-10-30/report/report_zh.md)，
+独立代码目录 [selective_quantization](selective_quantization/README.md)，分支 `experiments/selective-quantization-2026-10-30`。
+完成36层数值筛查、20组完整候选测量及历史遥测失败补测；包含17个输入、分阶段延时、NvMap/RSS、CPU/GPU温度和动作cosine。
+两路有效输入下，去padding＋Decoder FFN W8A8为 **160.42 ms**，相对完整BF16补测 **230.80 ms** 减少约 **30.5%**，OpenPI动作cosine **0.999989**。
+三路有效形状验证使用复制的第三视图，组合为 **206.18 ms**；不能把两路519行结果套用到真实三相机。
+保留原GELU与BF16数据流，未修改线上服务；已恢复原双模型服务并通过HTTP健康检查。数值相似度不代表闭环任务成功率。
+
 新增[Linux NVIDIA RTX4090/5090 Docker构建包](containers/nvidia/README.md)，分支`docker-nvidia`。
 x86_64/SM89+SM120，支持单卡双模型或双卡各一个模型，按GPU UUID记录显存、温度和功耗。
 当前交付源码构建包，**尚未构建镜像或进行RTX GPU验收**；VLA先采用PyTorch BF16。

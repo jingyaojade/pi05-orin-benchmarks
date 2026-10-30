@@ -1,0 +1,70 @@
+{
+  "created_unix": 1793370732.003657,
+  "torch": "2.3.0a0+6ddf5cf85e.nv24.04",
+  "torch_cuda": "12.2",
+  "python": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]",
+  "source_verification": {
+    "upstream_commit": "6cb2f80caec2f561a1331c554a6d3bbf95d2ed55",
+    "files": {
+      "flash_rt/frontends/torch/pi05_rtx.py": {
+        "upstream_sha256_lf": "5ecb7cb7b6dc60b8c1115d8aaaf09f520507a4402958a250664cd30f2f82ce42",
+        "patched_sha256_lf": "7900d753e4f1fb3f32fffaa5ad64e00a72dc9cd7ce3deb40a8a6fe40a3e93edb"
+      },
+      "flash_rt/models/pi05/pipeline_rtx.py": {
+        "upstream_sha256_lf": "de60a1f629195ed4336956afd0f47a1bdefef940c37877539f1f3cfab657ce37",
+        "patched_sha256_lf": "2135e8b21558cf26907784042cf5074d69bb9d1d3de82967cdb14e74c848d4ce"
+      },
+      "flash_rt/hardware/rtx/attn_backend.py": {
+        "upstream_sha256_lf": "aa5d78321d7b941c85e1581034d449149bf48799fe1aec2e15d1ff44fd65cff0",
+        "patched_sha256_lf": "4322877c876dcf043842fbcca4387c50764a8fc21c15efd95f70735c0bf96a56"
+      }
+    },
+    "patch_sha256": "ee55750fa7742e84cfb80fd8441f3e8c31f16a325327d157b33a0d6b7bc96372"
+  },
+  "commands": {
+    "nvpmodel": {
+      "returncode": 0,
+      "stdout": "NV Power Mode: MAXN\n0\n",
+      "stderr": ""
+    },
+    "clocks": {
+      "returncode": 0,
+      "stdout": "SOC family:tegra234  Machine:NVIDIA Jetson AGX Orin Developer Kit\nOnline CPUs: 0-11\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1728000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1881600 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2112000 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1728000 IdleStates: WFI=1 c7=1 \ncpu6:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu7:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=2188800 IdleStates: WFI=1 c7=1 \ncpu8:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu9:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1728000 IdleStates: WFI=1 c7=1 \ncpu10: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu11: Online=1 Governor=schedutil MinFreq=729600 MaxFreq=2201600 CurrentFreq=1804800 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=1300500000 CurrentFreq=306000000\nEMC MinFreq=204000000 MaxFreq=2133000000 CurrentFreq=2133000000 FreqOverride=1\nDLA0_CORE:   Online=1 MinFreq=0 MaxFreq=1600000000 CurrentFreq=1600000000\nDLA0_FALCON: Online=1 MinFreq=0 MaxFreq=844800000 CurrentFreq=844800000\nDLA1_CORE:   Online=1 MinFreq=0 MaxFreq=1600000000 CurrentFreq=1600000000\nDLA1_FALCON: Online=1 MinFreq=0 MaxFreq=844800000 CurrentFreq=844800000\nPVA0_VPS0: Online=1 MinFreq=0 MaxFreq=1369600000 CurrentFreq=1369600000\nPVA0_AXI:  Online=1 MinFreq=0 MaxFreq=985600000 CurrentFreq=985600000\nFAN Dynamic Speed Control=nvfancontrol hwmon1_pwm1=85\nNV Power Mode: MAXN\n",
+      "stderr": ""
+    },
+    "nvcc": {
+      "returncode": 0,
+      "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Tue_Aug_15_22:08:11_PDT_2023\nCuda compilation tools, release 12.2, V12.2.140\nBuild cuda_12.2.r12.2/compiler.33191640_0\n",
+      "stderr": ""
+    },
+    "services": {
+      "returncode": 0,
+      "stdout": "MainPID=73019\nActiveState=active\n\nMainPID=73024\nActiveState=active\n",
+      "stderr": ""
+    },
+    "vendor_status": {
+      "returncode": 0,
+      "stdout": " M flash_rt/frontends/torch/pi05_rtx.py\n M flash_rt/hardware/rtx/attn_backend.py\n M flash_rt/models/pi05/pipeline_rtx.py\n",
+      "stderr": ""
+    }
+  },
+  "native_extensions_sha256": {
+    "/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/flash_rt/flash_rt_fa2.cpython-310-aarch64-linux-gnu.so": "3d04c0f48eba93283d50d264bd8865ff78440dea80ff7cbc40144dde475f9c46",
+    "/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/flash_rt/flash_rt_kernels.cpython-310-aarch64-linux-gnu.so": "973b8f57a2d30fc906e998e29fb39e9ad4e710ff49e652a90866ec604c1839a0"
+  },
+  "historical_reference_check": {
+    "bitwise_equal": true,
+    "max_abs": 0.0
+  },
+  "health": {
+    "8081": {
+      "status": 200,
+      "body": "{\"status\": \"ready\", \"pid\": 73019}"
+    },
+    "8082": {
+      "status": 200,
+      "body": "{\"status\":\"ok\"}"
+    }
+  },
+  "restored_services_healthy": true
+}

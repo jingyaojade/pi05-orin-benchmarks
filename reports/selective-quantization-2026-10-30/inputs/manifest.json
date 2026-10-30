@@ -1,0 +1,60 @@
+{
+  "cases": 17,
+  "recorded_frames": [
+    {
+      "asset_frame": 0,
+      "task": 0,
+      "global_index": 55
+    },
+    {
+      "asset_frame": 1,
+      "task": 1,
+      "global_index": 179
+    },
+    {
+      "asset_frame": 2,
+      "task": 2,
+      "global_index": 425
+    },
+    {
+      "asset_frame": 3,
+      "task": 3,
+      "global_index": 760
+    },
+    {
+      "asset_frame": 4,
+      "task": 4,
+      "global_index": 1381
+    },
+    {
+      "asset_frame": 5,
+      "task": 5,
+      "global_index": 2050
+    },
+    {
+      "asset_frame": 6,
+      "task": 6,
+      "global_index": 2250
+    },
+    {
+      "asset_frame": 7,
+      "task": 7,
+      "global_index": 2360
+    }
+  ],
+  "assets": [
+    {
+      "path": "/home/nvidia/pi05-orin-flashrt/vendor/FlashRT/examples/thor/assets/pi05_libero.npz",
+      "sha256": "529c18b1c1e546e11ed1486db24dbcc0474218c159707f611e51488fe19b4b20"
+    },
+    {
+      "path": "/home/nvidia/pi05-orin-benchmarks/reports/engine-comparison-2026-10-16/baseline-latency/fixed_inputs.npz",
+      "sha256": "c7b18b3b0dbbccdc27ac6dc451f871aec0b1be88adfa37c5be2315d12d9451fd"
+    }
+  ],
+  "noise_seeds": "2026103000 + frame_index*10 + sample_index (0,1)",
+  "prompt": "pick up the black bowl",
+  "scope": "Recorded LIBERO images with a fixed benchmark prompt; not task-specific closed-loop episodes.",
+  "third_camera": "Duplicate of front image, used ONLY for three-valid-view shape/numerical tests; not an acquired third camera.",
+  "first_case": "Preserved historical synthetic fixture."
+}

@@ -1,0 +1,17 @@
+{"event": "loading_policy", "checkpoint": "/home/nvidia/pi05-orin/models/pi05_libero", "helper": "/home/nvidia/pi05-orin/serve.py"}
+Traceback (most recent call last):
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/reference.py", line 63, in <module>
+    if __name__=='__main__':main()
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/selective_quantization/reference.py", line 52, in main
+    result=baseline.finish_cpu(policy,cpu_inputs,actions)
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/baseline/benchmark.py", line 182, in finish_cpu
+    outputs = jax.tree.map(lambda value: np.asarray(value[0, ...].detach().cpu()), outputs)
+  File "/home/nvidia/pi05-orin/.venv/lib/python3.10/site-packages/jax/_src/tree.py", line 155, in map
+    return tree_util.tree_map(f, tree, *rest, is_leaf=is_leaf)
+  File "/home/nvidia/pi05-orin/.venv/lib/python3.10/site-packages/jax/_src/tree_util.py", line 358, in tree_map
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/home/nvidia/pi05-orin/.venv/lib/python3.10/site-packages/jax/_src/tree_util.py", line 358, in <genexpr>
+    return treedef.unflatten(f(*xs) for xs in zip(*all_leaves))
+  File "/home/nvidia/pi05-orin-selective-quantization-20261030/code/baseline/benchmark.py", line 182, in <lambda>
+    outputs = jax.tree.map(lambda value: np.asarray(value[0, ...].detach().cpu()), outputs)
+AttributeError: 'numpy.ndarray' object has no attribute 'detach'

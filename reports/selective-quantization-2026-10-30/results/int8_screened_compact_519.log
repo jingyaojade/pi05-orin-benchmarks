@@ -1,0 +1,22 @@
+FVK_PI05_RTX_FORCE_BF16=1 set: disabling FP8 paths for the Pi0.5 RTX pipeline.
+Selective W8A8 prepared 131 active weights; kept BF16 norms/GELU, INT8 copies=1142.0 MiB; scratch=8.1 MiB
+  autotune: tested 8 algos, best=0 (68.1312 us)
+  autotune: tested 8 algos, best=3 (138.934 us)
+  autotune: tested 8 algos, best=2 (56.2816 us)
+  autotune: tested 8 algos, best=3 (172.17 us)
+  autotune: tested 8 algos, best=2 (184.541 us)
+  autotune: tested 8 algos, best=7 (82.2208 us)
+  autotune: tested 8 algos, best=4 (228.922 us)
+  autotune: tested 8 algos, best=3 (181.002 us)
+  autotune: tested 8 algos, best=6 (1390.03 us)
+  autotune: tested 8 algos, best=6 (1391.94 us)
+  autotune: tested 8 algos, best=6 (1225.21 us)
+  autotune: tested 6 algos, best=2 (6.1152 us)
+  autotune: tested 5 algos, best=0 (39.1936 us)
+  autotune: tested 7 algos, best=4 (22.4512 us)
+  autotune: tested 7 algos, best=3 (58.5984 us)
+  autotune: tested 7 algos, best=2 (56.304 us)
+  autotune: tested 7 algos, best=5 (56.8288 us)
+  autotune: tested 1 algos, best=0 (10.3584 us)
+{"event": "latency_complete", "name": "int8_screened_compact_519", "latency": {"n": 50, "mean_ms": 144.55939642, "median_ms": 144.458293, "p95_ms": 145.22139249999998, "min_ms": 144.145191, "max_ms": 145.430333, "std_ms": 0.30402011175296}, "cosine": 0.9910162632444665}
+{"event": "variant_complete", "name": "int8_screened_compact_519"}

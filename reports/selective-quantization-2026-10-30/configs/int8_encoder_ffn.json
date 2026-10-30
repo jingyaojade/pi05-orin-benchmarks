@@ -1,0 +1,32 @@
+{
+  "num_views": 3,
+  "valid_num_views": 2,
+  "max_prompt_len": 200,
+  "num_steps": 10,
+  "name": "int8_encoder_ffn",
+  "encoder_layers": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "modules": [
+    "ffn_gate",
+    "ffn_up",
+    "ffn_down"
+  ]
+}
